@@ -14,7 +14,7 @@ Is there a correlation between the type of facility being inspected (restaurant,
 Is there a bias in the amount of inspections for some establishment, or does it only depend on its performance?
 
 # Dataset
-1) Chicago Food Inspections: A dataset providing the facilty, the time, the latitude and longitude, the result (pass, or fail, and risk level) and a short comment on the inspection.
+1) Chicago Food Inspections: A dataset providing the facility, the time, the latitude and longitude, the result (pass, or fail, and risk level) and a short comment on the inspection.
 
 2) Cencus Data - Seleted socio-economic indicators in Chicago, 2008 - 2012 (https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2). This dataset provides information on income per capita per area.
 
