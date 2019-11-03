@@ -1,6 +1,6 @@
 '''
 File name: load_datasets.ipynb
-Author: put your names, ..., Raphael Strebel
+Author: ..., Mohamed Ndoye, Raphael Strebel
 Date created: 03/11/2018
 Date last modified: ...
 Python Version: 3.7.4
