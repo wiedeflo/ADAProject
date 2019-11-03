@@ -3,3 +3,13 @@
 
 # Ada Library Information
 *.ali
+
+# Data
+data/*
+
+# Jupyter notebook
+.ipynb_checkpoints
+utils/__pycache__/*
+
+# Mac
+.DS_Store
