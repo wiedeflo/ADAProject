@@ -23,7 +23,7 @@ def load_chicago_df(inspection_DB_identifer:str, limit:int, chicago_url:str):
     # in place of application token, and no username or password:
     client = Socrata(chicago_url, None)
 
-    # First 50000 results, recieved as JSON & returned as dict
+    # First 50000 results, received as JSON & returned as dict
     # Columns converted to snake case, special chars removed,
     # dates and location formatted
     chicago_DB_records = client.get(inspection_DB_identifer, limit=limit)
