@@ -9,7 +9,7 @@ data/*
 
 # Jupyter notebook
 .ipynb_checkpoints
-utils/__pycache__/*
+src/utils/__pycache__/*
 
 # Mac
 .DS_Store
