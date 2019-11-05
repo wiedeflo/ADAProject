@@ -23,3 +23,12 @@ SOCIO_ECONOMIC_COL_NAMES = ['community_area_num', 'community_area_name', 'housin
 # Life expectancy
 LIFE_EXPECTANCY_PATH = '../data/Public_Health_Statistics-_Life_Expectancy_By_Community_Area.csv'
 LIFE_EXPECTANCY_COL_NAMES = ['community_area_num', 'community_area_name', 'life_exp_1990', 'lower_95_perc_CI_1990', 'upper_95_perc_CI_1990', 'life_exp_2000', 'lower_95_perc_CI_2000', 'upper_95_perc_CI_2000', 'life_exp_2010', 'lower_95_perc_CI_2010', 'upper_95_perc_CI_2010']
+
+###########################################################################################################
+################################## WEB SCRAPING LNG/LAT FROM CHICAGO AREA #################################
+###########################################################################################################
+
+# Chicago area
+LAT_LNG_HTML_POSITION_START = 'window.APP_INITIALIZATION_STATE=[[['
+LAT_LNG_HTML_POSITION_STOP = ']'
+CHICAGO_AREA_URL = 'https://www.google.com/maps/place/%s,+Chicago,+IL,+USA'
