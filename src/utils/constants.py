@@ -32,3 +32,13 @@ LIFE_EXPECTANCY_COL_NAMES = ['community_area_num', 'community_area_name', 'life_
 LAT_LNG_HTML_POSITION_START = 'window.APP_INITIALIZATION_STATE=[[['
 LAT_LNG_HTML_POSITION_STOP = ']'
 CHICAGO_AREA_URL = 'https://www.google.com/maps/place/%s,+Chicago,+IL,+USA'
+CHICAGO_ADDRESS = "Chicago, Illinois, United States"
+
+MONTCLAIRE_AREA_LAT = 41.929681
+MONTCLAIRE_AREA_LNG = -87.799306
+WASHINGTON_HEIGHT_AREA_LAT = 41.718415
+WASHINGTON_HEIGHT_AREA_LNG = -87.642884
+
+# Geopy lib
+GEOPY_USER_AGENT = "not sure what to write : TODO"
+GEOPY_TIMEOUT = 3
