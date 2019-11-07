@@ -10,7 +10,7 @@ Contains methods to retrieve the latitude and longitude of a Chicago city area
 import requests # to remove
 import geopy
 from geopy.geocoders import Nominatim
-from utils import constants
+from utils import constants as cst
 
 def get_lat_lng_from_area_name(area):
     """
@@ -19,8 +19,8 @@ def get_lat_lng_from_area_name(area):
     :return: a list containing 2 floats (the latitude and the longitude)
     """
         
-    complete_area = area + ", " + constants.CHICAGO_ADDRESS
-    loc = Nominatim(user_agent=constants.GEOPY_USER_AGENT, timeout=constants.GEOPY_TIMEOUT).geocode(complete_area)
+    complete_area = area + ", " + cst.CHICAGO_ADDRESS
+    loc = Nominatim(user_agent=cst.GEOPY_USER_AGENT, timeout=cst.GEOPY_TIMEOUT).geocode(complete_area)
     
     if not loc:
         lat, lng = None, None # get_lat_lng_from_area_name_google_maps(area)
@@ -45,7 +45,7 @@ def get_lat_lng_from_area_name_google_maps(area):
     r = requests.get(url)
     
     # parse response text to find string containing latitude and longitude
-    lat_and_lng = r.text.partition(constants.LAT_LNG_HTML_POSITION_START)[2].partition(constants.LAT_LNG_HTML_POSITION_STOP)[0]
+    lat_and_lng = r.text.partition(cst.LAT_LNG_HTML_POSITION_START)[2].partition(cst.LAT_LNG_HTML_POSITION_STOP)[0]
        
     print(lat_and_lng)
     
@@ -66,5 +66,5 @@ def get_url_from_area_google_maps(area):
     area_formatted = separator.join(area.split(" "))
     
     # return the url for the area
-    url = constants.CHICAGO_AREA_URL % (area_formatted)
+    url = cst.CHICAGO_AREA_URL % (area_formatted)
     return url
