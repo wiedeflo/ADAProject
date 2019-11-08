@@ -12,6 +12,7 @@ import geopy
 from geopy.geocoders import Nominatim
 from utils import constants as cst
 
+# NOT USED ANYMORE
 def get_lat_lng_from_area_name(area):
     """
     Retrieve the latitude and the longitude from a Chicago area. Uses geopy to retrieve this information.
