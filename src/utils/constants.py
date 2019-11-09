@@ -52,3 +52,6 @@ WASHINGTON_HEIGHT_AREA_LNG = -87.642884
 # Geopy lib
 GEOPY_USER_AGENT = "not sure what to write : TODO"
 GEOPY_TIMEOUT = 3
+
+# Strings not recognized by openstreetmaps searches
+UNKNOWN_ADDR_STRINGS = ['S', 'N', 'W', 'E', 'AVE', 'ST']

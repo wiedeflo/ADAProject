@@ -1,5 +1,5 @@
 '''
-File name: web_scraping.py
+File name: web_scraping_google_maps.py
 Author: ..., Mohamed Ndoye, Raphael Strebel
 Date created: 03/11/2019
 Date last modified: ...
@@ -8,31 +8,9 @@ Contains methods to retrieve the latitude and longitude of a Chicago city area
 '''
 
 import requests
-import geopy
-from geopy.geocoders import Nominatim
 from utils import constants as cst
 
-# NOT USED ANYMORE
-def get_lat_lng_from_area_name(area):
-    """
-    Retrieve the latitude and the longitude from a Chicago area. Uses geopy to retrieve this information.
-    :param area: string
-    :return: a list containing 2 floats (the latitude and the longitude)
-    """
-        
-    complete_area = area + ", " + cst.CHICAGO_ADDRESS
-    loc = Nominatim(user_agent=cst.GEOPY_USER_AGENT, timeout=cst.GEOPY_TIMEOUT).geocode(complete_area)
-    
-    if not loc:
-        lat, lng = None, None # get_lat_lng_from_area_name_google_maps(area)
-    else:
-        lat, lng = loc.latitude, loc.longitude
-    
-    
-    return [lat, lng]
-    
-
-def get_lat_lng_from_address_name_google_maps(address):
+def get_lat_lng_from_area_name(address):
     """
     Retrieve the latitude and the longitude from a Chicago area.
     :param area: string
@@ -43,7 +21,7 @@ def get_lat_lng_from_address_name_google_maps(address):
     complete_address = address + " " + cst.CHICAGO_ADDRESS
     
     # get url to request
-    url = get_url_from_address_google_maps(complete_address)
+    url = get_url_from_address(complete_address)
     
     # get response from url
     r = requests.get(url)
@@ -56,7 +34,7 @@ def get_lat_lng_from_address_name_google_maps(address):
     
     return lat, lng
 
-def get_url_from_address_google_maps(address):
+def get_url_from_address(address):
     """
     Retrieve the url corresponding to a 'google maps' query for a Chicago city area
     :param area: string
