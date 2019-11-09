@@ -15,20 +15,26 @@ from shapely.geometry import Polygon
 from utils import constants as cst
 from utils import web_scraping_google_maps
 
-def get_lat_lng_from_address(address):
+def get_lat_lng_from_address(address, cleaned=False):
     """
     Retrieve the latitude and the longitude from a Chicago area. Uses geopy to retrieve this information.
     :param area: string
     :return: a list containing 2 floats (the latitude and the longitude)
     """
-    
-    clean_addr = get_clean_address(address)
-        
-    complete_addr = clean_addr + ", " + cst.CHICAGO_ADDRESS
+            
+    complete_addr = address + ", " + cst.CHICAGO_ADDRESS
     loc = Nominatim(user_agent=cst.GEOPY_USER_AGENT, timeout=cst.GEOPY_TIMEOUT).geocode(complete_addr)
     
+    lat, lng = None, None 
+    
     if not loc:
-        lat, lng = None, None # create method similar to : web_scraping_google_maps.get_lat_lng_from_area_name(area) or find alt.
+        if not cleaned :
+            # Try cleaning it :
+            clean_addr = get_clean_address(address)
+            [lat, lng] = get_lat_lng_from_address(clean_addr, cleaned=True)
+        else:
+            # TODO : create method similar to : web_scraping_google_maps.get_lat_lng_from_area_name(area) or find alt.
+            lat, lng = None, None 
     else:
         lat, lng = loc.latitude, loc.longitude
     
@@ -46,7 +52,9 @@ def get_clean_address(address):
     
     # Remove all unrecognizable strings from the address
     for unknown_str in cst.UNKNOWN_ADDR_STRINGS:
-        if unknown_str in addr_split:
+        
+        # There might be multiple same strings in the address
+        while unknown_str in addr_split:
             addr_split.remove(unknown_str)
     
     # Join the remaining address
