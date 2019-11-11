@@ -16,6 +16,7 @@ def get_lat_lng_from_area_name(address):
     :param area: string
     :return: a list containing 2 floats (the latitude and the longitude)
     """
+ 
     
     # Complete the address by adding "Chicago, United States"
     complete_address = address + " " + cst.CHICAGO_ADDRESS

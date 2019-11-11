@@ -15,15 +15,19 @@ from shapely.geometry import Polygon
 from utils import constants as cst
 from utils import web_scraping_google_maps
 
+import math
+import re
+
 def get_lat_lng_from_address(address, cleaned=False):
     """
     Retrieve the latitude and the longitude from a Chicago area. Uses geopy to retrieve this information.
     :param area: string
     :return: a list containing 2 floats (the latitude and the longitude)
     """
-            
+        
     complete_addr = address + ", " + cst.CHICAGO_ADDRESS
     loc = Nominatim(user_agent=cst.GEOPY_USER_AGENT, timeout=cst.GEOPY_TIMEOUT).geocode(complete_addr)
+    
     
     lat, lng = None, None 
     
@@ -47,18 +51,29 @@ def get_clean_address(address):
     :return: a string containing the cleaned address
     """
     
+
+    
     # Split the address into a list of strings
     addr_split = address.split(' ')
     
-    # Remove all unrecognizable strings from the address
-    for unknown_str in cst.UNKNOWN_ADDR_STRINGS:
+    addr_split = [cst.KNOWN_ADDR_STRINGS.get(add) if add in cst.KNOWN_ADDR_STRINGS else add for add in addr_split]
+    
+    addr_split = [cst.TYPO_FIXES.get(add) if add in cst.TYPO_FIXES else add for add in addr_split]
         
-        # There might be multiple same strings in the address
-        while unknown_str in addr_split:
-            addr_split.remove(unknown_str)
+    addr_split = [re.sub('\(.*\)', '', add) for add in addr_split]
+    
+    for rem in cst.UNKNOWN_ADDR_SUBSTRINGS:
+        address = address.replace(rem, cst.UNKNOWN_ADDR_SUBSTRINGS.get(rem))
     
     # Join the remaining address
     clean_address = ' '.join(addr_split)
+    
+    while '  ' in clean_address:
+        clean_address = clean_address.replace('  ',' ')
+    #clean_address = clean_address.replace(' ,',',')
+    
+    for rem in cst.UNKNOWN_ADDR_SUBSTRINGS:
+        clean_address = clean_address.replace(rem, cst.UNKNOWN_ADDR_SUBSTRINGS.get(rem))
     
     return clean_address
 
@@ -78,7 +93,8 @@ def get_area_num_from_lng_lat(lat, lng, areas_DF):
     area_with_loc = all_areas_as_polygones.contains(loc)
     
     if not area_with_loc.any():
-        raise ValueError('No area with lat: %f and lng: %f'%(lat, lng))
+        return math.nan
+        #raise ValueError('No area with lat: %f and lng: %f'%(lat, lng))
             
     area_num = areas_DF[area_with_loc][cst.AREA_NUM].values[0]
     
