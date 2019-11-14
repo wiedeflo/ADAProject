@@ -19,9 +19,7 @@ AREA_NUM = 'community_area_num'
 
 # Food inspection
 FOOD_INSPECTIONS_PATH = DATA_PATH + 'food-inspections.csv'
-FOOD_INSPECTIONS_COL_NAMES = ['inspection_id', 'DBA_name', 'AKA_name', 'license_num', 'facility_type', 'risk', 'address', 'city',
-                              'state', 'zip', 'inspection_date', 'inspection_type', 'result', 'violations', 'lat', 'lng',
-                              'location']
+FOOD_INSPECTIONS_COL_NAMES = ['inspection_id', 'DBA_name', 'AKA_name', 'license_num', 'facility_type', 'risk', 'address', 'city', 'state', 'zip', 'inspection_date', 'inspection_type', 'result', 'violations', 'lat', 'lng', 'location', 'historical_wards_2003-2015', 'zip_codes', 'community_area', 'census_tracts', 'wards']
 
 # Socio-economic indicators
 SOCIO_ECONOMIC_INDICATORS_PATH = DATA_PATH + 'Census_Data_-_Selected_socioeconomic_indicators_in_Chicago__2008___2012.csv'
