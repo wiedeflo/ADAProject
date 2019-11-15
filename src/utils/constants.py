@@ -37,6 +37,9 @@ AREAS_PATH = DATA_PATH + 'Boundaries - Community Areas (current)/geo_export.shp'
 # Chicago areas ragion bounds as GeoJson
 AREAS_GEOJSON_PATH = DATA_PATH + 'Boundaries - Community Areas (current).json'
 
+# Unknown locations data path
+UNKNOWN_LOC_PATH = DATA_PATH + 'unknown_locations_df.pkl'
+
 ###########################################################################################################
 ######################################## LNG/LAT FROM CHICAGO AREA ########################################
 ###########################################################################################################
