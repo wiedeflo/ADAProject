@@ -10,6 +10,9 @@ Contains methods to clean the database
 import pandas as pd
 from utils import constants as cst
 
+import re
+import math
+
 def clean_socio_economic_df(socio_economic_df):
     '''
     clean the socio-economic dataframe : lower-case area names, drop rows with NaN as community area number, change type of 'community_area_num' to int
@@ -58,7 +61,7 @@ def clean_areas_df(areas_df):
     areas_df = areas_df.drop('area_numbe', axis=1)
     
     # drop unnecessary columns
-    areas_df = drop_columns_with_one_value(areas_df)
+    areas_df.loc[:, areas_df.columns != 'geometry'] = drop_columns_with_one_value(areas_df.loc[:, areas_df.columns != 'geometry'])
     
     # rename columns 'area_num_1' and 'community' to more meaningful names
     areas_df = areas_df.rename(columns={'area_num_1': cst.AREA_NUM, 'community': cst.AREA_NAME})

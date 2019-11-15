@@ -15,6 +15,9 @@ from shapely.geometry import Polygon
 from utils import constants as cst
 from utils import web_scraping_google_maps
 
+import re 
+import math
+
 def get_lat_lng_from_address(address, cleaned=False):
     """
     Retrieve the latitude and the longitude from a Chicago area. Uses geopy to retrieve this information.
@@ -24,13 +27,14 @@ def get_lat_lng_from_address(address, cleaned=False):
             
     complete_addr = address + ", " + cst.CHICAGO_ADDRESS
     loc = Nominatim(user_agent=cst.GEOPY_USER_AGENT, timeout=cst.GEOPY_TIMEOUT).geocode(complete_addr)
+   
     
     lat, lng = None, None 
     
     if not loc:
         if not cleaned :
             # Try cleaning it :
-            clean_addr = get_clean_address(address)
+            clean_addr = get_clean_address_new(address)
             [lat, lng] = get_lat_lng_from_address(clean_addr, cleaned=True)
         else:
             # TODO : create method similar to : web_scraping_google_maps.get_lat_lng_from_area_name(area) or find alt.
@@ -62,6 +66,38 @@ def get_clean_address(address):
     
     return clean_address
 
+def get_clean_address_new(address):
+    """
+    Some addresses are in an unrecognizable format, this method cleans them e.g. '3459 S OGDEN AVE' becomes '3459 OGDEN'
+    :param address: string
+    :return: a string containing the cleaned address
+    """
+    
+    # Split the address into a list of strings
+    addr_split = address.split(' ')
+    
+    #Replace all abbreviations and knwon problems
+    addr_split = [cst.KNOWN_ADDR_STRINGS.get(add) if add in cst.KNOWN_ADDR_STRINGS else add for add in addr_split]
+    
+    #Replace typos
+    addr_split = [cst.TYPO_FIXES.get(add) if add in cst.TYPO_FIXES else add for add in addr_split]
+        
+    #Remove things ing brackets
+    addr_split = [re.sub('\(.*\)', '', add) for add in addr_split]
+        
+    # Join the remaining address
+    clean_address = ' '.join(addr_split)
+    
+    #remove unneccesary whitespace
+    while '  ' in clean_address:
+        clean_address = clean_address.replace('  ',' ')
+    
+    #Replace the remaining adresses with a manually constructed dict
+    for rem in cst.UNKNOWN_ADDR_SUBSTRINGS:
+        clean_address = clean_address.replace(rem, cst.UNKNOWN_ADDR_SUBSTRINGS.get(rem))
+    
+    return clean_address
+
 def get_area_num_from_lng_lat(lat, lng, areas_DF):
     '''
     get the area number from a longitude latitude pair, using the parameter "areas_DF" 
@@ -78,7 +114,8 @@ def get_area_num_from_lng_lat(lat, lng, areas_DF):
     area_with_loc = all_areas_as_polygones.contains(loc)
     
     if not area_with_loc.any():
-        raise ValueError('No area with lat: %f and lng: %f'%(lat, lng))
+        return math.nan
+        #raise ValueError('No area with lat: %f and lng: %f'%(lat, lng))
             
     area_num = areas_DF[area_with_loc][cst.AREA_NUM].values[0]
     
