@@ -126,7 +126,7 @@ def get_area_num_from_lng_lat(lat, lng, areas_DF):
 def get_unknown_locations(food_unknown_loc):
     """
     Get the lat/lng of unknown addresses in a dataframe
-    :param food_unknown_loc: a pd.DataFrame 
+    :param food_unknown_loc: a pandas.DataFrame 
     :return: a pd.DataFrame containing the previously unknown location's along with their latitude and longitude, or NaN if this value could not be found.
     """
     # Get unknown locations 
