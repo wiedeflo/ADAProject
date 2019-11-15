@@ -7,16 +7,18 @@ Python Version: 3.7.4
 Contains methods to get the area in Chicago of a longitude/latitude pair
 '''
 
+import re 
+import math
+import pandas as pd
+
 import geopy
 from geopy.geocoders import Nominatim
+
 from shapely.geometry import Point
 from shapely.geometry import Polygon
 
 from utils import constants as cst
 from utils import web_scraping_google_maps
-
-import re 
-import math
 
 def get_lat_lng_from_address(address, cleaned=False):
     """
@@ -120,3 +122,28 @@ def get_area_num_from_lng_lat(lat, lng, areas_DF):
     area_num = areas_DF[area_with_loc][cst.AREA_NUM].values[0]
     
     return int(area_num)
+
+def get_unknown_locations(food_unknown_loc):
+    """
+    Get the lat/lng of unknown addresses in a dataframe
+    :param food_unknown_loc: a pd.DataFrame 
+    :return: a pd.DataFrame containing the previously unknown location's along with their latitude and longitude, or NaN if this value could not be found.
+    """
+    # Get unknown locations 
+    unknown_locations = pd.DataFrame()
+
+    try:
+        # Try loading the unknown locations :
+        unknown_locations = pd.read_pickle(cst.UNKNOWN_LOC_PATH)
+    except:
+        # Compute the missing locations
+        # No need for duplicate queries, so we just keep the unique addresses
+        unknown_locations = pd.DataFrame(food_unknown_loc['address'].unique(), columns=['address'])
+
+        # Retrieve 'lat' and 'lng' values of an address and append them to 'unknown_locations' dataframe
+        unknown_locations[['lat', 'lng']] = unknown_locations['address'].apply(lambda addr: pd.Series(get_lat_lng_from_address(addr)))
+
+        # Save them as pickle file
+        unknown_locations.to_pickle(cst.UNKNOWN_LOC_PATH)
+        
+    return unknown_locations
