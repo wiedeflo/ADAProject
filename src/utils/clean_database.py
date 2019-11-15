@@ -62,6 +62,7 @@ def clean_areas_df(areas_df):
     
     # drop unnecessary columns
     areas_df.loc[:, areas_df.columns != 'geometry'] = drop_columns_with_one_value(areas_df.loc[:, areas_df.columns != 'geometry'])
+    areas_df = areas_df.dropna(axis=1)
     
     # rename columns 'area_num_1' and 'community' to more meaningful names
     areas_df = areas_df.rename(columns={'area_num_1': cst.AREA_NUM, 'community': cst.AREA_NAME})

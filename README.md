@@ -39,4 +39,4 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 # Update 
 We download the Chicago community areas bounderies on :
 https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6
-(click on "export", then download the Shapefile format and the GEOJson format, and put the downloaded folder in "data")
+Click on "export", then download the Shapefile format and the GEOJson format, and put the downloaded folder in "data". The 4 files downloaded have random hashes appended to their names, so rename them to match "geo_export" leaving the extension.
