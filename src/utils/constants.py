@@ -44,12 +44,16 @@ UNKNOWN_LOC_PATH = DATA_PATH + 'unknown_locations_df.pkl'
 ######################################## LNG/LAT FROM CHICAGO AREA ########################################
 ###########################################################################################################
 
-# Chicago area
+# Chicago location 
+CHICAGO_LOCATION = [41.8333925,-87.7121486]
+
+# Web scraping
 LAT_LNG_HTML_POSITION_START = 'window.APP_INITIALIZATION_STATE=[[['
 LAT_LNG_HTML_POSITION_STOP = ']'
 CHICAGO_AREA_URL = 'https://www.google.com/maps/place/%s,+Chicago,+IL,+USA'
 CHICAGO_ADDRESS = "Illinois, United States"
 
+# Montclaire and Washington areas
 MONTCLAIRE_AREA_LAT = 41.929681
 MONTCLAIRE_AREA_LNG = -87.799306
 WASHINGTON_HEIGHT_AREA_LAT = 41.718415
