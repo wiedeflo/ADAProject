@@ -1,0 +1,15 @@
+TODO :
+
+- Clean food inspections to have only those in Chicago (not new york etc)
+- See if there is a relation betw. the number before the violation and the description of the violation
+- Check if possible to do time series on the map (change time -> see all inspections done at this day/month/year)
+- Plot socioeconomic on the map (different layer than food inspections) and visualize results
+- Save community area column after computing it (for food inspections)
+- Write a few explanations on what is observed on the map
+-> Should do more maps (express ratio nb facilities/ nb inspections, etc) :
+	- facility types : barplot/scatterplot of their resp. risks or violations or nb of inspections
+- Finish reporting basic stats
+- Program milestone 3 and all the way up to presentation
+	- Analyze and combine more in depth the databases
+	- write a data story/report
+	- ....
