@@ -18,7 +18,15 @@ def create_chicago_map():
     Creates a map of Chicago, highlighting the community areas
     :return: a folium map
     """
-    map_chicago = folium.Map(location = cst.CHICAGO_LOCATION)
+    
+    map_chicago = folium.Map(location = cst.CHICAGO_LOCATION, 
+                             max_bounds=True,
+                             min_lat=cst.CHICAGO_MIN_LAT,
+                             max_lat=cst.CHICAGO_MAX_LAT,
+                             min_lon=cst.CHICAGO_MIN_LNG,
+                             max_lon=cst.CHICAGO_MAX_LNG
+                            )
+    
     regiondata = json.load(open(cst.AREAS_GEOJSON_PATH))
     folium.GeoJson(regiondata).add_to(map_chicago)
     return map_chicago
