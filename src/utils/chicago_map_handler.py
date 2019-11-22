@@ -50,13 +50,15 @@ def add_locations(map_chicago, unknown_locations, food_inspections_DF):
     
     return map_chicago
 
-def inspections_heat_map(map_chicago, inspection_counts):
+def inspections_heat_map(inspection_counts):
     """
     Plot number of inspections per community area as a heatmap
     :param map_chicago: folium map of Chicago
     :param inspection_counts: pandas.DataFrame with columns 'community_area_num' and 'index'
     :return: folium heatmap of inspections per area
     """
+    
+    map_chicago = create_chicago_map()
     regiondata = json.load(open(cst.AREAS_GEOJSON_PATH))
     folium.GeoJson(regiondata).add_to(map_chicago)
 
