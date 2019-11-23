@@ -11,7 +11,11 @@ TODO :
 	- facility types : barplot/scatterplot of their resp. risks or violations or nb of inspections
 - Finish reporting basic stats
 - Program milestone 3 and all the way up to presentation
+<<<<<<< HEAD
 	- Analyze and combine more in depth the databases
 	- description of the violations and it how they are influencing the risk of an establishment (mean of the numbers to determine the pass/failure conditions?)
+=======
+	- See what other interesting analysis can be done by combining the databases
+>>>>>>> fafda05df2dd63687fa961d61b795f6e00ad3d7a
 	- write a data story/report
-	- ....
+	- Analyse more precisely the violations and the description of the violation, along with the provided numbers (in the food inspections DB)
