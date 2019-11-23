@@ -40,6 +40,8 @@ AREAS_GEOJSON_PATH = DATA_PATH + 'Boundaries - Community Areas (current).json'
 # Unknown locations data path
 UNKNOWN_LOC_PATH = DATA_PATH + 'unknown_locations_df.pkl'
 
+FOOD_INSPECTIONS_AREA_PICKLE = DATA_PATH + 'food_inspections_area_pickle.pkl'
+
 ###########################################################################################################
 ######################################## LNG/LAT FROM CHICAGO AREA ########################################
 ###########################################################################################################
@@ -55,7 +57,7 @@ CHICAGO_MAX_LNG = -87.463580
 LAT_LNG_HTML_POSITION_START = 'window.APP_INITIALIZATION_STATE=[[['
 LAT_LNG_HTML_POSITION_STOP = ']'
 CHICAGO_AREA_URL = 'https://www.google.com/maps/place/%s,+Chicago,+IL,+USA'
-CHICAGO_ADDRESS = "Illinois, United States"
+CHICAGO_ADDRESS = "Chicago, Illinois, United States"
 
 # Montclaire and Washington areas
 MONTCLAIRE_AREA_LAT = 41.929681
@@ -68,11 +70,11 @@ GEOPY_USER_AGENT = "not sure what to write : TODO"
 GEOPY_TIMEOUT = 10
 
 # Strings that we manually replace as they contain insufficient information
-UNKNOWN_ADDR_SUBSTRINGS = {'/SIDE DRIVE' : '', "O'HARE FIELD" : "O'HARE", 'SITE 322' : '', 'Rockwell AVENUE' : 'Rockwell Street', 'Doty' : 'Doty AVENUE', '(11156 S)' : '', '(St. Maurice)' : '', '2104AB-2108A SOUTH ARCHER AVENUE' : '2108 South Archer Avenue', 'WEST WEST' : 'WEST', 'DELANO WEST COURT': 'DELANO Court', 'DELANO EAST COURT': 'DELANO Court', '108 WEST PARK' : '108 West Park Avenue, Elmhurst', '4934 SOUTH Wabash BUILDING' : '4934 South Wabash Avenue', '3901 SOUTH DR MARTIN LUTHER KING JR' : '3901 SOUTH DR MARTIN LUTHER KING Junior Drive', '8306 SOUTH LAWRENCE AVENUE' : '8306 WEST LAWRENCE AVENUE', '1332 WEST DRIVING PARK ROAD BSMT': '1332 West Irving Park Road', '2300 NORTH Childrens Plaza PLAZA BUILDING' : '720 West Fullerton Parkway', '3107 SOUTH 71st STREET BSMT' : '3107 West 71st Street', '2920 SOUTH WENWORTH SITE 2' : '2920 South Wentworth Avenue', '6601 MARTIN FRANCE' : '6601 MARTIN FRANCE CIRCLE', '13946 SOUTH CHIPPEWA' : '13946 SOUTH CHIPPEWA AVENUE', '2217 WEST CRYSTAL STREET APT 2' : '2217 WEST CRYSTAL STREET', '1413 SOUTH 11 TH AVENUE':'1413 SOUTH 11TH AVENUE', '4500 SOUTH WOODS STREET' : '4500 SOUTH WOOD STREET', '425 EAST MC FETRIDGE BUILDING':'425 East McFetridge Drive', '4000 NORTH OHARE AIRPORT':'4000 NORTH OHARE', '3455-3459 SOUTH OGDEN AVENUE' : '3455 Ogden Avenue'}
+UNKNOWN_ADDR_SUBSTRINGS = {'/SIDE DRIVE' : '', "O'HARE FIELD" : "O'HARE", 'SITE 322' : '', 'Rockwell AVENUE' : 'Rockwell Street', 'Doty' : 'Doty AVENUE', '2104AB-2108A SOUTH ARCHER AVENUE' : '2108 South Archer Avenue', 'WEST WEST' : 'WEST', 'DELANO WEST COURT': 'DELANO Court', 'DELANO EAST COURT': 'DELANO Court', '108 WEST PARK' : '108 West Park Avenue, Elmhurst', '4934 SOUTH Wabash BUILDING' : '4934 South Wabash Avenue', '3901 SOUTH DR MARTIN LUTHER KING JR' : '3901 SOUTH DR MARTIN LUTHER KING Junior Drive', '8306 SOUTH LAWRENCE AVENUE' : '8306 WEST LAWRENCE AVENUE', '1332 WEST DRIVING PARK ROAD BSMT': '1332 West Irving Park Road', '2300 NORTH Childrens Plaza PLAZA BUILDING' : '720 West Fullerton Parkway', '3107 SOUTH 71st STREET BSMT' : '3107 West 71st Street', '2920 SOUTH WENWORTH SITE 2' : '2920 South Wentworth Avenue', '6601 MARTIN FRANCE' : '6601 MARTIN FRANCE CIRCLE', '13946 SOUTH CHIPPEWA' : '13946 SOUTH CHIPPEWA AVENUE', '2217 WEST CRYSTAL STREET APT 2' : '2217 WEST CRYSTAL STREET', '1413 SOUTH 11 TH AVENUE':'1413 SOUTH 11TH AVENUE', '4500 SOUTH WOODS STREET' : '4500 SOUTH WOOD STREET', '425 EAST MC FETRIDGE BUILDING':'425 East McFetridge Drive', '4000 NORTH OHARE AIRPORT':'4000 NORTH OHARE', '3455-3459 SOUTH OGDEN AVENUE' : '3455 Ogden Avenue', '7911 SOUTH WOODS BUILDING' : '7911 South Wood Street', '3455-3459 SOUTH OGDEN AVENUE' : '3459 West Ogden Avenue', '6237 SOUTH HALSTED PARKWAY' : '6237 SOUTH UNION AVENUE', 'SOUTH Western' : 'South Western Avenue', 'EAST WATER STREET' : 'East South Water Street', '912 NORTH WALTON STREET' : '912 NORTH STATE STREET', '743 WEST DRIVING PARK ROAD' : '743 WEST IRVING PARK ROAD', '7600 SOUTH CHICAGO AVE' : '7600 SOUTH SOUTH CHICAGO AVE', 'SOUTH WESTERN' : 'South Western Avenue', '(St. Maurice)' : ''}
 
 # Known Abbreviations and some minor address fixed
-KNOWN_ADDR_STRINGS = {'AVE' : 'AVENUE', 'ST': 'STREET', 'S' : 'SOUTH', 'W':'WEST', 'E':'EAST','N':'NORTH', 'BLVD' : 'BOULEVARD', 'TRL' : 'TRAIL', 'STE': 'SITE', 'RD' : 'ROAD', 'PKWY' : 'PARKWAY', 'BLDG' : 'BUILDING', 'PLZ' : 'PLAZA', 'CT' : 'COURT', 'A' : '', 'B' : '', '&' : '', 'Hoyne' : 'Hoyne Avenue', 'PRYOR' : 'Pryor AVENUE', 'DEVON' : 'DEVON AVENUE', 'ROSSELL' : 'ROSSELL AVENUE', 'LN': 'LANE'}
+KNOWN_ADDR_STRINGS = {'AVE' : 'AVENUE', 'ST': 'STREET', 'S' : 'SOUTH', 'W':'WEST', 'E':'EAST','N':'NORTH', 'BLVD' : 'BOULEVARD', 'TRL' : 'TRAIL', 'STE': 'SITE', 'RD' : 'ROAD', 'PKWY' : 'PARKWAY', 'BLDG' : 'BUILDING', 'PLZ' : 'PLAZA', 'CT' : 'COURT', 'A' : '', 'B' : '', '&' : '', 'Hoyne' : 'Hoyne Avenue', 'Wabash':'Wabash Avenue', 'Pryor' : 'Pryor AVENUE', 'DEVON' : 'DEVON AVENUE', 'ROSSELL' : 'ROSSELL AVENUE', 'LN': 'LANE'}
 
 # Typos
-TYPO_FIXES = {'COMMERICAL' : 'COMMERCIAL', 'Wasbash' : 'Wabash', 'RIVERSIDEPLZ' : 'RIVERSIDE', 'BROARDWAY' : 'BROADWAY', 'WASTENAW' : 'WASHTENAW', 'WAWR' : 'MAWR', 'GRIFFIN': 'Griffith',  'LAFIN' : 'LAFLIN' }
+TYPO_FIXES = {'COMMERICAL' : 'COMMERCIAL', 'Wasbash' : 'Wabash', 'RIVERSIDEPLZ' : 'RIVERSIDE', 'BROARDWAY' : 'BROADWAY', 'WASTENAW' : 'WASHTENAW', 'WAWR' : 'MAWR', 'GRIFFIN': 'Griffith',  'LAFIN' : 'LAFLIN', 'CULYER' : 'CUYLER' }
 

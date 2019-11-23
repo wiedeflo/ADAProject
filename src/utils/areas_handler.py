@@ -84,7 +84,7 @@ def get_clean_address_new(address):
     #Replace typos
     addr_split = [cst.TYPO_FIXES.get(add) if add in cst.TYPO_FIXES else add for add in addr_split]
         
-    #Remove things ing brackets
+    #Remove things in brackets
     addr_split = [re.sub('\(.*\)', '', add) for add in addr_split]
         
     # Join the remaining address
@@ -147,3 +147,15 @@ def get_unknown_locations(food_unknown_loc):
         unknown_locations.to_pickle(cst.UNKNOWN_LOC_PATH)
         
     return unknown_locations
+
+def get_locations_with_area(food_inspections_DF, areas_DF):
+    try:
+         # Try loading the food inspections with area code :
+        food_inspections_DF = pd.read_pickle(cst.FOOD_INSPECTIONS_AREA_PICKLE)
+    except:
+        #compute area code for each entry
+        food_inspections_DF[cst.AREA_NUM] = food_inspections_DF.apply(lambda row: get_area_num_from_lng_lat(row['lat'], row['lng'], areas_DF), axis=1)
+        #Save as pickle
+        food_inspections_DF.to_pickle(cst.FOOD_INSPECTIONS_AREA_PICKLE)
+        
+    return food_inspections_DF

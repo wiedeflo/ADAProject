@@ -10,6 +10,7 @@ Methods to visualize a map of Chicago by areas and with specific attributes
 import folium
 import json
 import math
+import datetime
 
 from utils import constants as cst
 
@@ -27,8 +28,7 @@ def create_chicago_map():
                              max_lon=cst.CHICAGO_MAX_LNG
                             )
     
-    regiondata = json.load(open(cst.AREAS_GEOJSON_PATH))
-    folium.GeoJson(regiondata).add_to(map_chicago)
+   
     return map_chicago
 
 def add_locations(map_chicago, unknown_locations, food_inspections_DF):
@@ -39,6 +39,10 @@ def add_locations(map_chicago, unknown_locations, food_inspections_DF):
     :param food_inspections_DF: pandas.DataFrame with the food inspections
     :return: folium map with markers
     """
+    # Add region overlay
+    regiondata = json.load(open(cst.AREAS_GEOJSON_PATH))
+    folium.GeoJson(regiondata).add_to(map_chicago)
+    
     # Create two groups : known and unknown locations
     uncertain_locations_feature=folium.FeatureGroup(name='Uncertain Points', show=False)
     map_chicago.add_child(uncertain_locations_feature)
@@ -58,22 +62,61 @@ def add_locations(map_chicago, unknown_locations, food_inspections_DF):
     
     return map_chicago
 
-def inspections_heat_map(inspection_counts):
+def heat_map(dataframe, title, area_column, data_column):
     """
     Plot number of inspections per community area as a heatmap
-    :param map_chicago: folium map of Chicago
-    :param inspection_counts: pandas.DataFrame with columns 'community_area_num' and 'index'
+    :param dataframe: dataframe containing area numbers and used data
+    :param title: Title of the heatmap
+    :param area_column: Column of the dataframe containing area information
+    :param data_column: Column of the dataframe containing data
     :return: folium heatmap of inspections per area
     """
-    
-    map_chicago = create_chicago_map()
-    regiondata = json.load(open(cst.AREAS_GEOJSON_PATH))
-    folium.GeoJson(regiondata).add_to(map_chicago)
+    #load new map
+    map_chicago = create_chicago_map() 
 
-    folium.Choropleth(geo_data=regiondata, data=inspection_counts,
-                 columns=['index', cst.AREA_NUM],
+    #load region data
+    regiondata = json.load(open(cst.AREAS_GEOJSON_PATH))
+    
+    for feat in regiondata['features']:
+        feat['properties']['community'] = feat['properties']['community'].title()
+        feat['properties'][data_column] = str(dataframe[dataframe[area_column] == feat['properties']['area_numbe']][data_column].values[0])
+    
+    #create heatmap
+    choro = folium.Choropleth(geo_data=regiondata, data=dataframe,
+                 columns=[area_column, data_column],
                  key_on='feature.properties.area_numbe',
                  fill_color='YlOrRd', fill_opacity=0.7, line_opacity=0.2,
-                 legend_name='Number of inspections per region').add_to(map_chicago)
+                 legend_name=title).add_to(map_chicago)
     
+    choro.geojson.add_child(
+    folium.features.GeoJsonTooltip(['community', data_column]))
+    
+    return map_chicago
+
+
+#tried time map and failed
+def timed_heatmap(dataframe, areas_DF):
+                  
+    #load new map
+    map_chicago = create_chicago_map() 
+
+    #load region data
+    #regiondata = json.load(open(cst.AREAS_GEOJSON_PATH))
+                  
+    #create styledict
+    styledict = {}
+    for row in dataframe.values:
+        inner_dict = {}
+        for column in dataframe:
+            if column != cst.AREA_NUM:
+                epoch = str(int(datetime.datetime(column, 1, 1,0,0).timestamp()))
+                inner_dict[epoch] = {'color': '#ffffff', 'opacity': 1}
+        styledict[str(int(row[0])-1)] = inner_dict
+        
+    print(areas_DF.to_json())
+    
+    
+                  
+    #print(styledict)
+    folium.plugins.TimeSliderChoropleth(data=areas_DF.to_json(), overlay = True, styledict = styledict).add_to(map_chicago)
     return map_chicago
