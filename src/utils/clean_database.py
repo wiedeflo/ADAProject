@@ -15,17 +15,20 @@ import math
 
 def clean_food_inspections_df(food_inspections_DF, areas_DF):
     food_inspections_DF = drop_columns_with_one_value(food_inspections_DF)
-    food_inspections_DF['city'] = food_inspections_DF['city'].apply(lambda city: check_city(city, areas_DF))
+    
+    areas = areas_DF['community_area_name'].values
+    
+    food_inspections_DF['city'] = food_inspections_DF['city'].apply(lambda city: check_city(city, areas))
     
     return food_inspections_DF
 
-def check_city(city, areas_DF):
+def check_city(city, areas):
     if not isinstance(city, str):
         return "unknown"
     
     city = city.lower()
     
-    if "chicago" in city or city in areas_DF['community_area_name'].values or city == "chcicago":
+    if "chicago" in city or city in areas or city == "chcicago":
         return "chicago"
     else:
         return "unknown"
