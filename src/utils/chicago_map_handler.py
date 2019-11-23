@@ -8,7 +8,7 @@ Methods to visualize a map of Chicago by areas and with specific attributes
 '''
 
 import folium
-import folium.plugins
+from folium import plugins
 import json
 import math
 import datetime
