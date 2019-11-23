@@ -8,6 +8,7 @@ Methods to visualize a map of Chicago by areas and with specific attributes
 '''
 
 import folium
+import folium.plugins
 import json
 import math
 import datetime
@@ -113,7 +114,7 @@ def timed_heatmap(dataframe, areas_DF):
                 inner_dict[epoch] = {'color': '#ffffff', 'opacity': 1}
         styledict[str(int(row[0])-1)] = inner_dict
         
-    print(areas_DF.to_json())
+    #print(areas_DF.to_json())
     
     
                   
