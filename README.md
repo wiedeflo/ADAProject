@@ -53,16 +53,27 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 
 # Libraries
 pandas
+
 numpy
+
 geopandas
+
 vincent
+
 folium
+
 json
+
 math
+
 re
+
 datetime
+
 geopy
+
 shapely
+
 requests
 
 # Authors
