@@ -14,6 +14,12 @@ import re
 import math
 
 def clean_food_inspections_df(food_inspections_DF, areas_DF):
+    '''
+    Clean the food inspections dataframe by dropping single-valued columns and changing the name of the city to "chicago" or "unknown".
+    :param food_inspections_DF: a pandas.DataFrame
+    :param areas: a pandas.DataFrame
+    :return: a clean pandas.DataFrame containing the food inspections
+    '''
     food_inspections_DF = drop_columns_with_one_value(food_inspections_DF)
     
     areas = areas_DF['community_area_name'].values
@@ -23,6 +29,12 @@ def clean_food_inspections_df(food_inspections_DF, areas_DF):
     return food_inspections_DF
 
 def check_city(city, areas):
+    '''
+    Checks if the city is either a variation of "Chicago", an community area in Chicago or unknown. In the first two cases the function returns a string "chicago", otherwise it returns "unknown".
+    :param city: str
+    :param areas: a list of community areas in Chicago
+    :return: a string, either "chicago" or "unknown"
+    '''
     if not isinstance(city, str):
         return "unknown"
     
