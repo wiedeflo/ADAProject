@@ -16,10 +16,15 @@ Is there a bias in the amount of inspections for some establishment, or does it 
 # Dataset
 1) Chicago Food Inspections: A dataset providing the facility, the time, the latitude and longitude, the result (pass, or fail, and risk level) and a short comment on the inspection.
 https://www.kaggle.com/chicago/chicago-food-inspections
+Note : this database is updated every friday, we downloaded ours after the update of the 18th of October.
 
 2) Cencus Data - Seleted socio-economic indicators in Chicago, 2008 - 2012 (https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2). This dataset provides information on income per capita per area.
 
 3) Public Health Statistics- Life Expectancy By Community Area Health (https://data.cityofchicago.org/Health-Human-Services/Public-Health-Statistics-Life-Expectancy-By-Commun/qjr3-bm53). This dataset provides information on life expectancy per capita per area.
+
+4) We download the Chicago community areas bounderies on :
+https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6
+Click on "export", then download the Shapefile format and the GEOJson format, and put the downloaded folder in "data". The 4 files downloaded have random hashes appended to their names, so rename them to match "geo_export" leaving the extension.
 
 The city of Chicago offers a wide variety of datasets of which we might take advantage in the future, and which might allow us to analyse other aspects of geographical inequality in Chicago, such as crime, population density, education, etc.
 
@@ -62,8 +67,3 @@ requests
 
 # Authors
 Florian Wiedemair, Mohamed Ndoye, Raphael Strebel, Jose Garrido Ramas
-
-# Update 
-We download the Chicago community areas bounderies on :
-https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6
-Click on "export", then download the Shapefile format and the GEOJson format, and put the downloaded folder in "data". The 4 files downloaded have random hashes appended to their names, so rename them to match "geo_export" leaving the extension.
