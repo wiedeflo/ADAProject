@@ -40,10 +40,11 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 4) Write a data story/report.
 
 # Questions for TAa
-1) Do you think our research questions are too general: should we be more specific?
-2) Are our datasets relevant?
-3) Do you think working with 3 datasets might be too ambitious?
-4) Is there any other source of information that could be relevant for the topic?
+1) Do you think the direction we follow is the right one ?
+2) Any ideas for further analysis ?
+3) We have many maps, do you think some of them are unnecessary ?
+4) About machine learning we plan on doing for the next milestone, do you have any advice on what we proposed, or any ideas what else we could do ?
+5) Any feedback is more than welcome :) 
 
 # Libraries
 pandas
