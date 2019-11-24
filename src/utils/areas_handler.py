@@ -6,6 +6,7 @@ Python Version: 3.7.4
 Contains methods to get the area in Chicago of a longitude/latitude pair
 '''
 
+import os
 import re 
 import math
 import pandas as pd
@@ -28,7 +29,6 @@ def get_lat_lng_from_address(address, cleaned=False):
             
     complete_addr = address + ", " + cst.CHICAGO_ADDRESS
     loc = Nominatim(user_agent=cst.GEOPY_USER_AGENT, timeout=cst.GEOPY_TIMEOUT).geocode(complete_addr)
-   
     
     lat, lng = None, None 
     
@@ -122,23 +122,23 @@ def get_area_num_from_lng_lat(lat, lng, areas_DF):
     
     return int(area_num)
 
-def get_unknown_locations(food_unknown_loc):
+def get_unknown_locations(food_unknown_loc, load_if_possible = True):
     """
     Get the lat/lng of unknown addresses in a dataframe
     :param food_unknown_loc: a pandas.DataFrame 
     :return: a pd.DataFrame containing the previously unknown location's along with their latitude and longitude, or NaN if this value could not be found.
     """
-    # Get unknown locations 
-    unknown_locations = pd.DataFrame()
-
-    try:
-        # Try loading the unknown locations :
+    
+    # Load unknown locations if file already exists :
+    if os.path.exists(cst.UNKNOWN_LOC_PATH) and load_if_possible:
         unknown_locations = pd.read_pickle(cst.UNKNOWN_LOC_PATH)
-    except:
+     
+    #Else create the file
+    else:
         # Compute the missing locations
         # No need for duplicate queries, so we just keep the unique addresses
         unknown_locations = pd.DataFrame(food_unknown_loc['address'].unique(), columns=['address'])
-
+        
         # Retrieve 'lat' and 'lng' values of an address and append them to 'unknown_locations' dataframe
         unknown_locations[['lat', 'lng']] = unknown_locations['address'].apply(lambda addr: pd.Series(get_lat_lng_from_address(addr)))
 
@@ -147,13 +147,15 @@ def get_unknown_locations(food_unknown_loc):
         
     return unknown_locations
 
-def get_locations_with_area(food_inspections_DF, areas_DF):
-    try:
+def get_locations_with_area(food_inspections_DF, areas_DF, load_if_possible = True):
+    if os.path.exists(cst.FOOD_INSPECTIONS_AREA_PICKLE) and load_if_possible:
          # Try loading the food inspections with area code :
         food_inspections_DF = pd.read_pickle(cst.FOOD_INSPECTIONS_AREA_PICKLE)
-    except:
+        
+    else:
         #compute area code for each entry
         food_inspections_DF[cst.AREA_NUM] = food_inspections_DF.apply(lambda row: get_area_num_from_lng_lat(row['lat'], row['lng'], areas_DF), axis=1)
+        
         #Save as pickle
         food_inspections_DF.to_pickle(cst.FOOD_INSPECTIONS_AREA_PICKLE)
         

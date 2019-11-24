@@ -62,7 +62,7 @@ def add_locations(map_chicago, unknown_locations, food_inspections_DF):
     
     return map_chicago
 
-def heat_map(dataframe, title, area_column, data_column):
+def heat_map(dataframe, title, area_column, data_column, good_indicator = False):
     """
     Plot number of inspections per community area as a heatmap
     :param dataframe: dataframe containing area numbers and used data
@@ -71,6 +71,12 @@ def heat_map(dataframe, title, area_column, data_column):
     :param data_column: Column of the dataframe containing data
     :return: folium heatmap of inspections per area
     """
+
+    if good_indicator:
+        colors = "YlGn"
+    else:
+        colors="YlOrRd"
+       
     #load new map
     map_chicago = create_chicago_map() 
 
@@ -80,12 +86,12 @@ def heat_map(dataframe, title, area_column, data_column):
     for feat in regiondata['features']:
         feat['properties']['community'] = feat['properties']['community'].title()
         feat['properties'][data_column] = str(dataframe[dataframe[area_column] == feat['properties']['area_numbe']][data_column].values[0])
-    
+                
     #create heatmap
     choro = folium.Choropleth(geo_data=regiondata, data=dataframe,
                  columns=[area_column, data_column],
                  key_on='feature.properties.area_numbe',
-                 fill_color='YlOrRd', fill_opacity=0.7, line_opacity=0.2,
+                 fill_color=colors, fill_opacity=0.7,nan_fill_color='grey',  line_opacity=0.2,
                  legend_name=title).add_to(map_chicago)
     
     choro.geojson.add_child(
