@@ -52,28 +52,17 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 5) Any feedback is more than welcome :) 
 
 # Libraries
-pandas
-
-numpy
-
-geopandas
-
-vincent
-
-folium
-
-json
-
-math
-
-re
-
-datetime
-
-geopy
-
-shapely
-
+pandas \
+numpy \
+geopandas \
+vincent \
+folium \
+json \
+math \
+re \
+datetime \
+geopy \
+shapely \
 requests
 
 # Authors
