@@ -30,6 +30,15 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 
 3) Analyse the socio-economic indicators: determine how the rich/poor areas are divided in Chicago.
 
+# A list of internal milestones up until project milestone 3
+1) Description of the violations and how they are influencing the risk of an establishment.
+
+2) See what other interesting analysis can be done by combining the databases.
+
+3) Use Machine Learning to cluster establishments or predict there pass/failure evaluation.
+
+4) Write a data story/report.
+
 # Questions for TAa
 1) Do you think our research questions are too general: should we be more specific?
 2) Are our datasets relevant?
