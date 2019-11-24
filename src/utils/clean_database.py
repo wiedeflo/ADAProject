@@ -1,8 +1,7 @@
 '''
 File name: clean_database.py
-Author: ..., Mohamed Ndoye, Raphael Strebel
 Date created: 03/11/2019
-Date last modified: ...
+Date last modified: 24/11/2019
 Python Version: 3.7.4
 Contains methods to clean the database
 '''

@@ -36,6 +36,23 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 3) Do you think working with 3 datasets might be too ambitious?
 4) Is there any other source of information that could be relevant for the topic?
 
+# Libraries
+pandas
+numpy
+geopandas
+vincent
+folium
+json
+math
+re
+datetime
+geopy
+shapely
+requests
+
+# Authors
+Florian Wiedemair, Mohamed Ndoye, Raphael Strebel, Jose Garrido Ramas
+
 # Update 
 We download the Chicago community areas bounderies on :
 https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6

@@ -1,8 +1,7 @@
 '''
 File name: areas_handler.py
-Author: ..., Mohamed Ndoye, Raphael Strebel
 Date created: 07/11/2019
-Date last modified: ...
+Date last modified: 24/11/2019
 Python Version: 3.7.4
 Contains methods to get the area in Chicago of a longitude/latitude pair
 '''

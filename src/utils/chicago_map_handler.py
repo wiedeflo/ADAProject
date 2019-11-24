@@ -1,8 +1,7 @@
 '''
 File name: areas_handler.py
-Author: ..., Mohamed Ndoye, Raphael Strebel
 Date created: 21/11/2019
-Date last modified: ...
+Date last modified: 24/11/2019
 Python Version: 3.7.4
 Methods to visualize a map of Chicago by areas and with specific attributes
 '''

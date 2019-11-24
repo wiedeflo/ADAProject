@@ -1,8 +1,7 @@
 '''
 File name: web_scraping_google_maps.py
-Author: ..., Mohamed Ndoye, Raphael Strebel
 Date created: 03/11/2019
-Date last modified: ...
+Date last modified: 24/11/2019
 Python Version: 3.7.4
 Contains methods to retrieve the latitude and longitude of a Chicago city area
 '''

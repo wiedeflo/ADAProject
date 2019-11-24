@@ -1,10 +1,9 @@
 '''
 File name: constants.py
-Author: ..., Mohamed Ndoye, Raphael Strebel
 Date created: 03/11/2019
-Date last modified: ...
+Date last modified: 24/11/2019
 Python Version: 3.7.4
-Contains constants such as file paths, columns names,...
+Contains constants on the database file paths, columns names, Chicago addresses or locations, etc
 '''
 ###########################################################################################################
 ################################################ DATABASES ################################################
