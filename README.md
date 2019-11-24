@@ -35,7 +35,7 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 
 2) See what other interesting analysis can be done by combining the databases.
 
-3) Use Machine Learning to cluster establishments or predict there pass/failure evaluation.
+3) Use Machine Learning to cluster establishments or predict their pass/failure evaluation.
 
 4) Write a data story/report.
 
