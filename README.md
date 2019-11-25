@@ -67,7 +67,8 @@ datetime \
 geopy \
 shapely \
 requests \
-os
+os \
+plotly
 
 # Authors
 Florian Wiedemair, Mohamed Ndoye, Raphael Strebel, Jose Garrido Ramas
