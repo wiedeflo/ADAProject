@@ -1,7 +1,7 @@
 '''
 File name: areas_handler.py
 Date created: 07/11/2019
-Date last modified: 24/11/2019
+Date last modified: 25/11/2019
 Python Version: 3.7.4
 Contains methods to get the area in Chicago of a longitude/latitude pair
 '''
@@ -38,7 +38,6 @@ def get_lat_lng_from_address(address, cleaned=False):
             clean_addr = get_clean_address_new(address)
             [lat, lng] = get_lat_lng_from_address(clean_addr, cleaned=True)
         else:
-            # TODO : create method similar to : web_scraping_google_maps.get_lat_lng_from_area_name(area) or find alt.
             lat, lng = None, None 
     else:
         lat, lng = loc.latitude, loc.longitude
@@ -77,23 +76,23 @@ def get_clean_address_new(address):
     # Split the address into a list of strings
     addr_split = address.split(' ')
     
-    #Replace all abbreviations and knwon problems
+    # Replace all abbreviations and knwon problems
     addr_split = [cst.KNOWN_ADDR_STRINGS.get(add) if add in cst.KNOWN_ADDR_STRINGS else add for add in addr_split]
     
-    #Replace typos
+    # Replace typos
     addr_split = [cst.TYPO_FIXES.get(add) if add in cst.TYPO_FIXES else add for add in addr_split]
         
-    #Remove things in brackets
+    # Remove things in brackets
     addr_split = [re.sub('\(.*\)', '', add) for add in addr_split]
         
     # Join the remaining address
     clean_address = ' '.join(addr_split)
     
-    #remove unneccesary whitespace
+    # Remove unneccesary whitespace
     while '  ' in clean_address:
         clean_address = clean_address.replace('  ',' ')
     
-    #Replace the remaining adresses with a manually constructed dict
+    # Replace the remaining adresses with a manually constructed dict
     for rem in cst.UNKNOWN_ADDR_SUBSTRINGS:
         clean_address = clean_address.replace(rem, cst.UNKNOWN_ADDR_SUBSTRINGS.get(rem))
     
@@ -133,7 +132,7 @@ def get_unknown_locations(food_unknown_loc, load_if_possible = True):
     if os.path.exists(cst.UNKNOWN_LOC_PATH) and load_if_possible:
         unknown_locations = pd.read_pickle(cst.UNKNOWN_LOC_PATH)
      
-    #Else create the file
+    # Otherwise create the file
     else:
         # Compute the missing locations
         # No need for duplicate queries, so we just keep the unique addresses
@@ -148,15 +147,22 @@ def get_unknown_locations(food_unknown_loc, load_if_possible = True):
     return unknown_locations
 
 def get_locations_with_area(food_inspections_DF, areas_DF, load_if_possible = True):
+    """
+    Load the food inspections with area code if it exists, otherwise compute the area code for each food inspection and save it
+    :param food_inspections_DF: a pandas.DataFrame with the food inspections
+    :param areas_DF: a pandas.DataFrame with the areas
+    :param load_if_possible: a boolean variable set to true by default
+    :return: a pd.DataFrame containing the food inspections with their area numbers
+    """
     if os.path.exists(cst.FOOD_INSPECTIONS_AREA_PICKLE) and load_if_possible:
          # Try loading the food inspections with area code :
         food_inspections_DF = pd.read_pickle(cst.FOOD_INSPECTIONS_AREA_PICKLE)
         
     else:
-        #compute area code for each entry
+        # Compute area code for each entry
         food_inspections_DF[cst.AREA_NUM] = food_inspections_DF.apply(lambda row: get_area_num_from_lng_lat(row['lat'], row['lng'], areas_DF), axis=1)
         
-        #Save as pickle
+        # Save as pickle
         food_inspections_DF.to_pickle(cst.FOOD_INSPECTIONS_AREA_PICKLE)
         
     return food_inspections_DF

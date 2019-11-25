@@ -63,7 +63,8 @@ re \
 datetime \
 geopy \
 shapely \
-requests
+requests \
+os
 
 # Authors
 Florian Wiedemair, Mohamed Ndoye, Raphael Strebel, Jose Garrido Ramas
