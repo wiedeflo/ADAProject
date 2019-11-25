@@ -44,6 +44,9 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 
 4) Write a data story/report.
 
+# Structure of the code
+The data is in the ```data``` folder, the code is in the ```src``` folder. The ```src/project.ipynb``` notebook contains the pipeline of the project, with multiple references to ```src/utils``` where helper functions can be found (to avoid overloading the notebook).
+
 # Questions for TAa
 1) Do you think the direction we follow is the right one ?
 2) Any ideas for further analysis ?
