@@ -25,7 +25,10 @@ def create_chicago_map():
                              min_lat=cst.CHICAGO_MIN_LAT,
                              max_lat=cst.CHICAGO_MAX_LAT,
                              min_lon=cst.CHICAGO_MIN_LNG,
-                             max_lon=cst.CHICAGO_MAX_LNG
+                             max_lon=cst.CHICAGO_MAX_LNG,
+                             max_zoom=18,
+                             min_zoom=8,
+                             zoom_start=10
                             )
     
    
