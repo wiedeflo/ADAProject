@@ -24,6 +24,7 @@ def clean_food_inspections_df(food_inspections_DF, areas_DF):
     areas = areas_DF['community_area_name'].values
     
     food_inspections_DF['city'] = food_inspections_DF['city'].apply(lambda city: check_city(city, areas))
+    food_inspections_DF['inspection_date'] = food_inspections_DF['inspection_date'].apply(pd.to_datetime)
     
     return food_inspections_DF
 
