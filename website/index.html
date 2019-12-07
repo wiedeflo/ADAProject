@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+
+<!-- https://www.w3schools.com/w3css/tryw3css_templates_gourmet_catering.htm#home -->
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#food_inspections" class="w3-bar-item w3-button">Chicago Food Inspections</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#introduction" class="w3-bar-item w3-button">Introduction</a>
+      <a href="#story" class="w3-bar-item w3-button">Story</a>
+      <a href="#conclusion" class="w3-bar-item w3-button">Conclusion</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="food_inspections">
+  <img class="w3-image" src="food.jpg" alt="Hamburger Catering" width="1600" height="180">
+  <script src="jquery.js"></script> 
+  <script> 
+    $(function(){
+      $("#map_intro").load("map_intro.html"); 
+    });
+  </script>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+  <h1 class="w3-center">Abstract</h1><br>
+  <p class="w3-large">Chicago is a notoriously unequal city: Passengers travelling on its red metro line have life expectancies that vary by 30 years depending on their stop, according to The Economist. We want to investigate how geographical socio-economic divisions in Chicago reflect in food inspections in two ways: results to food inspections, and quantities of food inspections. By analysing results to food inspections, we want to find out which areas are performing better and which are performing worse, and compare this to measures of the socio-economic divide. By inspecting the quantity of inspections per area, we hope to gain insight on a potential bias in the choice of inspected establishment and whether the chances of an establishment getting inspected depend only on its performance or also on its location.</p>
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="introduction">
+
+  	<!-- TODO Display intro_map does not work -->
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+    	<html><div class="w3-display-container w3-content w3-wide" src="map_intro" style="max-width:1600px;min-width:500px"></div></html>
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">Introduction</h1><br>
+      <p class="w3-large">Introduction with map on the left... blablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablablablabla
+      blablablablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablabla
+      blablablablablablablablablablablablablablablablablab lablablablablablablablablablablablablablablablablablablabla
+      blablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablabla  
+      blablablablablablablablablablablablablablablablabl ablablablablablablablablablablablablablablablablablablablabla
+      blablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablabla</p>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Story Section -->
+  <div class="w3-row w3-padding-64" id="story">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Our Story</h1><br>
+      <h4>Bread Basket</h4>
+      <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
+    
+      <h4>Honey Almond Granola with Fruits</h4>
+      <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
+    
+      <h4>Belgian Waffle</h4>
+      <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
+    
+      <h4>Scrambled eggs</h4>
+      <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
+    
+      <h4>Blueberry Pancakes</h4>
+      <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>    
+    </div>
+    
+    <!-- TODO Display map -->
+    <div class="w3-col l6 w3-padding-large">
+      <!--<img src="/w3images/tablesetting.jpg" class="w3-round w3-image w3-opacity-min" alt="Story" style="width:100%">-->
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Conclusion Section -->
+  <div class="w3-container w3-padding-64" id="conclusion">
+    <h1>Conclusion</h1><br>
+    <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
+    <p class="w3-text-blue-grey w3-large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
+    <p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+</html>
