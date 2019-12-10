@@ -14,7 +14,7 @@ import datetime
 
 from utils import constants as cst
 
-def create_chicago_map():
+def create_chicago_map(with_community_areas=False):
     """
     Creates a map of Chicago, highlighting the community areas
     :return: a folium map
@@ -31,7 +31,21 @@ def create_chicago_map():
                              zoom_start=10
                             )
     
-   
+    if with_community_areas:
+        #load region data
+        regiondata = json.load(open(cst.AREAS_GEOJSON_PATH))
+        
+        for feat in regiondata['features']:
+            feat['properties']['community'] = feat['properties']['community'].title()
+
+        #create heatmap
+        choro = folium.Choropleth(geo_data=regiondata, 
+                                  columns=[cst.AREA_NUM],
+                                  fill_opacity=0.3,
+                                  key_on='feature.properties.area_numbe').add_to(map_chicago)
+
+        choro.geojson.add_child(folium.features.GeoJsonTooltip(['community']))
+
     return map_chicago
 
 def add_locations(map_chicago, unknown_locations, food_inspections_DF):
@@ -88,7 +102,11 @@ def heat_map(dataframe, title, area_column, data_column, good_indicator = False)
     
     for feat in regiondata['features']:
         feat['properties']['community'] = feat['properties']['community'].title()
-        feat['properties'][data_column] = str(dataframe[dataframe[area_column] == feat['properties']['area_numbe']][data_column].values[0])
+        
+        if dataframe[dataframe[area_column] == feat['properties']['area_numbe']].empty:
+            feat['properties'][data_column] = 'NaN'
+        else:
+            feat['properties'][data_column] = str(dataframe[dataframe[area_column] == feat['properties']['area_numbe']][data_column].values[0])
                 
     #create heatmap
     choro = folium.Choropleth(geo_data=regiondata, data=dataframe,
@@ -97,8 +115,7 @@ def heat_map(dataframe, title, area_column, data_column, good_indicator = False)
                  fill_color=colors, fill_opacity=0.7,nan_fill_color='grey',  line_opacity=0.2,
                  legend_name=title).add_to(map_chicago)
     
-    choro.geojson.add_child(
-    folium.features.GeoJsonTooltip(['community', data_column]))
+    choro.geojson.add_child(folium.features.GeoJsonTooltip(['community', data_column]))
     
     return map_chicago
 
