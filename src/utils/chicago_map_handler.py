@@ -14,7 +14,7 @@ import datetime
 
 from utils import constants as cst
 
-def create_chicago_map():
+def create_chicago_map(with_community_areas=False):
     """
     Creates a map of Chicago, highlighting the community areas
     :return: a folium map
@@ -31,7 +31,19 @@ def create_chicago_map():
                              zoom_start=10
                             )
     
-   
+    if with_community_areas:
+        #load region data
+        regiondata = json.load(open(cst.AREAS_GEOJSON_PATH))
+
+        #create heatmap
+        choro = folium.Choropleth(geo_data=regiondata, 
+                                  columns=[cst.AREA_NUM],
+                                  fill_color='grey',
+                                  fill_opacity=0.4,
+                                  key_on='feature.properties.area_numbe').add_to(map_chicago)
+
+        choro.geojson.add_child(folium.features.GeoJsonTooltip(['community']))
+
     return map_chicago
 
 def add_locations(map_chicago, unknown_locations, food_inspections_DF):
