@@ -40,18 +40,26 @@ h1, h2, h3, h4, h5, h6 {
   <script src="jquery.js"></script>
   <script>
     $(function(){
-      $("#map_intro").load("map_intro.html");
+      $("#map_intro").load("maps/map_intro.html");
+      $("#nb_inspections").load("maps/num_establishments.html");
+      $("#average_risk").load("maps/average_risk.html");
+      $("#num_inspections").load("maps/num_inspections.html");
+      $("#inspections_per_establishment").load("maps/inspections_per_establishment.html");
+      $("#per_capita_income").load("maps/per_capita_income.html");
+      $("#life_exp_2010").load("maps/life_exp_2010.html");
+      $("#housholds_below_poverty_perc").load("maps/housholds_below_poverty_perc.html");
     });
   </script>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <script>
+    particlesJS.load('particles-js', 'particles.json', function(){
+      console.log('particles.json loaded...');
+    });
+  </script>
+
 </header>
-
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-<script>
-  particlesJS.load('particles-js', 'particles.json', function(){
-    console.log('particles.json loaded...');
-  });
-</script>
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:1100px">
@@ -61,9 +69,8 @@ h1, h2, h3, h4, h5, h6 {
   <!-- About Section -->
   <div class="w3-row w3-padding-64" id="introduction">
 
-  	<!-- TODO Display intro_map does not work -->
     <div class="w3-col m6 w3-padding-large w3-hide-small">
-      <iframe src="map_intro.html" width="100%" height="500px"></iframe>
+      <iframe src="maps/map_intro.html" width="100%" height="500px"></iframe>
     </div>
 
     <div class="w3-col m6 w3-padding-large">
@@ -83,8 +90,8 @@ h1, h2, h3, h4, h5, h6 {
   <div class="w3-row w3-padding-64" id="story">
     <div class="w3-col l6 w3-padding-large">
       <h1 class="w3-center">Our Story</h1><br>
-      <h4>Bread Basket</h4>
-      <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
+      <h4>Number of Establishments</h4>
+      <p class="w3-text-grey">The heatmap shows the number of establishments on the area we want to analyze. Same as before, we observe that the more we approach the city center or the north of the city, the higher the number of establishments. Indeed, the number of inspections is correlated with the number of establishments; the more establishments we have on a given area, the higher the inspections will be on that area.</p><br>
 
       <h4>Honey Almond Granola with Fruits</h4>
       <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
@@ -99,9 +106,8 @@ h1, h2, h3, h4, h5, h6 {
       <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
     </div>
 
-    <!-- TODO Display map -->
     <div class="w3-col l6 w3-padding-large">
-      <!--<img src="/w3images/tablesetting.jpg" class="w3-round w3-image w3-opacity-min" alt="Story" style="width:100%">-->
+      <iframe src="maps/num_establishments.html" width="100%" height="500px"></iframe>
     </div>
   </div>
 
@@ -111,15 +117,6 @@ h1, h2, h3, h4, h5, h6 {
   <div class="w3-container w3-padding-64" id="conclusion">
     <h1>Conclusion</h1><br>
     <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
-    <p class="w3-text-blue-grey w3-large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
-    <p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
-      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
-    </form>
   </div>
 
 <!-- End page content -->
@@ -127,6 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Florian Wiedemair, Mohamed Ndoye, Raphael Strebel, Jose Garrido Ramas - 2019</p>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
 
