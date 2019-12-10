@@ -75,12 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 
     <div class="w3-col m6 w3-padding-large">
       <h1 class="w3-center">Introduction</h1><br>
-      <p class="w3-large">Introduction with map on the left... blablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablablablabla
-      blablablablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablabla
-      blablablablablablablablablablablablablablablablablab lablablablablablablablablablablablablablablablablablablabla
-      blablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablabla
-      blablablablablablablablablablablablablablablablabl ablablablablablablablablablablablablablablablablablablablabla
-      blablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablabla</p>
+      <p class="w3-large">Introduction with map on the left... On the map we can see the city of Chicago and the region where the facilities of the inspections presented in the food_inspections dataset are located. In the following, we will focus ang get some insights on that area.</p>
     </div>
   </div>
 
@@ -90,24 +85,30 @@ h1, h2, h3, h4, h5, h6 {
   <div class="w3-row w3-padding-64" id="story">
     <div class="w3-col l6 w3-padding-large">
       <h1 class="w3-center">Our Story</h1><br>
+      <h4>Number of Inspections</h4>
+      <p class="w3-text-grey">The heatmap shows the number of inspections on the area we are focusing on and determined before. We can see that the more we approach the city center of Chicago, the higher the number of inspections. <br>However, it is also curious to see that in the north of Chicago, the number of inspections is higher than in the south. This could be due to a higher amount of establishment in this area; we check this below.</p><br>
+
       <h4>Number of Establishments</h4>
       <p class="w3-text-grey">The heatmap shows the number of establishments on the area we want to analyze. Same as before, we observe that the more we approach the city center or the north of the city, the higher the number of establishments. Indeed, the number of inspections is correlated with the number of establishments; the more establishments we have on a given area, the higher the inspections will be on that area.</p><br>
 
-      <h4>Honey Almond Granola with Fruits</h4>
-      <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
+      <h4>Average risk per inspection for each area</h4>
+      <p class="w3-text-grey">The heatmap shows the average risk of the establishments for each community area. The risk of an establishment shows how it could potentially affect the public's health with 1 being the highest and 3 the lowest. Furthermore, <b>high risk establishments are inspected more frequently that low risk establishments</b>.</p><br>
 
-      <h4>Belgian Waffle</h4>
-      <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
+      <h4>Number of Inspections per establishment</h4>
+      <p class="w3-text-grey">The heatmap shows the number of inspections per establishment and as highlighted before, we can see that the establishments with a high number of inspections present high average risks. </p><br>
 
-      <h4>Scrambled eggs</h4>
-      <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
+      <h4>Per capita income in 2010</h4>
+      <p class="w3-text-grey">...</p>
 
-      <h4>Blueberry Pancakes</h4>
-      <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
+      <h4>Life expectancy in 2010</h4>
+      <p class="w3-text-grey">...</p>
+
+      <h4>Percentage of households below the poverty line</h4>
+      <p class="w3-text-grey">...</p>
     </div>
 
     <div class="w3-col l6 w3-padding-large">
-      <iframe src="maps/num_establishments.html" width="100%" height="500px"></iframe>
+      <iframe src="maps/num_inspections.html" width="100%" height="500px"></iframe>
     </div>
   </div>
 
