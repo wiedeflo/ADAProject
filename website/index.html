@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>ADA - Chicago Food Inspections</title>
+<link rel="icon" type="image/jpg" href="img/favicon.jpg" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="cssfile.css" rel="stylesheet">
 <style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1, h2, h3, h4, h5, h6 {
@@ -30,14 +32,23 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="food_inspections">
-  <img class="w3-image" src="food.jpg" alt="Hamburger Catering" width="1600" height="180">
-  <script src="jquery.js"></script> 
-  <script> 
+  <div id="particles-js"></div>
+  <img class="w3-image" src="img/food.jpg" alt="Hamburger Catering" width="1600" height="180">
+  <script src="jquery.js"></script>
+  <script>
     $(function(){
-      $("#map_intro").load("map_intro.html"); 
+      $("#map_intro").load("map_intro.html");
     });
   </script>
 </header>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+  particlesJS.load('particles-js', 'particles.json', function(){
+    console.log('particles.json loaded...');
+  });
+</script>
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:1100px">
@@ -49,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 
   	<!-- TODO Display intro_map does not work -->
     <div class="w3-col m6 w3-padding-large w3-hide-small">
-    	<html><div class="w3-display-container w3-content w3-wide" src="map_intro" style="max-width:1600px;min-width:500px"></div></html>
+      <iframe src="map_intro" width="100%" height="500px"></iframe>
     </div>
 
     <div class="w3-col m6 w3-padding-large">
@@ -57,34 +68,34 @@ h1, h2, h3, h4, h5, h6 {
       <p class="w3-large">Introduction with map on the left... blablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablablablabla
       blablablablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablabla
       blablablablablablablablablablablablablablablablablab lablablablablablablablablablablablablablablablablablablabla
-      blablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablabla  
+      blablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablabla
       blablablablablablablablablablablablablablablablabl ablablablablablablablablablablablablablablablablablablablabla
       blablablablablablablablablablablablablablablablabla blablablablablablablablablablablablablablablablablablablabla</p>
     </div>
   </div>
-  
+
   <hr>
-  
+
   <!-- Story Section -->
   <div class="w3-row w3-padding-64" id="story">
     <div class="w3-col l6 w3-padding-large">
       <h1 class="w3-center">Our Story</h1><br>
       <h4>Bread Basket</h4>
       <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
-    
+
       <h4>Honey Almond Granola with Fruits</h4>
       <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
-    
+
       <h4>Belgian Waffle</h4>
       <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
-    
+
       <h4>Scrambled eggs</h4>
       <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
-    
+
       <h4>Blueberry Pancakes</h4>
-      <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>    
+      <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
     </div>
-    
+
     <!-- TODO Display map -->
     <div class="w3-col l6 w3-padding-large">
       <!--<img src="/w3images/tablesetting.jpg" class="w3-round w3-image w3-opacity-min" alt="Story" style="width:100%">-->
@@ -107,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
       <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
     </form>
   </div>
-  
+
 <!-- End page content -->
 </div>
 
