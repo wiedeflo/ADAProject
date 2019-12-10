@@ -1,7 +1,7 @@
 {
   "particles":{
     "number":{
-      "value":200
+      "value":150
     },
     "color":{
       "value":"#fff"
@@ -17,7 +17,7 @@
       }
     },
     "opacity":{
-      "value":0.8,
+      "value":0.75,
       "random":true,
       "anim":{
         "enable":false,
@@ -25,7 +25,7 @@
       }
     },
     "size":{
-      "value": 4,
+      "value": 3,
       "random":false,
       "anim":{
         "enable": false,
@@ -36,7 +36,7 @@
       "enable": true,
       "distance": 100,
       "color":"#fff",
-      "width":2
+      "width":1
     },
     "move":{
       "enable":true,
