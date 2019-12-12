@@ -16,10 +16,10 @@ h1, h2, h3, h4, h5, h6 {
 .story-block{
   display: inline-block;
   padding-bottom:40px;
-  height:600px;
+  height:650px;
 }
 .text-left{
-  text-align: right;
+  text-align: left;
 }
 .text-right{
   text-align: left;
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 20px; 
   overflow: hidden;
   width:100%;
-  height:450px;
+  height:550px;
 }
 .vertical-align{
   position: relative;
@@ -86,17 +86,73 @@ width:1600px;
   <h1 class="w3-center">Abstract</h1><br>
   <p class="w3-large" align="justify">Chicago is a notoriously unequal city: Passengers travelling on its red metro line have life expectancies that vary by 30 years depending on their stop, according to The Economist. We want to investigate how geographical socio-economic divisions in Chicago reflect in food inspections in two ways: results to food inspections, and quantities of food inspections. By analysing results to food inspections, we want to find out which areas are performing better and which are performing worse, and compare this to measures of the socio-economic divide. By inspecting the quantity of inspections per area, we hope to gain insight on a potential bias in the choice of inspected establishment and whether the chances of an establishment getting inspected depend only on its performance or also on its location.</p>
 
+  <hr>
+
   <!-- About Section -->
-  <div class="w3-row w3-padding-64" id="introduction">
-
-    <div class="w3-col m6 w3-padding-large w3-hide-small">
-      <iframe src="maps/map_intro.html" frameBorder="0" style="border-radius: 20px; overflow: hidden;" width="100%" height="450px"></iframe>
+  
+  <div class="w3-row w3-padding-64"  id="introduction">
+    <h1 class="w3-center">Introduction</h1><br>
+    <div class = "story-block">
+        <div class="w3-col m6 w3-padding-large vertical-align">
+            <iframe src="maps/map_intro.html" frameBorder="0" class = "frame-class"></iframe>
+          </div>
+          <div class="w3-col m6 w3-padding-large text-right vertical-align">
+            <h4 align="left">The city of Chicago</h4>
+            <p class="w3-text-grey" align="justify"> Chicago with its approximately 2.7 million inhabitants is one of the biggest cities in the US. The city is divided into 77 community areas
+              which are displayed on the map to the left. <br>\\Add more interesting facts about Chicago 
+            </p><br>
+        </div>
     </div>
 
-    <div class="w3-col m6 w3-padding-large">
-      <h1 class="w3-center">Introduction</h1><br>
-      <p class="w3-large" align="justify">Introduction with map on the left... On the map we can see the city of Chicago and the region where the facilities of the inspections presented in the food_inspections dataset are located. In the following, we will focus ang get some insights on that area.</p>
-    </div>
+    <div class = "story-block">
+        <div class="w3-col m6 w3-padding-large text-left vertical-align">
+          <h4 align="left">Food inspections in Chicago</h4>
+          <p class="w3-text-grey" align="justify"> With over 7000 (\\can someone please check that number) restaurants Chicago is known for its diverse food culture.\\Maybe add another interesting food fact for chicago here e.g. that there is a chicago style pizza</br>
+           In order to investigate the vast number of culinary establishments we used the <a href="https://www.kaggle.com/chicago/chicago-food-inspections">Chicago Food Inspections</a> dataset provided by Kaggle and the city of Chicago. 
+           It provides information on the establishment and the results of every food inspection carried out since January 1<sup>st</sup> 2010. The maps on the right give a raw overview on some of the data from that set. Select below which data to display.
+           <div class="ui buttons">
+            <button class="ui primary button" id = "num_inspections_btn"># of inspections</button>
+            <div class="or"></div>
+            <button class="ui button" id = "num_establishments_btn"># of establishments</button>
+          </div>
+          <h6 align="left">Explanation</h6>
+          <!-- If you change this text remeber to also change the text in the javascript at the bottom -->
+          <p class="w3-text-grey" align="justify" id="intro_inspections">  
+            The heatmap shows the number of inspections on the area we are focusing on and determined before. 
+            We can see that the more we approach the city center of Chicago, the higher the number of inspections. 
+            However, it is also curious to see that in the north of Chicago, the number of inspections is higher than in the south.
+             This could be due to a higher amount of establishment in this area; we check this in the other map.
+          </p>
+          <br>
+        </div>
+        <div class="w3-col l6 w3-padding-large vertical-align">
+          <iframe src="maps/num_inspections.html" class = "frame-class" id="intro_food_inspections_map" frameBorder="0"></iframe>
+        </div>
+      </div>
+  
+      <div class = "story-block">
+        <div class="w3-col m6 w3-padding-large vertical-align">
+          <iframe src="maps/per_capita_income.html" frameBorder="0" id="intro_socio_map" class = "frame-class"></iframe>
+        </div>
+        <div class="w3-col m6 w3-padding-large text-right vertical-align">
+          <h4 align="left">Socioeconomics in Chicago</h4>
+          <p class="w3-text-grey" align="justify"> As mentioned before Chicago is also notiously unequal. \\add another example of inequality in chicago</br>
+           In order to capture some of these socioecnomic factors we used the 
+           <a href="https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2">Cencus Data</a> and the 
+           <a href="https://data.cityofchicago.org/Health-Human-Services/Public-Health-Statistics-Life-Expectancy-By-Commun/qjr3-bm53">Public Health Statistics</a>
+           datasets provided by the city of Chicago. 
+           They provide information on some important socioecnomic factors for each community area in Chicago. The maps on the left give a raw overview on some of the data from those sets. Select below which data to display. 
+          <div class="ui buttons">
+            <button class="ui primary button" id = "pc_income_2010_btn">Per capita income</button>
+            <div class="or"></div>
+            <button class="ui button" id = "le_2010_btn">Life expectancy</button>
+            <div class="or"></div>
+            <button class="ui button" id = "perc_poverty_btn">Poverty</button>
+          </div>
+          <h6 align="left">Explanation</h6>
+          <p class="w3-text-grey" align="justify" id="intro_socio">Some explanation of per capita income.</p><br>
+        </div>
+      </div>
   </div>
 
   <hr>
@@ -105,8 +161,8 @@ width:1600px;
   <div class="w3-row w3-padding-64" id="story">
 
     <h1 class="w3-center">Our Story</h1><br>
-
-    <div class = "story-block">
+  <!--   Moved to the introduction
+     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large text-left vertical-align">
         <h4 align="left">Number of Inspections</h4>
         <p class="w3-text-grey" align="justify">The heatmap shows the number of inspections on the area we are focusing on and determined before. We can see that the more we approach the city center of Chicago, the higher the number of inspections. <br>However, it is also curious to see that in the north of Chicago, the number of inspections is higher than in the south. This could be due to a higher amount of establishment in this area; we check this below.</p><br>
@@ -124,8 +180,9 @@ width:1600px;
         <h4 align="left">Number of Establishments</h4>
         <p class="w3-text-grey" align="justify">The heatmap shows the number of establishments on the area we want to analyze. Same as before, we observe that the more we approach the city center or the north of the city, the higher the number of establishments. Indeed, the number of inspections is correlated with the number of establishments; the more establishments we have on a given area, the higher the inspections will be on that area.</p><br>
       </div>
-    </div>
+    </div>-->
   
+  <!-- Not sure where to use this one at the moment
     <div class = "story-block">
       <div class="w3-col l6 w3-padding-large text-left vertical-align">
         <h4 align="left">Average risk per inspection for each area</h4>
@@ -134,18 +191,21 @@ width:1600px;
       <div class="w3-col l6 w3-padding-large vertical-align">
         <iframe src="maps/average_risk.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
-    </div>
+    </div>-->
     
     <div class = "story-block">
+      <div class="w3-col m6 w3-padding-large text-left vertical-align">
+        <h4 align="left">Quantity of food inspections vs. \\some socioeconomic factor goes here</h4>
+        <p class="w3-text-grey" align="justify">Using the datasets above we started to do a more in-depth investigation of the food inspections. As a first step we wated to find out if there is a connection between the number of investiagtions in an area and one of the socioeconomic factors for that area.
+         To get a rough outline of the quanitity of the inspections for each community are we plotted the number of inspections per establishment, which can be seen on the heatmap on the right. As highlighted before, we can see that the establishments with a high number of inspections present high average risks. </p><br>
+         \\Further elaborate on the map 
+         \\Add arguments for negative correlation (found by Jose) and maybe add visualization for that. COuld be in a seperate paragraph
+      </div>
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="maps/inspections_per_establishment.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
-      <div class="w3-col m6 w3-padding-large text-right vertical-align">
-        <h4 align="left">Number of Inspections per establishment</h4>
-        <p class="w3-text-grey" align="justify">The heatmap shows the number of inspections per establishment and as highlighted before, we can see that the establishments with a high number of inspections present high average risks. </p><br>
-      </div>
     </div>
-    
+    <!--Moved to the introduction
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large text-left vertical-align" >
         <h4 align="left">Per capita income in 2010</h4>
@@ -174,7 +234,7 @@ width:1600px;
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="maps/housholds_below_poverty_perc.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
-    </div>
+    </div>-->
 
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large vertical-align">
@@ -218,10 +278,12 @@ width:1600px;
 
 </body>
 <script>
-    var $elem = $("#restaurant_map");
+    var $restaurant_map = $("#restaurant_map");
+    var $intro_inspections_map = $("#intro_food_inspections_map")
+    var $intro_socio_map =  $("#intro_socio_map")
 
     $("#restaurant_button").click(function() {
-    $elem.attr('src',"maps/map_restaurant_pass.html"); 
+    $restaurant_map.attr('src',"maps/map_restaurant_pass.html"); 
     $("#poverty_button").removeClass("ui primary button");
     $("#poverty_button").addClass("ui button");
     $("#restaurant_button").removeClass("ui button");
@@ -229,11 +291,78 @@ width:1600px;
   });
 
   $("#poverty_button").click(function() {
-    $elem.attr('src',"maps/map_poverty.html"); 
+    $restaurant_map.attr('src',"maps/map_poverty.html"); 
     $("#restaurant_button").removeClass("ui primary button");
     $("#restaurant_button").addClass("ui button");
     $("#poverty_button").removeClass("ui button");
     $("#poverty_button").addClass("ui primary button");
+  });
+
+  $("#num_inspections_btn").click(function() {
+    $intro_inspections_map.attr('src',"maps/num_inspections.html"); 
+    $("#num_establishments_btn").removeClass("ui primary button");
+    $("#num_establishments_btn").addClass("ui button");
+    $("#num_inspections_btn").removeClass("ui button");
+    $("#num_inspections_btn").addClass("ui primary button");
+    $("#intro_inspections").text("\
+     The heatmap shows the number of inspections on the area we are focusing on and determined before. \
+     We can see that the more we approach the city center of Chicago, the higher the number of inspections. \
+            However, it is also curious to see that in the north of Chicago, the number of inspections is higher than in the south.\
+             This could be due to a higher amount of establishment in this area; we check this in the other map.\
+    ");
+  });
+
+  $("#num_establishments_btn").click(function() {
+    $intro_inspections_map.attr('src',"maps/num_establishments.html"); 
+    $("#num_inspections_btn").removeClass("ui primary button");
+    $("#num_inspections_btn").addClass("ui button");
+    $("#num_establishments_btn").removeClass("ui button");
+    $("#num_establishments_btn").addClass("ui primary button");
+    $("#intro_inspections").text("\
+     The heatmap shows the number of establishments on the area we want to analyze. \
+      We observe that the more we approach the city center or the north of the city, \
+      the higher the number of establishments. Indeed, the number of inspections is correlated with the number of establishments; \
+      the more establishments we have on a given area, the higher the inspections will be on that area.\
+    ");
+  });
+
+   $("#pc_income_2010_btn").click(function() {
+    $intro_socio_map.attr('src',"maps/per_capita_income.html"); 
+    $("#le_2010_btn").removeClass("ui primary button");
+    $("#le_2010_btn").addClass("ui button");
+    $("#perc_poverty_btn").removeClass("ui primary button");
+    $("#perc_poverty_btn").addClass("ui button");
+    $("#pc_income_2010_btn").removeClass("ui button");
+    $("#pc_income_2010_btn").addClass("ui primary button");
+    $("#intro_socio").text("\
+    Some explanation of per capita income. \
+    ");
+  });
+
+   $("#le_2010_btn").click(function() {
+    $intro_socio_map.attr('src',"maps/life_exp_2010.html"); 
+    $("#pc_income_2010_btn").removeClass("ui primary button");
+    $("#pc_income_2010_btn").addClass("ui button");
+    $("#perc_poverty_btn").removeClass("ui primary button");
+    $("#perc_poverty_btn").addClass("ui button");
+    $("#le_2010_btn").removeClass("ui button");
+    $("#le_2010_btn").addClass("ui primary button");
+    $("#intro_socio").text("\
+    Some explanation of life expectancy. \
+    ");
+  });
+
+   $("#perc_poverty_btn").click(function() {
+    $intro_socio_map.attr('src',"maps/housholds_below_poverty_perc.html"); 
+    $("#le_2010_btn").removeClass("ui primary button");
+    $("#le_2010_btn").addClass("ui button");
+    $("#pc_income_2010_btn").removeClass("ui primary button");
+    $("#pc_income_2010_btn").addClass("ui button");
+    $("#perc_poverty_btn").removeClass("ui button");
+    $("#perc_poverty_btn").addClass("ui primary button");
+    $("#intro_socio").text("\
+    Some explanation of poverty. \
+    ");
   });
 </script>
 </html>
