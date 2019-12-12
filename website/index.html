@@ -37,6 +37,15 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-50%);
   top: 50%;
 }
+.food-header{
+background-image: url(img/food.jpg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+height: 850px;
+margin-bottom: 100px;
+width:1600px;
+}
 </style>
 <body>
 
@@ -56,9 +65,8 @@ h1, h2, h3, h4, h5, h6 {
 </div>
 
 <!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="food_inspections">
+<header class="w3-display-container w3-content w3-wide food-header" style="max-width:1600px;min-width:500px" id="food_inspections">
   <div id="particles-js"></div>
-  <img class="w3-image" src="img/food.jpg" alt="Hamburger Catering" width="1600" height="180">
   <div class="w3-display-middle w3-padding-large" style="color: white; font-size: 200px;font-weight: 1000;">
     <h1 class="w3-xxxlarge">Food Inspection in Chicago</h1>
   </div>
@@ -76,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 <!-- Page content -->
 <div class="w3-content" style="max-width:1200px">
   <h1 class="w3-center">Abstract</h1><br>
-  <p class="w3-large">Chicago is a notoriously unequal city: Passengers travelling on its red metro line have life expectancies that vary by 30 years depending on their stop, according to The Economist. We want to investigate how geographical socio-economic divisions in Chicago reflect in food inspections in two ways: results to food inspections, and quantities of food inspections. By analysing results to food inspections, we want to find out which areas are performing better and which are performing worse, and compare this to measures of the socio-economic divide. By inspecting the quantity of inspections per area, we hope to gain insight on a potential bias in the choice of inspected establishment and whether the chances of an establishment getting inspected depend only on its performance or also on its location.</p>
+  <p class="w3-large" align="justify">Chicago is a notoriously unequal city: Passengers travelling on its red metro line have life expectancies that vary by 30 years depending on their stop, according to The Economist. We want to investigate how geographical socio-economic divisions in Chicago reflect in food inspections in two ways: results to food inspections, and quantities of food inspections. By analysing results to food inspections, we want to find out which areas are performing better and which are performing worse, and compare this to measures of the socio-economic divide. By inspecting the quantity of inspections per area, we hope to gain insight on a potential bias in the choice of inspected establishment and whether the chances of an establishment getting inspected depend only on its performance or also on its location.</p>
 
   <!-- About Section -->
   <div class="w3-row w3-padding-64" id="introduction">
@@ -87,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 
     <div class="w3-col m6 w3-padding-large">
       <h1 class="w3-center">Introduction</h1><br>
-      <p class="w3-large">Introduction with map on the left... On the map we can see the city of Chicago and the region where the facilities of the inspections presented in the food_inspections dataset are located. In the following, we will focus ang get some insights on that area.</p>
+      <p class="w3-large" align="justify">Introduction with map on the left... On the map we can see the city of Chicago and the region where the facilities of the inspections presented in the food_inspections dataset are located. In the following, we will focus ang get some insights on that area.</p>
     </div>
   </div>
 
@@ -100,8 +108,8 @@ h1, h2, h3, h4, h5, h6 {
 
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large text-left vertical-align">
-        <h4>Number of Inspections</h4>
-        <p class="w3-text-grey">The heatmap shows the number of inspections on the area we are focusing on and determined before. We can see that the more we approach the city center of Chicago, the higher the number of inspections. <br>However, it is also curious to see that in the north of Chicago, the number of inspections is higher than in the south. This could be due to a higher amount of establishment in this area; we check this below.</p><br>
+        <h4 align="left">Number of Inspections</h4>
+        <p class="w3-text-grey" align="justify">The heatmap shows the number of inspections on the area we are focusing on and determined before. We can see that the more we approach the city center of Chicago, the higher the number of inspections. <br>However, it is also curious to see that in the north of Chicago, the number of inspections is higher than in the south. This could be due to a higher amount of establishment in this area; we check this below.</p><br>
       </div>
       <div class="w3-col l6 w3-padding-large vertical-align">
         <iframe src="maps/num_inspections.html" class = "frame-class" frameBorder="0"></iframe>
@@ -113,15 +121,15 @@ h1, h2, h3, h4, h5, h6 {
         <iframe src="maps/num_establishments.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
       <div class="w3-col m6 w3-padding-large text-right vertical-align">
-        <h4>Number of Establishments</h4>
-        <p class="w3-text-grey">The heatmap shows the number of establishments on the area we want to analyze. Same as before, we observe that the more we approach the city center or the north of the city, the higher the number of establishments. Indeed, the number of inspections is correlated with the number of establishments; the more establishments we have on a given area, the higher the inspections will be on that area.</p><br>
+        <h4 align="left">Number of Establishments</h4>
+        <p class="w3-text-grey" align="justify">The heatmap shows the number of establishments on the area we want to analyze. Same as before, we observe that the more we approach the city center or the north of the city, the higher the number of establishments. Indeed, the number of inspections is correlated with the number of establishments; the more establishments we have on a given area, the higher the inspections will be on that area.</p><br>
       </div>
     </div>
   
     <div class = "story-block">
       <div class="w3-col l6 w3-padding-large text-left vertical-align">
-        <h4>Average risk per inspection for each area</h4>
-        <p class="w3-text-grey">The heatmap shows the average risk of the establishments for each community area. The risk of an establishment shows how it could potentially affect the public's health with 1 being the highest and 3 the lowest. Furthermore, <b>high risk establishments are inspected more frequently that low risk establishments</b>.</p><br>
+        <h4 align="left">Average risk per inspection for each area</h4>
+        <p class="w3-text-grey" align="justify">The heatmap shows the average risk of the establishments for each community area. The risk of an establishment shows how it could potentially affect the public's health with 1 being the highest and 3 the lowest. Furthermore, <b>high risk establishments are inspected more frequently that low risk establishments</b>.</p><br>
       </div>
       <div class="w3-col l6 w3-padding-large vertical-align">
         <iframe src="maps/average_risk.html" frameBorder="0" class = "frame-class"></iframe>
@@ -133,15 +141,15 @@ h1, h2, h3, h4, h5, h6 {
         <iframe src="maps/inspections_per_establishment.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
       <div class="w3-col m6 w3-padding-large text-right vertical-align">
-        <h4>Number of Inspections per establishment</h4>
-        <p class="w3-text-grey">The heatmap shows the number of inspections per establishment and as highlighted before, we can see that the establishments with a high number of inspections present high average risks. </p><br>
+        <h4 align="left">Number of Inspections per establishment</h4>
+        <p class="w3-text-grey" align="justify">The heatmap shows the number of inspections per establishment and as highlighted before, we can see that the establishments with a high number of inspections present high average risks. </p><br>
       </div>
     </div>
     
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large text-left vertical-align" >
-        <h4>Per capita income in 2010</h4>
-        <p class="w3-text-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <h4 align="left">Per capita income in 2010</h4>
+        <p class="w3-text-grey" align="justify">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
       </div>
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="maps/per_capita_income.html" frameBorder="0" class = "frame-class"></iframe>
@@ -153,15 +161,15 @@ h1, h2, h3, h4, h5, h6 {
         <iframe src="maps/life_exp_2010.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
       <div class="w3-col m6 w3-padding-large text-right vertical-align" >
-        <h4>Life expectancy in 2010</h4>
-        <p class="w3-text-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <h4 align="left">Life expectancy in 2010</h4>
+        <p class="w3-text-grey" align="justify">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
       </div>
     </div>
 
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large text-left vertical-align">
-        <h4>Percentage of households below the poverty line</h4>
-        <p class="w3-text-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <h4 align="left">Percentage of households below the poverty line</h4>
+        <p class="w3-text-grey" align="justify">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
       </div>
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="maps/housholds_below_poverty_perc.html" frameBorder="0" class = "frame-class"></iframe>
@@ -173,8 +181,8 @@ h1, h2, h3, h4, h5, h6 {
         <iframe src="maps/map_restaurant_pass.html" id = "restaurant_map" frameBorder="0" class = "frame-class"></iframe>
       </div>
       <div class="w3-col m6 w3-padding-large text-right vertical-align">
-        <h4>Percentage of failing Restaurants and Stores vs. Poverty</h4>
-        <p class="w3-text-grey">Unbelievably we found a correlation between the percentage of failed 
+        <h4 align="left">Percentage of failing Restaurants and Stores vs. Poverty</h4>
+        <p class="w3-text-grey" align="justify">Unbelievably we found a correlation between the percentage of failed 
           inspections of restaurants and stores and the percentage of households below the poverty line.
         </p>
         <div class="ui buttons">
