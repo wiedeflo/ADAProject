@@ -79,7 +79,7 @@ def add_locations(map_chicago, unknown_locations, food_inspections_DF):
     
     return map_chicago
 
-def heat_map(dataframe, title, area_column, data_column, good_indicator = False):
+def heat_map(dataframe, title, area_column, data_column, good_indicator = False, rename_mapping=None):
     """
     Plot number of inspections per community area as a heatmap
     :param dataframe: dataframe containing area numbers and used data
@@ -93,6 +93,12 @@ def heat_map(dataframe, title, area_column, data_column, good_indicator = False)
         colors = "YlGn"
     else:
         colors="YlOrRd"
+        
+    if rename_mapping:
+        dataframe = dataframe.rename(columns=rename_mapping)
+        
+        if data_column in rename_mapping.keys():
+            data_column = rename_mapping[data_column]
        
     #load new map
     map_chicago = create_chicago_map() 
