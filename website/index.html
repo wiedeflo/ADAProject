@@ -98,8 +98,7 @@ width:1600px;
           </div>
           <div class="w3-col m6 w3-padding-large text-right vertical-align">
             <h4 align="left">The city of Chicago</h4>
-            <p class="w3-text-grey" align="justify"> Chicago with its approximately 2.7 million inhabitants is one of the biggest cities in the US. The city is divided into 77 community areas
-              which are displayed on the map to the left. <br>\\Add more interesting facts about Chicago 
+            <p class="w3-text-grey" align="justify"> Chicago with its approximately 2.7 million inhabitants is one of the biggest cities in the US. The city is divided into 77 community areas which are displayed on the map to the left. The notorious socio-economic divide between community areas in Chicago will become clearer throughout our data story, and makes this city particularly interesting to analyse. The city center is located on the center-east of the displayed areas, next to Lake Michigan, and is composed of the three areas <i>Near North Side, Near South Side</i> and <i>Loop</i>. You can see the the name of the community area when hovering over the areas. <br>\\Add more interesting facts about Chicago 
             </p><br>
         </div>
     </div>
@@ -107,15 +106,15 @@ width:1600px;
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large text-left vertical-align">
           <h4 align="left">Food inspections in Chicago</h4>
-          <p class="w3-text-grey" align="justify"> With over 7000 (\\can someone please check that number) restaurants Chicago is known for its diverse food culture.\\Maybe add another interesting food fact for chicago here e.g. that there is a chicago style pizza</br>
-           In order to investigate the vast number of culinary establishments we used the <a href="https://www.kaggle.com/chicago/chicago-food-inspections">Chicago Food Inspections</a> dataset provided by Kaggle and the city of Chicago. 
-           It provides information on the establishment and the results of every food inspection carried out since January 1<sup>st</sup> 2010. The maps on the right give a raw overview on some of the data from that set. Select below which data to display.
+          <p class="w3-text-grey" align="justify"> With over 7000 restaurants, Chicago is known for its diverse food culture. For example, did you know that there is a Chicago style pizza? Well now you do. 
+           <br> In order to investigate the vast number of culinary establishments we used the <a href="https://www.kaggle.com/chicago/chicago-food-inspections">Chicago Food Inspections</a> dataset provided by Kaggle and the city of Chicago. 
+           It provides information on the establishment and the results of every food inspection carried out since January 1<sup>st</sup> 2010. The maps on the right gives a raw overview of some of this data. Select below which data to display.
            <div class="ui buttons">
             <button class="ui primary button" id = "num_inspections_btn"># of inspections</button>
             <div class="or"></div>
             <button class="ui button" id = "num_establishments_btn"># of establishments</button>
           </div>
-          <h6 align="left">Explanation</h6>
+          <h6 align="left" style="margin-top:20px">Explanation</h6>
           <!-- If you change this text remeber to also change the text in the javascript at the bottom -->
           <p class="w3-text-grey" align="justify" id="intro_inspections">  
             The heatmap shows the number of inspections on the area we are focusing on and determined before. 
@@ -136,12 +135,12 @@ width:1600px;
         </div>
         <div class="w3-col m6 w3-padding-large text-right vertical-align">
           <h4 align="left">Socioeconomics in Chicago</h4>
-          <p class="w3-text-grey" align="justify"> As mentioned before Chicago is also notiously unequal. \\add another example of inequality in chicago</br>
-           In order to capture some of these socioecnomic factors we used the 
+          <p class="w3-text-grey" align="justify"> As mentioned before Chicago is also notiously unequal. Indeed, the life expectancy varies between 69 and 85 years depending on the areas.
+            <br> In order to capture some of these socioeconomic factors we used the 
            <a href="https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2">Cencus Data</a> and the 
            <a href="https://data.cityofchicago.org/Health-Human-Services/Public-Health-Statistics-Life-Expectancy-By-Commun/qjr3-bm53">Public Health Statistics</a>
            datasets provided by the city of Chicago. 
-           They provide information on some important socioecnomic factors for each community area in Chicago. The maps on the left give a raw overview on some of the data from those sets. Select below which data to display. 
+           They provide information on some important socioeconomic factors for each community area in Chicago. The maps on the left give a raw overview on some of the data from those sets. Select below which data to display. 
           <div class="ui buttons">
             <button class="ui primary button" id = "pc_income_2010_btn">Per capita income</button>
             <div class="or"></div>
@@ -149,7 +148,7 @@ width:1600px;
             <div class="or"></div>
             <button class="ui button" id = "perc_poverty_btn">Poverty</button>
           </div>
-          <h6 align="left">Explanation</h6>
+          <h6 align="left" style="margin-top:20px">Explanation</h6>
           <p class="w3-text-grey" align="justify" id="intro_socio">Some explanation of per capita income.</p><br>
         </div>
       </div>
