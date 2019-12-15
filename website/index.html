@@ -240,14 +240,15 @@ width:1600px;
         <iframe src="maps/map_restaurant_pass.html" id = "restaurant_map" frameBorder="0" class = "frame-class"></iframe>
       </div>
       <div class="w3-col m6 w3-padding-large text-right vertical-align">
-        <h4 align="left">Percentage of failing Restaurants and Stores vs. Poverty</h4>
-        <p class="w3-text-grey" align="justify">Unbelievably we found a correlation between the percentage of failed 
-          inspections of restaurants and stores and the percentage of households below the poverty line.
+        <h4 align="left">Percentage of failing Restaurants and Stores vs. Percentage of Households below Poverty line</h4>
+        <p class="w3-text-grey" align="justify">There is a correlation between the percentage of failed 
+          inspections of restaurants and stores and the percentage of households below the poverty line in areas of Chicago. Looking at the areas with highest percentage of failing restaurants and stores: Oakland, Washington Park and Riverdale, all three of them have over 40% of failed inspections. The percentage of households below the poverty line is also around 40% for the first two areas and over 56% for the last (!). It is curious that neighbour areas sometimes perform much better in both domains. For example Douglas, the northern neighbour of Oakland, has only around 21% failed inspections in restaurants and stores, and 30% households below poverty line. These numbers aren't great, but they are a lot better than its southern neighbour. 
+          <br>Of course the relation put in evidence here is not a dependence, but both features are at first glance indicators of how attractive a community can be. A community where more than a third of inspections fail might not be the most appealing, and the same goes for the percentage of households below the poverty line. The motivation behind keeping only restaurants and stores is that facilities such as hospitals or schools present higher risks, and are therefor more severely inspected. As those are more rare than restaurants and stores they might add some bias to specific communities, and so we choose to focus only on the latters.
         </p>
         <div class="ui buttons">
             <button class="ui primary button" id = "restaurant_button">Restaurants/Stores</button>
             <div class="or"></div>
-            <button class="ui button" id = "poverty_button">Life Expectancy</button>
+            <button class="ui button" id = "poverty_button">Poverty</button>
         </div>
       </div>
     </div>
