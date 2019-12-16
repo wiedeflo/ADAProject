@@ -22,10 +22,13 @@ def create_chicago_map(with_community_areas=False, with_regions=False, areas_DF=
     :return: a folium map
     """
     
+    # Set parameters for map with/without regions
     dragging_enabled = False if with_regions else True
     max_zoom = 10 if with_regions else 16
     min_zoom = 10 if with_regions else 8
+    zoomControl = False if with_regions else True
     
+    # Initialize basic map
     map_chicago = folium.Map(location = cst.CHICAGO_LOCATION, 
                              max_bounds=True,
                              min_lat=cst.CHICAGO_MIN_LAT,
@@ -35,7 +38,8 @@ def create_chicago_map(with_community_areas=False, with_regions=False, areas_DF=
                              max_zoom=max_zoom,
                              min_zoom=min_zoom,
                              zoom_start=10,
-                             dragging=dragging_enabled
+                             dragging=dragging_enabled,
+                             zoomControl=zoomControl
                             )
     
     if with_community_areas:
