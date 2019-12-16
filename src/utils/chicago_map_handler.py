@@ -13,12 +13,18 @@ import math
 import datetime
 
 from utils import constants as cst
+from utils import interactive_plot_handler
+from utils.interactive_plot_handler import region_to_color, name_to_region
 
-def create_chicago_map(with_community_areas=False):
+def create_chicago_map(with_community_areas=False, with_regions=False, areas_DF=None):
     """
     Creates a map of Chicago, highlighting the community areas
     :return: a folium map
     """
+    
+    dragging_enabled = False if with_regions else True
+    max_zoom = 10 if with_regions else 16
+    min_zoom = 10 if with_regions else 8
     
     map_chicago = folium.Map(location = cst.CHICAGO_LOCATION, 
                              max_bounds=True,
@@ -26,9 +32,10 @@ def create_chicago_map(with_community_areas=False):
                              max_lat=cst.CHICAGO_MAX_LAT,
                              min_lon=cst.CHICAGO_MIN_LNG,
                              max_lon=cst.CHICAGO_MAX_LNG,
-                             max_zoom=18,
-                             min_zoom=8,
-                             zoom_start=10
+                             max_zoom=max_zoom,
+                             min_zoom=min_zoom,
+                             zoom_start=10,
+                             dragging=dragging_enabled
                             )
     
     if with_community_areas:
@@ -37,16 +44,42 @@ def create_chicago_map(with_community_areas=False):
         
         for feat in regiondata['features']:
             feat['properties']['community'] = feat['properties']['community'].title()
+            
+        if with_regions:
+            #create heatmap
+            folium.GeoJson(
+                regiondata,
+                style_function=lambda feature: {
+                    'fillColor': my_color_function(feature),
+                    'fillOpacity':0.7,
+                    'color' : 'black',
+                    'weight' : 1,
+                    'dashArray' : '1, 1'
+                    }
+                ).add_to(map_chicago)
+            
+            choro = folium.Choropleth(geo_data=regiondata, 
+                                      columns=[cst.AREA_NUM],
+                                      fill_opacity=0,
+                                      key_on='feature.properties.area_numbe').add_to(map_chicago)
 
-        #create heatmap
-        choro = folium.Choropleth(geo_data=regiondata, 
-                                  columns=[cst.AREA_NUM],
-                                  fill_opacity=0.3,
-                                  key_on='feature.properties.area_numbe').add_to(map_chicago)
+            choro.geojson.add_child(folium.features.GeoJsonTooltip(['community']))
+        else:
+            #create heatmap
+            choro = folium.Choropleth(geo_data=regiondata, 
+                                      columns=[cst.AREA_NUM],
+                                      fill_opacity=0.3,
+                                      key_on='feature.properties.area_numbe').add_to(map_chicago)
 
-        choro.geojson.add_child(folium.features.GeoJsonTooltip(['community']))
+            choro.geojson.add_child(folium.features.GeoJsonTooltip(['community']))
 
     return map_chicago
+
+def my_color_function(feature):
+    """Maps low values to green and hugh values to red."""
+    area = feature['properties']['community']
+    region = name_to_region[area.lower()]
+    return region_to_color[region] 
 
 def add_locations(map_chicago, unknown_locations, food_inspections_DF):
     """
