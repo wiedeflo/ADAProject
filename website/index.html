@@ -149,7 +149,7 @@ width:1600px;
             <button class="ui button" id = "perc_poverty_btn">Poverty</button>
           </div>
           <h6 align="left" style="margin-top:20px">Explanation</h6>
-          <p class="w3-text-grey" align="justify" id="intro_socio">Some explanation of per capita income.</p><br>
+          <p class="w3-text-grey" align="justify" id="intro_socio">Community areas around the center have the highest per capita income, but even there the difference is noticeable. One can check that Loop, Near North Side and Lincoln Park have the largest average per capita incomes of approximately 88'700$, 71'500$ and 65'500$, which still shows a great difference. Indeed, Near North Side has average per capita income of 30% more than Loop even thou both are neighbours! Slightly to the south, between Near South Side and its neighbour Armour Square, the difference even larger, the first having an average per capita income of 59'000$ while the second only has around 16'000$.</p><br>
         </div>
       </div>
   </div>
@@ -256,7 +256,9 @@ width:1600px;
   </div>
 
   <div width=1000px height=1000px>
+    <h4 align="left">Community area per income below poverty</h4>
     <iframe src="figures/comm_area_per_income_below_poverty.html" width="100%" height="750" frameBorder="0"></iframe>
+
   </div>
 
   <hr>
@@ -335,7 +337,7 @@ width:1600px;
     $("#pc_income_2010_btn").removeClass("ui button");
     $("#pc_income_2010_btn").addClass("ui primary button");
     $("#intro_socio").text("\
-    Some explanation of per capita income. \
+    Community areas around the center have the highest per capita income, but even there the difference is noticeable. One can check that Loop, Near North Side and Lincoln Park have the largest average per capita incomes of approximately 88'700$, 71'500$ and 65'500$, which still shows a great difference. Indeed, Near North Side has average per capita income of 30% more than Loop even thou both are neighbours! Slightly to the south, between Near South Side and its neighbour Armour Square, the difference even larger, the first having an average per capita income of 59'000$ while the second only has around 16'000$. \
     ");
   });
 
@@ -348,7 +350,7 @@ width:1600px;
     $("#le_2010_btn").removeClass("ui button");
     $("#le_2010_btn").addClass("ui primary button");
     $("#intro_socio").text("\
-    Some explanation of life expectancy. \
+    The huge differences in life expectancies when comparing community areas of Chicago is one of the reasons we chose this project. As can be seen on the map the city center seems to do well, with life expectancies in the range of 80-85 years. The communities in the diagonals from the center to the north-west and to the south-west also show high life expectancies. However this value drops dangerously for communities in between the diagonals, and for a cluster of communities in the center-south side : West Englewood, Englewood, Greater Grand Crossing, Fuller Park and Washington Park. This last community area has a life expectancy of 68.9 years, even thou its eastern neighbour's (Hide Park) is 82.3 years.\
     ");
   });
 
