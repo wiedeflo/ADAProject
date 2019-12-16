@@ -13,6 +13,20 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display";
   letter-spacing: 5px;
 }
+
+.plot_button {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  border-radius: 20px; 
+  cursor: pointer;
+}
+
 .story-block{
   display: inline-block;
   padding-bottom:40px;
@@ -95,11 +109,11 @@ width:1600px;
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large vertical-align">
             <iframe src="maps/map_intro.html" frameBorder="0" class = "frame-class"></iframe>
-          </div>
-          <div class="w3-col m6 w3-padding-large text-right vertical-align">
-            <h4 align="left">The city of Chicago</h4>
-            <p class="w3-text-grey" align="justify"> Chicago with its approximately 2.7 million inhabitants is one of the biggest cities in the US. The city is divided into 77 community areas which are displayed on the map to the left. The notorious socio-economic divide between community areas in Chicago will become clearer throughout our data story, and makes this city particularly interesting to analyse. The city center is located on the center-east of the displayed areas, next to Lake Michigan, and is composed of the three areas <i>Near North Side, Near South Side</i> and <i>Loop</i>. You can see the the name of the community area when hovering over it. <br>\\Add more interesting facts about Chicago 
-            </p><br>
+        </div>
+        <div class="w3-col m6 w3-padding-large text-right vertical-align">
+          <h4 align="left">The city of Chicago</h4>
+          <p class="w3-text-grey" align="justify"> Chicago with its approximately 2.7 million inhabitants is one of the biggest cities in the US. The city is divided into 77 community areas which are displayed on the map to the left. The notorious socio-economic divide between community areas in Chicago will become clearer throughout our data story, and makes this city particularly interesting to analyse. The city center is located on the center-east of the displayed areas, next to Lake Michigan, and is composed of the three areas <i>Near North Side, Near South Side</i> and <i>Loop</i>. You can see the the name of the community area when hovering over it. <br>\\Add more interesting facts about Chicago 
+          </p><br>
         </div>
     </div>
 
@@ -267,6 +281,26 @@ width:1600px;
   <div class="w3-container w3-padding-64" id="conclusion">
     <h1>Conclusion</h1><br>
     <p>TODO</p>
+
+    <div>
+      <iframe src="maps/map_chicago_regions_colored.html" width="500px" height="600px" border-radius="20px" frameBorder="0" overflow="hidden"></iframe>
+
+      <ul align="left" style="list-style: none;">
+        <li><input type = "button" class="plot_button" style="background-color:#4CAF50;" name = "all" id = "all" value = "All" onClick = "openPage(id)"></li>
+        <li><input type = "button" class="plot_button" style="background-color:rgb(0, 0, 0);" name = "chicago" id = "chicago" value = "Chicago" onClick = "openPage(id)"></li>
+        <li><input type = "button" class="plot_button" style="background-color:rgb(0, 127, 0);" name = "far north side" id = "far_north_side" value = "Far North Side" onClick = "openPage(id)"></li>
+        <li><input type = "button" class="plot_button" style="background-color:rgb(0, 0, 127);" name = "northwest side" id = "northwest_side" value = "Northwest Side" onClick = "openPage(id)"></li>
+        <li><input type = "button" class="plot_button" style="background-color:rgb(127, 0, 127);" name = "north side" id = "north_side" value = "North Side" onClick = "openPage(id)"></li>
+        <li><input type = "button" class="plot_button" style="background-color:rgb(0, 127, 127);" name = "west side" id = "west_side" value = "West Side" onClick = "openPage(id)"></li>
+        <li><input type = "button" class="plot_button" style="background-color:rgb(127, 0, 0);" name = "central" id = "central" value = "Central" onClick = "openPage(id)"></li>
+        <li><input type = "button" class="plot_button" style="background-color:rgb(255, 127, 0);" name = "southwest side" id = "southwest_side" value = "Southwest Side" onClick = "openPage(id)"></li>
+        <li><input type = "button" class="plot_button" style="background-color:rgb(127, 127, 0);" name = "south side" id = "south_side" value = "South Side" onClick = "openPage(id)"></li>
+        <li><input type = "button" class="plot_button" style="background-color:rgb(255, 127, 127);" name = "far southwest side" id = "far_southwest_side" value = "Far Southwest Side" onClick = "openPage(id)"></li>
+        <li><input type = "button" class="plot_button" style="background-color:rgb(255, 0, 127);" name = "far southeast side" id = "far_southeast_side" value = "Far Southeast Side" onClick = "openPage(id)"></li>
+      </ul>
+    </div>
+
+    <iframe id="interactivePlot" src="figures/comm_area_per_income_below_poverty.html" width="100%" height="750" display="block" frameBorder="0"></iframe>
   </div>
 
 <!-- End page content -->
@@ -275,7 +309,6 @@ width:1600px;
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-32">
   <p>Florian Wiedemair, Mohamed Ndoye, Raphael Strebel, Jose Garrido Ramas - 2019</p>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
 
 </body>
@@ -283,6 +316,14 @@ width:1600px;
     var $restaurant_map = $("#restaurant_map");
     var $intro_inspections_map = $("#intro_food_inspections_map")
     var $intro_socio_map =  $("#intro_socio_map")
+
+    function openPage(page){
+      console.log(page);
+      figure_path = "figures/comm_area_per_income_below_poverty_" + page + ".html";
+      console.log(figure_path);
+      document.getElementById("interactivePlot").src=figure_path;
+      
+    }
 
     $("#restaurant_button").click(function() {
     $restaurant_map.attr('src',"maps/map_restaurant_pass.html"); 
