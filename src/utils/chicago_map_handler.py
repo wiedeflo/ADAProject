@@ -27,6 +27,7 @@ def create_chicago_map(with_community_areas=False, with_regions=False, areas_DF=
     max_zoom = 10 if with_regions else 16
     min_zoom = 10 if with_regions else 8
     zoomControl = False if with_regions else True
+    scrollWheelZoom = False if with_regions else True
     
     # Initialize basic map
     map_chicago = folium.Map(location = cst.CHICAGO_LOCATION, 
@@ -39,7 +40,8 @@ def create_chicago_map(with_community_areas=False, with_regions=False, areas_DF=
                              min_zoom=min_zoom,
                              zoom_start=10,
                              dragging=dragging_enabled,
-                             zoomControl=zoomControl
+                             zoomControl=zoomControl,
+                             scrollWheelZoom=scrollWheelZoom
                             )
     
     if with_community_areas:
