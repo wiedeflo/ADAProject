@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="./UI-Button-master/button.css">
 <link href="cssfile.css" rel="stylesheet">
+
+
 <style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1, h2, h3, h4, h5, h6 {
@@ -14,14 +16,36 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 5px;
 }
 
+@import "compass/css3";
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 100px;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+
+
+
+
 .plot_button {
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   margin: 2px 2px;
   border-radius: 20px; 
   cursor: pointer;
@@ -61,6 +85,7 @@ margin-bottom: 100px;
 width:1600px;
 }
 </style>
+
 <body>
 
 <!-- https://www.w3schools.com/w3css/tryw3css_templates_gourmet_catering.htm#home -->
@@ -269,23 +294,19 @@ width:1600px;
 
   </div>
 
-  <div width=1000px height=1000px>
-    <h4 align="left">Community area per income below poverty</h4>
-    <iframe src="figures/comm_area_per_income_below_poverty.html" width="100%" height="750" frameBorder="0"></iframe>
+  <!--<div width=1000px height=1000px> -->
+    <!--<iframe src="figures/comm_area_per_income_below_poverty.html" width="100%" height="750" frameBorder="0"></iframe> -->
 
-  </div>
+  
 
-  <hr>
-
-  <!-- Conclusion Section -->
-  <div class="w3-container w3-padding-64" id="conclusion">
-    <h1>Conclusion</h1><br>
-    <p>TODO</p>
-
-    <div>
-      <iframe src="maps/map_chicago_regions_colored.html" width="500px" height="600px" border-radius="20px" frameBorder="0" overflow="hidden"></iframe>
-
-      <ul align="left" style="list-style: none;">
+  <ul id="test" class="flex-container">
+    <li>
+      <h4 align="left">Community area per income below poverty</h4>
+      <iframe id="interactivePlot" src="figures/comm_area_per_income_below_poverty.html" width="100%" height="100%" display="block" frameBorder="0"></iframe>
+    </li>
+    
+    <li>
+      <ul align="left" style="list-style: none; margin-top: 30px;">
         <li><input type = "button" class="plot_button" style="background-color:#4CAF50;" name = "all" id = "all" value = "All" onClick = "openPage(id)"></li>
         <li><input type = "button" class="plot_button" style="background-color:rgb(0, 0, 0);" name = "chicago" id = "chicago" value = "Chicago" onClick = "openPage(id)"></li>
         <li><input type = "button" class="plot_button" style="background-color:rgb(0, 127, 0);" name = "far north side" id = "far_north_side" value = "Far North Side" onClick = "openPage(id)"></li>
@@ -298,9 +319,22 @@ width:1600px;
         <li><input type = "button" class="plot_button" style="background-color:rgb(255, 127, 127);" name = "far southwest side" id = "far_southwest_side" value = "Far Southwest Side" onClick = "openPage(id)"></li>
         <li><input type = "button" class="plot_button" style="background-color:rgb(255, 0, 127);" name = "far southeast side" id = "far_southeast_side" value = "Far Southeast Side" onClick = "openPage(id)"></li>
       </ul>
-    </div>
+    </li>
 
-    <iframe id="interactivePlot" src="figures/comm_area_per_income_below_poverty.html" width="100%" height="750" display="block" frameBorder="0"></iframe>
+    <li width="200px" height="450px">
+      <iframe src="maps/map_chicago_regions_colored.html" border-radius="20px" height="90%" width="120%" frameBorder="0" overflow="hidden"></iframe>
+    </li>
+  </div>
+
+  <hr>
+
+  <!-- Conclusion Section -->
+  <div class="w3-container w3-padding-64" id="conclusion">
+    <h1>Conclusion</h1><br>
+    <p>TODO</p>
+    <p>The regions are explained on the <a href="https://en.wikipedia.org/wiki/Community_areas_in_Chicago">Community areas in Chicago Wikipedia page</a></p>
+
+    
   </div>
 
 <!-- End page content -->
@@ -318,9 +352,7 @@ width:1600px;
     var $intro_socio_map =  $("#intro_socio_map")
 
     function openPage(page){
-      console.log(page);
       figure_path = "figures/comm_area_per_income_below_poverty_" + page + ".html";
-      console.log(figure_path);
       document.getElementById("interactivePlot").src=figure_path;
       
     }
