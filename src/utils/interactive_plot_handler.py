@@ -1,8 +1,21 @@
+'''
+File name: areas_handler.py
+Date created: 15/12/2019
+Date last modified: 17/12/2019
+Python Version: 3.7.4
+Handles the interactive "per capita income with respect to household incomes of areas" plot. Also contains dictionaries of region-to-color name-to-region used for this plot.
+'''
+
 import plotly
 import plotly.express as px
 import plotly.graph_objs as go
 
 def interactive_plot_capita_income_wrt_households(socio_life_merged_DF):
+    ''' 
+    Get the plotly interactive plot of per capita income with respect to household incomes of areas
+    :param socio_life_merged_DF: pd.DataFrame
+    :return: plotly interactive plot
+    '''
     # Make plot
     f = go.FigureWidget([go.Scatter(
         x=socio_life_merged_DF['housholds_below_poverty_perc'],
@@ -11,7 +24,6 @@ def interactive_plot_capita_income_wrt_households(socio_life_merged_DF):
         hoverinfo="text",
         mode='markers',
         marker_color=socio_life_merged_DF['region'].apply(lambda reg: region_to_color[reg]),
-        #showlegend=True,
     )])
 
     # Specify layout and titles
@@ -24,8 +36,6 @@ def interactive_plot_capita_income_wrt_households(socio_life_merged_DF):
         title=go.layout.Title(text="Community area per capita income with respect to households below poverty"),
     )
 
-    #f.update_layout(legend= {'itemsizing': 'constant'})
-
     # On-click interaction
     scatter = f.data[0]
     scatter.marker.size = [10] * 100
@@ -34,6 +44,9 @@ def interactive_plot_capita_income_wrt_households(socio_life_merged_DF):
 
     # create callback function
     def update_point(trace, points, selector):
+        ''' 
+        On click of an area : increase the size of dots of areas of same region and decrease the size of the others
+        '''
         x, y = points.xs[0], points.ys[0]
 
         area, region = socio_life_merged_DF[(socio_life_merged_DF['per_capita_income'] == y) & \
@@ -44,7 +57,8 @@ def interactive_plot_capita_income_wrt_households(socio_life_merged_DF):
         s = list(scatter.marker.size)
 
         same_region = socio_life_merged_DF[socio_life_merged_DF['region'] == region]['community_area_name'].values
-
+        
+        # Make areas of same region bigger and others smaller
         for area in all_regions:
             if area in same_region:
                 idx = name_to_idx[area]
@@ -58,7 +72,8 @@ def interactive_plot_capita_income_wrt_households(socio_life_merged_DF):
         with f.batch_update():
             scatter.marker.color = c
             scatter.marker.size = s
-
+    
+    # Add on-click interactivity
     scatter.on_click(update_point)
 
     return f
