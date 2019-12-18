@@ -195,6 +195,8 @@ width:1600px;
 
   <hr>
 
+    
+    
   <!-- Story Section -->
   <div class="w3-row w3-padding-64" id="story">
 
@@ -231,18 +233,26 @@ width:1600px;
       </div>
     </div>-->
     
+      
     <div class = "story-block">
-      <div class="w3-col m6 w3-padding-large text-left vertical-align">
-        <h4 align="left">Quantity of food inspections vs. \\some socioeconomic factor goes here</h4>
-        <p class="w3-text-grey" align="justify">Using the datasets above we started to do a more in-depth investigation of the food inspections. As a first step we wated to find out if there is a connection between the number of investiagtions in an area and one of the socioeconomic factors for that area.
-         To get a rough outline of the quanitity of the inspections for each community are we plotted the number of inspections per establishment, which can be seen on the heatmap on the right. As highlighted before, we can see that the establishments with a high number of inspections present high average risks. </p><br>
-         \\Further elaborate on the map 
-         \\Add arguments for negative correlation (found by Jose) and maybe add visualization for that. COuld be in a seperate paragraph
+        <div class="w3-col m6 w3-padding-large text-left vertical-align">
+          <h4 align="left">Tell me how long people live in the area where you put your restaurant and I will tell you how it is performing</h4>
+          <p class="w3-text-grey" align="justify"> In the maps to the right we show the number of food inspection per establishment, the average establishment risk, and the average inspection result (between 0; fail and 2; pass). It seems that the richer center and north have more inspections per establishment than the poorer west, and, perhaps more surprisingly,the establishment in these richer areas seem to have <b> average higher risk</b>, while also obtaining <b> average higher better results</b>: Why is it that rich areas seem to have facilities which are performing better in inspections but have on average a higher risk than the facilities in the poor areas?. 
+           <div class="ui buttons">
+            <button class="ui primary button" id = "inspections_per_establishment_btn"># inspections per establishment</button>
+            <div class="or"></div>
+            <button class="ui button" id = "average_result_btn">Average result</button>
+            <button class="ui button" id = "average_risk_btn">Average risk</button>
+
+          </div>
+          <!-- If you change this text remeber to also change the text in the javascript at the bottom -->
+                 </div>
+        <div class="w3-col l6 w3-padding-large vertical-align">
+          <iframe src="maps/average_result.html" class = "frame-class" id="average_result_map" frameBorder="0"></iframe>
+        </div>
       </div>
-      <div class="w3-col m6 w3-padding-large vertical-align">
-        <iframe src="maps/inspections_per_establishment.html" frameBorder="0" class = "frame-class"></iframe>
-      </div>
-    </div>
+  
+      
     <!--Moved to the introduction
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large text-left vertical-align" >
@@ -273,7 +283,38 @@ width:1600px;
         <iframe src="maps/housholds_below_poverty_perc.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
     </div>-->
+      
+      
+      
+    <div class = "story-block">
+      <div class="w3-col m6 w3-padding-large text-left vertical-align">
+        <h4 align="left">Facilities in rich areas: More risky, but better performing?</h4>
+        <p class="w3-text-grey" align="justify">Indeed, our intution by looking at the map shows up in the correlation numbers as well: The correlation numer between every good social indicator and the average number of inspections or the risk is positive, and the correlation number between every bad social indicator and the average number of inspections or the risk is negative. If you look at the average inspection result, the sign is the opposite. There is also some weak positive and negative correlations (between 0.1 and 0.3) that appear.
+           
 
+      </div>
+      <div class="w3-col m6 w3-padding-large vertical-align">
+        <iframe src="img/corr_socio_good.html" frameBorder="0" class = "frame-class"></iframe>
+      </div>
+    </div>
+      
+    <div class = "story-block">
+      <div class="w3-col m6 w3-padding-large text-left vertical-align">
+        <h4 align="left">Will you get inspected in 2018?</h4>
+        <p class="w3-text-grey" align="justify">
+            We try and use ML to, based on a restaurants previous history and some of its characteristics, predict whether it will get inspected in 2018. Using logistic regression and Monte Carlo crossvalidation with 1000 iterations we estimate a validation set accuracy of 61% (classes are balanced: We chose the period so that approximetaly half the facilities would get inspected at that time and half wouldn't).
+          
+However, it is not in the accuracy that the interest of this exercise lays, but in the weights the model assigns to each input variable, both categorical (after 1 hot encoding) and numerical (to which we apply MinMaxScaler) variables. The top 5 variables contributing positively are N_INSPECTIONS, AVERAGE_RISK, SHARED KITCHEN, SHELTER, HOSPITAL. The bottom 5 variables are LONG TERM CARE FACILITY, DAYCARE COMBO 1586, AVERAGE_RESULT, WRIGLEY ROOFTOP AND BAR/GRILL.
+(((here do a bar plot with the top 5 and bottom 5 variables the model looks at?)))
+      </div>
+      <div class="w3-col m6 w3-padding-large vertical-align">
+        <iframe src="img/corr_socio_good.html" frameBorder="0" class = "frame-class"></iframe>
+      </div>
+    </div>
+          
+  
+      
+      
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="maps/map_restaurant_pass.html" id = "restaurant_map" frameBorder="0" class = "frame-class"></iframe>
@@ -400,6 +441,20 @@ width:1600px;
       the more establishments we have on a given area, the higher the inspections will be on that area.\
     ");
   });
+    
+    
+  $("#average_result_btn").click(function() {
+    $intro_inspections_map.attr('src',"maps/average_result.html"); 
+    $("#average_result_btn").removeClass("ui primary button");
+    $("#average_result_btn").addClass("ui button");
+    $("#average_result_btn").removeClass("ui button");
+    $("#average_result_btn").addClass("ui primary button");
+    $("#intro_inspections").text("\
+     The heatmap shows the average result to inspections. \
+      We observe that the more we approach the city center or the north of the city, \
+      the better the results to inspections are.");
+  });
+
 
    $("#pc_income_2010_btn").click(function() {
     $intro_socio_map.attr('src',"maps/per_capita_income.html"); 
