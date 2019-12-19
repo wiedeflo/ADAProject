@@ -23,13 +23,13 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   margin-bottom: 100px;
   list-style: none;
-  
+
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  
+
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
 }
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   font-size: 12px;
   margin: 2px 2px;
-  border-radius: 20px; 
+  border-radius: 20px;
   cursor: pointer;
 }
 
@@ -52,6 +52,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom:40px;
   height:650px;
 }
+
 .text-left{
   text-align: left;
 }
@@ -59,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 .frame-class{
-  border-radius: 20px; 
+  border-radius: 20px;
   overflow: hidden;
   width:100%;
   height:550px;
@@ -124,7 +125,7 @@ width:1600px;
   <hr>
 
   <!-- About Section -->
-  
+
   <div class="w3-row w3-padding-64"  id="introduction">
     <h1 class="w3-center">Introduction</h1><br>
     <div class = "story-block">
@@ -133,7 +134,7 @@ width:1600px;
         </div>
         <div class="w3-col m6 w3-padding-large text-right vertical-align">
           <h4 align="left">The city of Chicago</h4>
-          <p class="w3-text-grey" align="justify"> Chicago with its approximately 2.7 million inhabitants is one of the biggest cities in the US. The city is divided into 77 community areas which are displayed on the map to the left. The notorious socio-economic divide between community areas in Chicago will become clearer throughout our data story, and makes this city particularly interesting to analyse. The city center is located on the center-east of the displayed areas, next to Lake Michigan, and is composed of the three areas <i>Near North Side, Near South Side</i> and <i>Loop</i>. You can see the the name of the community area when hovering over it. <br>\\Add more interesting facts about Chicago 
+          <p class="w3-text-grey" align="justify"> Chicago with its approximately 2.7 million inhabitants is one of the biggest cities in the US. The city is divided into 77 community areas which are displayed on the map to the left. The notorious socio-economic divide between community areas in Chicago will become clearer throughout our data story, and makes this city particularly interesting to analyse. The city center is located on the center-east of the displayed areas, next to Lake Michigan, and is composed of the three areas <i>Near North Side, Near South Side</i> and <i>Loop</i>. You can see the the name of the community area when hovering over it. <br>\\Add more interesting facts about Chicago
           </p><br>
         </div>
     </div>
@@ -141,8 +142,8 @@ width:1600px;
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large text-left vertical-align">
           <h4 align="left">Food inspections in Chicago</h4>
-          <p class="w3-text-grey" align="justify"> With over 7000 restaurants, Chicago is known for its diverse food culture. For example, did you know that there is a Chicago style pizza? Well now you do. 
-           <br> In order to investigate the vast number of culinary establishments we used the <a href="https://www.kaggle.com/chicago/chicago-food-inspections">Chicago Food Inspections</a> dataset provided by Kaggle and the city of Chicago. 
+          <p class="w3-text-grey" align="justify"> With over 7000 restaurants, Chicago is known for its diverse food culture. For example, did you know that there is a Chicago style pizza? Well now you do.
+           <br> In order to investigate the vast number of culinary establishments we used the <a href="https://www.kaggle.com/chicago/chicago-food-inspections">Chicago Food Inspections</a> dataset provided by Kaggle and the city of Chicago.
            It provides information on the establishment and the results of every food inspection carried out since January 1<sup>st</sup> 2010. The maps on the right gives a raw overview of some of this data. Select below which data to display.
            <div class="ui buttons">
             <button class="ui primary button" id = "num_inspections_btn"># of inspections</button>
@@ -151,9 +152,9 @@ width:1600px;
           </div>
           <h6 align="left" style="margin-top:20px">Explanation</h6>
           <!-- If you change this text remeber to also change the text in the javascript at the bottom -->
-          <p class="w3-text-grey" align="justify" id="intro_inspections">  
-            The heatmap shows the number of inspections on the area we are focusing on and determined before. 
-            We can see that the more we approach the city center of Chicago, the higher the number of inspections. 
+          <p class="w3-text-grey" align="justify" id="intro_inspections">
+            The heatmap shows the number of inspections on the area we are focusing on and determined before.
+            We can see that the more we approach the city center of Chicago, the higher the number of inspections.
             However, it is also curious to see that in the north of Chicago, the number of inspections is higher than in the south.
              This could be due to a higher amount of establishment in this area; we check this in the other map.
           </p>
@@ -163,7 +164,7 @@ width:1600px;
           <iframe src="maps/num_inspections.html" class = "frame-class" id="intro_food_inspections_map" frameBorder="0"></iframe>
         </div>
       </div>
-  
+
       <div class = "story-block">
         <div class="w3-col m6 w3-padding-large vertical-align">
           <iframe src="maps/per_capita_income.html" frameBorder="0" id="intro_socio_map" class = "frame-class"></iframe>
@@ -171,11 +172,11 @@ width:1600px;
         <div class="w3-col m6 w3-padding-large text-right vertical-align">
           <h4 align="left">Socioeconomics in Chicago</h4>
           <p class="w3-text-grey" align="justify"> As mentioned before Chicago is also notiously unequal. Indeed, the life expectancy varies between 69 and 85 years depending on the areas.
-            <br> In order to capture some of these socioeconomic factors we used the 
-           <a href="https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2">Cencus Data</a> and the 
+            <br> In order to capture some of these socioeconomic factors we used the
+           <a href="https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2">Cencus Data</a> and the
            <a href="https://data.cityofchicago.org/Health-Human-Services/Public-Health-Statistics-Life-Expectancy-By-Commun/qjr3-bm53">Public Health Statistics</a>
-           datasets provided by the city of Chicago. 
-           They provide information on some important socioeconomic factors for each community area in Chicago. The maps on the left give a raw overview on some of the data from those sets. Select below which data to display. 
+           datasets provided by the city of Chicago.
+           They provide information on some important socioeconomic factors for each community area in Chicago. The maps on the left give a raw overview on some of the data from those sets. Select below which data to display.
           <div class="ui buttons">
             <button class="ui primary button" id = "pc_income_2010_btn">Per capita income</button>
             <div class="or"></div>
@@ -191,8 +192,8 @@ width:1600px;
 
   <hr>
 
-    
-    
+
+
   <!-- Story Section -->
   <div class="w3-row w3-padding-64" id="story">
 
@@ -217,7 +218,7 @@ width:1600px;
         <p class="w3-text-grey" align="justify">The heatmap shows the number of establishments on the area we want to analyze. Same as before, we observe that the more we approach the city center or the north of the city, the higher the number of establishments. Indeed, the number of inspections is correlated with the number of establishments; the more establishments we have on a given area, the higher the inspections will be on that area.</p><br>
       </div>
     </div>-->
-  
+
   <!-- Not sure where to use this one at the moment
     <div class = "story-block">
       <div class="w3-col l6 w3-padding-large text-left vertical-align">
@@ -228,12 +229,12 @@ width:1600px;
         <iframe src="maps/average_risk.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
     </div>-->
-    
-      
+
+
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large text-left vertical-align">
           <h4 align="left">Tell me how long people live in the area where you put your restaurant and I will tell you how it is performing</h4>
-          <p class="w3-text-grey" align="justify"> In the maps to the right we show the number of food inspection per establishment, the average establishment risk, and the average inspection result (between 0; fail and 2; pass). It seems that the richer center and north have more inspections per establishment than the poorer west, and, perhaps more surprisingly,the establishment in these richer areas seem to have <b> average higher risk</b>, while also obtaining <b> average higher better results</b>: Why is it that rich areas seem to have facilities which are performing better in inspections but have on average a higher risk than the facilities in the poor areas?. 
+          <p class="w3-text-grey" align="justify"> In the maps to the right we show the number of food inspection per establishment, the average establishment risk, and the average inspection result (between 0; fail and 2; pass). It seems that the richer center and north have more inspections per establishment than the poorer west, and, perhaps more surprisingly,the establishment in these richer areas seem to have <b> average higher risk</b>, while also obtaining <b> average higher better results</b>: Why is it that rich areas seem to have facilities which are performing better in inspections but have on average a higher risk than the facilities in the poor areas?.
            <div class="ui buttons">
             <button class="ui primary button" id = "inspections_per_establishment_btn"># inspections per establishment</button>
             <div class="or"></div>
@@ -247,8 +248,8 @@ width:1600px;
           <iframe src="maps/average_result.html" class = "frame-class" id="average_result_map" frameBorder="0"></iframe>
         </div>
       </div>
-  
-      
+
+
     <!--Moved to the introduction
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large text-left vertical-align" >
@@ -259,7 +260,7 @@ width:1600px;
         <iframe src="maps/per_capita_income.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
     </div>
-    
+
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="maps/life_exp_2010.html" frameBorder="0" class = "frame-class"></iframe>
@@ -279,27 +280,27 @@ width:1600px;
         <iframe src="maps/housholds_below_poverty_perc.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
     </div>-->
-      
-      
-      
+
+
+
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large text-left vertical-align">
         <h4 align="left">Facilities in rich areas: More risky, but better performing?</h4>
         <p class="w3-text-grey" align="justify">Indeed, our intution by looking at the map shows up in the correlation numbers as well: The correlation numer between every good social indicator and the average number of inspections or the risk is positive, and the correlation number between every bad social indicator and the average number of inspections or the risk is negative. If you look at the average inspection result, the sign is the opposite. There is also some weak positive and negative correlations (between 0.1 and 0.3) that appear.
-           
+
 
       </div>
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="img/corr_socio_good.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
     </div>
-      
+
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large text-left vertical-align">
         <h4 align="left">Will you get inspected in 2018?</h4>
         <p class="w3-text-grey" align="justify">
             We try and use ML to, based on a restaurants previous history and some of its characteristics, predict whether it will get inspected in 2018. Using logistic regression and Monte Carlo crossvalidation with 1000 iterations we estimate a validation set accuracy of 61% (classes are balanced: We chose the period so that approximetaly half the facilities would get inspected at that time and half wouldn't).
-          
+
 However, it is not in the accuracy that the interest of this exercise lays, but in the weights the model assigns to each input variable, both categorical (after 1 hot encoding) and numerical (to which we apply MinMaxScaler) variables. The top 5 variables contributing positively are N_INSPECTIONS, AVERAGE_RISK, SHARED KITCHEN, SHELTER, HOSPITAL. The bottom 5 variables are LONG TERM CARE FACILITY, DAYCARE COMBO 1586, AVERAGE_RESULT, WRIGLEY ROOFTOP AND BAR/GRILL.
 (((here do a bar plot with the top 5 and bottom 5 variables the model looks at?)))
       </div>
@@ -307,18 +308,18 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
         <iframe src="img/corr_socio_good.html" frameBorder="0" class = "frame-class"></iframe>
       </div>
     </div>
-          
-  
-      
-      
+
+
+
+
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="maps/map_restaurant_pass.html" id = "restaurant_map" frameBorder="0" class = "frame-class"></iframe>
       </div>
       <div class="w3-col m6 w3-padding-large text-right vertical-align">
         <h4 align="left">Percentage of failing Restaurants and Stores vs. Percentage of Households below Poverty line</h4>
-        <p class="w3-text-grey" align="justify">There is a correlation between the percentage of failed 
-          inspections of restaurants and stores and the percentage of households below the poverty line in areas of Chicago. Looking at the areas with highest percentage of failing restaurants and stores: Oakland, Washington Park and Riverdale, all three of them have over 40% of failed inspections. The percentage of households below the poverty line is also around 40% for the first two areas and over 56% for the last (!). It is curious that neighbour areas sometimes perform much better in both domains. For example Douglas, the northern neighbour of Oakland, has only around 21% failed inspections in restaurants and stores, and 30% households below poverty line. These numbers aren't great, but they are a lot better than its southern neighbour. 
+        <p class="w3-text-grey" align="justify">There is a correlation between the percentage of failed
+          inspections of restaurants and stores and the percentage of households below the poverty line in areas of Chicago. Looking at the areas with highest percentage of failing restaurants and stores: Oakland, Washington Park and Riverdale, all three of them have over 40% of failed inspections. The percentage of households below the poverty line is also around 40% for the first two areas and over 56% for the last (!). It is curious that neighbour areas sometimes perform much better in both domains. For example Douglas, the northern neighbour of Oakland, has only around 21% failed inspections in restaurants and stores, and 30% households below poverty line. These numbers aren't great, but they are a lot better than its southern neighbour.
           <br>Of course the relation put in evidence here is not a dependence, but both features are at first glance indicators of how attractive a community can be. A community where more than a third of inspections fail might not be the most appealing, and the same goes for the percentage of households below the poverty line. The motivation behind keeping only restaurants and stores is that facilities such as hospitals or schools present higher risks, and are therefor more severely inspected. As those are more rare than restaurants and stores they might add some bias to specific communities, and so we choose to focus only on the latters.
         </p>
         <div class="ui buttons">
@@ -334,16 +335,19 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
   <!--<div width=1000px height=1000px> -->
     <!--<iframe src="figures/comm_area_per_income_below_poverty.html" width="100%" height="750" frameBorder="0"></iframe> -->
 
-  
+</div>
+
+
+<div>
 
     <ul id="test" class="flex-container">
       <li>
         <h4 align="left">Community area per income below poverty</h4>
-        <iframe id="interactivePlot" src="figures/comm_area_per_income_below_poverty.html" width="100%" height="100%" display="block" frameBorder="0"></iframe>
+        <iframe id="interactivePlot" src="figures/comm_area_per_income_below_poverty.html" width="190%" height="150%" display="block" frameBorder="0"></iframe>
       </li>
-      
+
       <li>
-        <ul align="left" style="list-style: none; margin-top: 30px;">
+        <ul align="left" style="list-style: none; margin-top: 160px; margin-left: 300px;">
           <li><input type = "button" class="plot_button" style="background-color:#4CAF50;" name = "all" id = "all" value = "All" onClick = "openPage(id)"></li>
           <li><input type = "button" class="plot_button" style="background-color:rgb(0, 0, 0);" name = "chicago" id = "chicago" value = "Chicago" onClick = "openPage(id)"></li>
           <li><input type = "button" class="plot_button" style="background-color:rgb(0, 127, 0);" name = "far north side" id = "far_north_side" value = "Far North Side" onClick = "openPage(id)"></li>
@@ -359,10 +363,15 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
       </li>
 
       <li width="200px" height="450px">
+        <br><br><br><br><br><br><br>
         <iframe src="maps/map_chicago_regions_colored.html" border-radius="20px" height="90%" width="120%" frameBorder="0" overflow="hidden"></iframe>
       </li>
     </ul>
 
+  </div>
+
+    <br><br><br><br><br><br>
+    <div class="w3-content" style="max-width:1200px">
     <p> To further analyse the indicator of households below poverty line, we will now compare it to the average per capita income inside same community areas. As a plot depicting the poverty indices of community areas would be hard to geographically interpret, we now introduce the notion of <i>region</i> as defined by the city of Chicago and explained on this <a href="https://en.wikipedia.org/wiki/Community_areas_in_Chicago">Wikipedia page</a>. There are 9 regions in Chicago, and each one of them contains a subset of community areas. It is easier to visualize the households below poverty line w.r.t the average per capita inside regions. You can click on the region names in the legend to put in evidence the community areas of the selected region on the plot. Hover over a point in the plot to see the name of the community area.
     <br>
     The legend consists of all regions of Chicago, with <i>All</i> --displaying all regions-- and <i>Chicago</i> --displaying the average of the city--. Clearly the <i>Central</i> region has the highest per capita incomes and few households below the poverty line (around 15%). The <i>North Side</i> region also seems to do very well in those measures, altough the community areas <i>Avondale</i> and <i>Logan Square</i> have much lower per capita incomes (around half of the other areas in the same regions), they have roughly the same percentage of households below the poverty line. In the southernmost regions, there seems to be a greater percentage of households under the poverty line. Indeed, when analysing <i>southwest side, south side, far southwest side</i> and <i>far southeast side</i>, one can check that community areas have around 20-30% of households below poverty line (although <i>far southwest side</i> is slightly better) and the average per capita income rarely exceeds 30k and is usually around 20k, which is not a lot...
@@ -379,7 +388,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
     <p>TODO</p>
     <p>The regions are explained on the <a href="https://en.wikipedia.org/wiki/Community_areas_in_Chicago">Community areas in Chicago Wikipedia page</a></p>
 
-    
+
   </div>
 
 <!-- End page content -->
@@ -399,11 +408,11 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
     function openPage(page){
       figure_path = "figures/comm_area_per_income_below_poverty_" + page + ".html";
       document.getElementById("interactivePlot").src=figure_path;
-      
+
     }
 
     $("#restaurant_button").click(function() {
-    $restaurant_map.attr('src',"maps/map_restaurant_pass.html"); 
+    $restaurant_map.attr('src',"maps/map_restaurant_pass.html");
     $("#poverty_button").removeClass("ui primary button");
     $("#poverty_button").addClass("ui button");
     $("#restaurant_button").removeClass("ui button");
@@ -411,7 +420,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
   });
 
   $("#poverty_button").click(function() {
-    $restaurant_map.attr('src',"maps/housholds_below_poverty_perc.html"); 
+    $restaurant_map.attr('src',"maps/housholds_below_poverty_perc.html");
     $("#restaurant_button").removeClass("ui primary button");
     $("#restaurant_button").addClass("ui button");
     $("#poverty_button").removeClass("ui button");
@@ -419,7 +428,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
   });
 
   $("#num_inspections_btn").click(function() {
-    $intro_inspections_map.attr('src',"maps/num_inspections.html"); 
+    $intro_inspections_map.attr('src',"maps/num_inspections.html");
     $("#num_establishments_btn").removeClass("ui primary button");
     $("#num_establishments_btn").addClass("ui button");
     $("#num_inspections_btn").removeClass("ui button");
@@ -433,7 +442,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
   });
 
   $("#num_establishments_btn").click(function() {
-    $intro_inspections_map.attr('src',"maps/num_establishments.html"); 
+    $intro_inspections_map.attr('src',"maps/num_establishments.html");
     $("#num_inspections_btn").removeClass("ui primary button");
     $("#num_inspections_btn").addClass("ui button");
     $("#num_establishments_btn").removeClass("ui button");
@@ -445,10 +454,10 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
       the more establishments we have on a given area, the higher the inspections will be on that area.\
     ");
   });
-    
-    
+
+
   $("#average_result_btn").click(function() {
-    $intro_inspections_map.attr('src',"maps/average_result.html"); 
+    $intro_inspections_map.attr('src',"maps/average_result.html");
     $("#average_result_btn").removeClass("ui primary button");
     $("#average_result_btn").addClass("ui button");
     $("#average_result_btn").removeClass("ui button");
@@ -461,7 +470,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
 
 
    $("#pc_income_2010_btn").click(function() {
-    $intro_socio_map.attr('src',"maps/per_capita_income.html"); 
+    $intro_socio_map.attr('src',"maps/per_capita_income.html");
     $("#le_2010_btn").removeClass("ui primary button");
     $("#le_2010_btn").addClass("ui button");
     $("#perc_poverty_btn").removeClass("ui primary button");
@@ -474,7 +483,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
   });
 
    $("#le_2010_btn").click(function() {
-    $intro_socio_map.attr('src',"maps/life_exp_2010.html"); 
+    $intro_socio_map.attr('src',"maps/life_exp_2010.html");
     $("#pc_income_2010_btn").removeClass("ui primary button");
     $("#pc_income_2010_btn").addClass("ui button");
     $("#perc_poverty_btn").removeClass("ui primary button");
@@ -487,7 +496,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
   });
 
    $("#perc_poverty_btn").click(function() {
-    $intro_socio_map.attr('src',"maps/housholds_below_poverty_perc.html"); 
+    $intro_socio_map.attr('src',"maps/housholds_below_poverty_perc.html");
     $("#le_2010_btn").removeClass("ui primary button");
     $("#le_2010_btn").addClass("ui button");
     $("#pc_income_2010_btn").removeClass("ui primary button");
