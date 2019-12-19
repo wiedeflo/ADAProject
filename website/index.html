@@ -34,10 +34,6 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-around;
 }
 
-
-
-
-
 .plot_button {
   border: none;
   color: white;
@@ -340,32 +336,37 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
 
   
 
-  <ul id="test" class="flex-container">
-    <li>
-      <h4 align="left">Community area per income below poverty</h4>
-      <iframe id="interactivePlot" src="figures/comm_area_per_income_below_poverty.html" width="100%" height="100%" display="block" frameBorder="0"></iframe>
-    </li>
-    
-    <li>
-      <ul align="left" style="list-style: none; margin-top: 30px;">
-        <li><input type = "button" class="plot_button" style="background-color:#4CAF50;" name = "all" id = "all" value = "All" onClick = "openPage(id)"></li>
-        <li><input type = "button" class="plot_button" style="background-color:rgb(0, 0, 0);" name = "chicago" id = "chicago" value = "Chicago" onClick = "openPage(id)"></li>
-        <li><input type = "button" class="plot_button" style="background-color:rgb(0, 127, 0);" name = "far north side" id = "far_north_side" value = "Far North Side" onClick = "openPage(id)"></li>
-        <li><input type = "button" class="plot_button" style="background-color:rgb(0, 0, 127);" name = "northwest side" id = "northwest_side" value = "Northwest Side" onClick = "openPage(id)"></li>
-        <li><input type = "button" class="plot_button" style="background-color:rgb(127, 0, 127);" name = "north side" id = "north_side" value = "North Side" onClick = "openPage(id)"></li>
-        <li><input type = "button" class="plot_button" style="background-color:rgb(0, 127, 127);" name = "west side" id = "west_side" value = "West Side" onClick = "openPage(id)"></li>
-        <li><input type = "button" class="plot_button" style="background-color:rgb(127, 0, 0);" name = "central" id = "central" value = "Central" onClick = "openPage(id)"></li>
-        <li><input type = "button" class="plot_button" style="background-color:rgb(255, 127, 0);" name = "southwest side" id = "southwest_side" value = "Southwest Side" onClick = "openPage(id)"></li>
-        <li><input type = "button" class="plot_button" style="background-color:rgb(127, 127, 0);" name = "south side" id = "south_side" value = "South Side" onClick = "openPage(id)"></li>
-        <li><input type = "button" class="plot_button" style="background-color:rgb(255, 127, 127);" name = "far southwest side" id = "far_southwest_side" value = "Far Southwest Side" onClick = "openPage(id)"></li>
-        <li><input type = "button" class="plot_button" style="background-color:rgb(255, 0, 127);" name = "far southeast side" id = "far_southeast_side" value = "Far Southeast Side" onClick = "openPage(id)"></li>
-      </ul>
-    </li>
+    <ul id="test" class="flex-container">
+      <li>
+        <h4 align="left">Community area per income below poverty</h4>
+        <iframe id="interactivePlot" src="figures/comm_area_per_income_below_poverty.html" width="100%" height="100%" display="block" frameBorder="0"></iframe>
+      </li>
+      
+      <li>
+        <ul align="left" style="list-style: none; margin-top: 30px;">
+          <li><input type = "button" class="plot_button" style="background-color:#4CAF50;" name = "all" id = "all" value = "All" onClick = "openPage(id)"></li>
+          <li><input type = "button" class="plot_button" style="background-color:rgb(0, 0, 0);" name = "chicago" id = "chicago" value = "Chicago" onClick = "openPage(id)"></li>
+          <li><input type = "button" class="plot_button" style="background-color:rgb(0, 127, 0);" name = "far north side" id = "far_north_side" value = "Far North Side" onClick = "openPage(id)"></li>
+          <li><input type = "button" class="plot_button" style="background-color:rgb(0, 0, 127);" name = "northwest side" id = "northwest_side" value = "Northwest Side" onClick = "openPage(id)"></li>
+          <li><input type = "button" class="plot_button" style="background-color:rgb(127, 0, 127);" name = "north side" id = "north_side" value = "North Side" onClick = "openPage(id)"></li>
+          <li><input type = "button" class="plot_button" style="background-color:rgb(0, 127, 127);" name = "west side" id = "west_side" value = "West Side" onClick = "openPage(id)"></li>
+          <li><input type = "button" class="plot_button" style="background-color:rgb(127, 0, 0);" name = "central" id = "central" value = "Central" onClick = "openPage(id)"></li>
+          <li><input type = "button" class="plot_button" style="background-color:rgb(255, 127, 0);" name = "southwest side" id = "southwest_side" value = "Southwest Side" onClick = "openPage(id)"></li>
+          <li><input type = "button" class="plot_button" style="background-color:rgb(127, 127, 0);" name = "south side" id = "south_side" value = "South Side" onClick = "openPage(id)"></li>
+          <li><input type = "button" class="plot_button" style="background-color:rgb(255, 127, 127);" name = "far southwest side" id = "far_southwest_side" value = "Far Southwest Side" onClick = "openPage(id)"></li>
+          <li><input type = "button" class="plot_button" style="background-color:rgb(255, 0, 127);" name = "far southeast side" id = "far_southeast_side" value = "Far Southeast Side" onClick = "openPage(id)"></li>
+        </ul>
+      </li>
 
-    <li width="200px" height="450px">
-      <iframe src="maps/map_chicago_regions_colored.html" border-radius="20px" height="90%" width="120%" frameBorder="0" overflow="hidden"></iframe>
-    </li>
+      <li width="200px" height="450px">
+        <iframe src="maps/map_chicago_regions_colored.html" border-radius="20px" height="90%" width="120%" frameBorder="0" overflow="hidden"></iframe>
+      </li>
+    </ul>
+
+    <p>To further analyse the indicator of households below poverty line, we will now compare it to the average per capita income inside same community areas. As a plot depicting the poverty indices of community areas would be hard to geographically interpret, we now introduce the notion of <i>region</i> as defined by the city of Chicago and explained on this <a href="https://en.wikipedia.org/wiki/Community_areas_in_Chicago">Wikipedia page</a>. There are 9 regions in Chicago, and each one of them contains a subset of community areas. It is easier to visualize the households below poverty line w.r.t the average per capita inside regions. You can click on the region names in the legend to put in evidence the community areas of the selected region on the plot. Hover over a point in the plot to see the name of the community area.
+     Community area per capita income with respect to households below poverty</p>
   </div>
+
 
   <hr>
 

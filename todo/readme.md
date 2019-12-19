@@ -1,22 +1,13 @@
-# TODO
+- Jose : start at Quantity of food inspections vs. \\some socioeconomic factor goes here until "Percentage of failing Restaurants and Stores vs. Percentage of Households below Poverty line" (excluded, but finish on this subject)
 
-## Report/Story:
+- Raphael : Community area per income below poverty : explain more on regions and plot
 
-1. Setup the structure of the website
-2. Write abstact and introduction
-3. Add some basic visualizations/data for food inspections. Maybe also add some information of socioeconomic factors
-4. Report on Research Questions/Observations
-    - Socioeconomics vs. number of inspections
-    - Maybe analyze types of violations
-    - Look into the relation between the type of establishment and the related risk
-    - Is there a bias in inspections
-5. Conclusion
-6. Maybe plot maps over time
-7. Make Site vizually more pleasing
- 
- ## Notebook: 
- 
-* Look into correlations of food inspetions with:
-  - Socioeconomic factors
-  - The type of establishment
-* Look into the different types of violations
+- Mohammed : Conclusion 
+
+- Florian : Introduction
+
+- General : 
+	- clean notebook -> when big chunks of code, create a new python file in "utils" and move them to functions there
+					 -> add comments and explanations (especially in predictions part)
+	- Move the stuff in /website
+	- The README in milestone 3 shall be updated detailing the contributions of all group members (including who will work on the final presentation).
