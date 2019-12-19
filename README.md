@@ -47,6 +47,12 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 
 4) Write a data story/report.
 
+# Contributions
+Florian Wiedemair : parts of webscraping unknown locations
+Mohamed Ndoye :
+Raphael Strebel : Cleaning of databases, parts of written analysis in the data story, parts of webscraping unknown locations, interactive "per capita income wrt households below poverty line" plot
+Jose Garrido Ramas :
+
 # Structure of the code
 The data is in the ```data``` folder, the code is in the ```src``` folder. The ```src/project.ipynb``` notebook contains the pipeline of the project, with multiple references to ```src/utils``` where helper functions can be found (to avoid overloading the notebook).
 
