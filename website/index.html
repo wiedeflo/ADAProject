@@ -194,7 +194,8 @@ width:1600px;
             <button class="ui button" id = "perc_poverty_btn">Poverty</button>
           </div>
           <h6 align="left" style="margin-top:20px">Explanation</h6>
-          <p class="w3-text-grey" align="justify" id="intro_socio">Community areas around the center have the highest per capita income, but even there the difference is noticeable. One can check that Near North Side, Lincoln Park and Loop have the largest average per capita incomes of approximately 88'700$, 71'500$ and 65'500$ resp. which still shows a great difference. Indeed, Near North Side has average per capita income of roughly 30% more than Loop even though both are neighbours! Slightly to the south, between Near South Side and its neighbour Armour Square, the difference even larger, the first having an average per capita income of 59'000$ while the second only has around 16'000$.</p><br>
+          <p class="w3-text-grey" align="justify" id="intro_socio">Community areas around the center have the highest per capita income, but even there the difference is noticeable. One can check that <i>Near North Side, Lincoln Park</i> and <i>Loop</i> have the largest average per capita incomes of approximately 88'700$, 71'500$ and 65'500$ resp. which still shows a great difference. Indeed, <i>Near North Side</i> has average per capita income of roughly 30% more than <i>Loop</i> even though both are neighbours! Slightly to the south, between <i>Near South Side</i> and its neighbour <i>Armour Square</i>, the difference even larger, the first having an average per capita income of 59'000$ while the second only has around 16'000$.</p><br>
+
         </div>
       </div>
   </div>
@@ -509,6 +510,8 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
   });
 
 
+   per_capita_income_text = "Community areas around the center have the highest per capita income, but even there the difference is noticeable. One can check that " + "Near North Side, Lincoln Park".italics() + " and " + "Loop".italics() + " have the largest average per capita incomes of approximately 88'700$, 71'500$ and 65'500$ resp. which still shows a great difference. Indeed," + " Near North Side ".italics() + "has average per capita income of roughly 30% more than " + "Loop".italics() + " even though both are neighbours! Slightly to the south, between" + " Near South Side".italics() + " and its neighbour " + "Armour Square".italics() + ", the difference even larger, the first having an average per capita income of 59'000$ while the second only has around 16'000$."
+
    $("#pc_income_2010_btn").click(function() {
     $intro_socio_map.attr('src',"maps/per_capita_income.html");
     $("#le_2010_btn").removeClass("ui primary button");
@@ -517,10 +520,10 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
     $("#perc_poverty_btn").addClass("ui button");
     $("#pc_income_2010_btn").removeClass("ui button");
     $("#pc_income_2010_btn").addClass("ui primary button");
-    $("#intro_socio").text("\
-    Community areas around the center have the highest per capita income, but even there the difference is noticeable. One can check that Near North Side, Lincoln Park and Loop have the largest average per capita incomes of approximately 88'700$, 71'500$ and 65'500$ resp. which still shows a great difference. Indeed, Near North Side has average per capita income of roughly 30% more than Loop even though both are neighbours! Slightly to the south, between Near South Side and its neighbour Armour Square, the difference even larger, the first having an average per capita income of 59'000$ while the second only has around 16'000$. \
-    ");
+    $("#intro_socio").html(per_capita_income_text);
   });
+
+   life_exp_text = "The frightening differences in life expectancies between community areas of Chicago is one of the reasons we chose this project. As can be seen on the map, the city center seems to do well with life expectancies in the range of 80-85 years. The communities in the diagonals from the center to the north-west and to the south-west also show high life expectancies. However this value drops dangerously for communities in between the diagonals, and for a cluster of communities in the center-south side : " + "West Englewood, Englewood, Greater Grand Crossing, Fuller Park".italics() + " and " + "Washington Park".italics() + ". This last community area has a life expectancy of 68.9 years, even though its eastern neighbour's (" + "Hide Park".italics() + ") is 82.3 years.";
 
    $("#le_2010_btn").click(function() {
     $intro_socio_map.attr('src',"maps/life_exp_2010.html");
@@ -530,10 +533,10 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
     $("#perc_poverty_btn").addClass("ui button");
     $("#le_2010_btn").removeClass("ui button");
     $("#le_2010_btn").addClass("ui primary button");
-    $("#intro_socio").text("\
-    The frightening differences in life expectancies between community areas of Chicago is one of the reasons we chose this project. As can be seen on the map, the city center seems to do well with life expectancies in the range of 80-85 years. The communities in the diagonals from the center to the north-west and to the south-west also show high life expectancies. However this value drops dangerously for communities in between the diagonals, and for a cluster of communities in the center-south side : West Englewood, Englewood, Greater Grand Crossing, Fuller Park and Washington Park. This last community area has a life expectancy of 68.9 years, even though its eastern neighbour's (Hide Park) is 82.3 years.\
-    ");
+    $("#intro_socio").html(life_exp_text);
   });
+
+   povery_text = "This map shows the precentage of households below the poverty line in all community areas. One oddity that we notice is that the areas with highest per capita incomes are not the ones with least percentage of households under the poverty line. Indeed, when hovering over the areas of the city center, namely " + "Near North Side, Lincoln Park".italics() + " and " + "Loop".italics() + ", we see that this indicator shows percentages of between roughly 13 and 15. This is still relatively high as some areas on the edge of the city limits exhibit much lower percentages of around 5-10. For example taking the two areas " + "Garfield Ridge".italics() + " and " + "Clearing".italics() + ", located on the western limit of the city, towards the center-south side, both have low ratios of households below the poverty line of 8.8-8.9% but their per capita incomes are around 26000$, which is quite low. Multiple other examples can be found on the same comparison, and we will go deeper into this particular comparison later in the story, but it is interesting to get an early overview of the subject."
 
    $("#perc_poverty_btn").click(function() {
     $intro_socio_map.attr('src',"maps/housholds_below_poverty_perc.html");
@@ -543,9 +546,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
     $("#pc_income_2010_btn").addClass("ui button");
     $("#perc_poverty_btn").removeClass("ui button");
     $("#perc_poverty_btn").addClass("ui primary button");
-    $("#intro_socio").text("\
-    This map shows the precentage of households below the poverty line in all community areas. One oddity that we notice is that the areas with highest per capita incomes are not the ones with least percentage of households under the poverty line. Indeed, when hovering over the areas of the city center, namely Near North Side, Lincoln Park and Loop, we see that this indicator shows percentages of between roughly 13 and 15. This is still relatively high as some areas on the edge of the city limits exhibit much lower percentages of around 5-10. For example taking the two areas Garfield Ridge and Clearing, located on the western limit of the city, towards the center-south side, both have low ratios of households below the poverty line of 8.8-8.9% but their per capita incomes are around 26000$, which is quite low. Multiple other examples can be found on the same comparison, and we will go deeper into this particular comparison later in the story, but it is interesting to get an early overview of the subject. \
-    ");
+    $("#intro_socio").html(povery_text);
   });
 </script>
 </html>
