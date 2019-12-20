@@ -51,11 +51,11 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 4) Write a data story/report.
 
 # Contributions
-Florian Wiedemair : parts of webscraping unknown locations, parts of map visualization, parts of website design, parts of written analysis
-Mohamed Ndoye :
-Raphael Strebel : Cleaning of databases, parts of written analysis in the data story, parts of webscraping unknown locations, interactive "per capita income wrt households below poverty line" plot
+Florian Wiedemair : parts of webscraping unknown locations, parts of map visualization, parts of website design, parts of written analysis\
+Mohamed Ndoye : \
+Raphael Strebel : Cleaning of databases, parts of written analysis in the data story, parts of webscraping unknown locations, interactive "per capita income wrt households below poverty line" plot\
 Jose Garrido Ramas : Parts of written analysis in the data story, ML part to predict if a facility will get inspected, 
-correlation between socioeconomic indicators, correlation between socio economic indicators and food inspection results.
+correlation between socioeconomic indicators, correlation between socio economic indicators and food inspection results.\
 Everyone will work on the final presentation.
 
 # Structure of the code
