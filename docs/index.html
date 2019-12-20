@@ -99,7 +99,7 @@ width:1600px;
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="#food_inspections" class="w3-bar-item w3-button">Chicago Food Inspections</a>
+    <a href="#food_inspections" class="w3-bar-item w3-button" >Chicago Food Inspections</a>
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="#introduction" class="w3-bar-item w3-button">Introduction</a>
@@ -115,7 +115,7 @@ width:1600px;
   <div class="w3-display-middle w3-padding-large" style="color: white; font-size: 200px;font-weight: 1000;  margin-left: auto;
   margin-right: auto;">
     <h1 class="w3-xxxlarge" style="text-align: center; margin-left: auto;
-    margin-right: auto;">Food Inspections in Chicago</h1>
+    margin-right: auto; text-shadow: 2px 4px 2px rgba(0,0,0,0.3);">Food Inspections in Chicago</h1>
   </div>
   <script src="jquery.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -254,7 +254,7 @@ width:1600px;
 			(((here do a bar plot with the top 5 and bottom 5 variables the model looks at?)))
       </div>
       <div class="w3-col m6 w3-padding-large vertical-align">
-        <iframe src="img/corr_socio_good.html" frameBorder="0" class = "frame-class"></iframe>
+        <iframe src="img/bar_coeff.html" frameBorder="0" class = "frame-class" scrolling="no" style="height: 455px;"></iframe>
       </div>
     </div>
 
@@ -428,7 +428,8 @@ width:1600px;
     $("#average_result_btn").addClass("ui button");
     $("#average_result_exp").text("\
     This map displays the average risk, which is determined in each inspection, per area. \
-    This feature describes the risk of an establishment of adversely affecting the public’s health.\
+    This feature describes the risk of an establishment of adversely affecting the public’s health. \\
+    We can see similar patterns as in the map about results.\
     ");
   });
 
