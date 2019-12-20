@@ -209,43 +209,11 @@ width:1600px;
   <div class="w3-row w3-padding-64" id="story">
 
     <h1 class="w3-center">Our Story</h1><br>
-  <!--   Moved to the introduction
-     <div class = "story-block">
-      <div class="w3-col m6 w3-padding-large text-left vertical-align">
-        <h4 align="left">Number of Inspections</h4>
-        <p class="w3-text-grey" align="justify">The heatmap shows the number of inspections on the area we are focusing on and determined before. We can see that the more we approach the city center of Chicago, the higher the number of inspections. <br>However, it is also curious to see that in the north of Chicago, the number of inspections is higher than in the south. This could be due to a higher amount of establishment in this area; we check this below.</p><br>
-      </div>
-      <div class="w3-col l6 w3-padding-large vertical-align">
-        <iframe src="maps/num_inspections.html" class = "frame-class" frameBorder="0"></iframe>
-      </div>
-    </div>
-
-    <div class = "story-block">
-      <div class="w3-col m6 w3-padding-large vertical-align">
-        <iframe src="maps/num_establishments.html" frameBorder="0" class = "frame-class"></iframe>
-      </div>
-      <div class="w3-col m6 w3-padding-large text-right vertical-align">
-        <h4 align="left">Number of Establishments</h4>
-        <p class="w3-text-grey" align="justify">The heatmap shows the number of establishments on the area we want to analyze. Same as before, we observe that the more we approach the city center or the north of the city, the higher the number of establishments. Indeed, the number of inspections is correlated with the number of establishments; the more establishments we have on a given area, the higher the inspections will be on that area.</p><br>
-      </div>
-    </div>-->
-
-  <!-- Not sure where to use this one at the moment
-    <div class = "story-block">
-      <div class="w3-col l6 w3-padding-large text-left vertical-align">
-        <h4 align="left">Average risk per inspection for each area</h4>
-        <p class="w3-text-grey" align="justify">The heatmap shows the average risk of the establishments for each community area. The risk of an establishment shows how it could potentially affect the public's health with 1 being the highest and 3 the lowest. Furthermore, <b>high risk establishments are inspected more frequently that low risk establishments</b>.</p><br>
-      </div>
-      <div class="w3-col l6 w3-padding-large vertical-align">
-        <iframe src="maps/average_risk.html" frameBorder="0" class = "frame-class"></iframe>
-      </div>
-    </div>-->
-
 
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large text-left vertical-align">
           <h4 align="left">Tell me how long people live in the area where you put your restaurant and I will tell you how it is performing</h4>
-          <p class="w3-text-grey" align="justify"> In the maps to the right we show the number of food inspection per establishment, the average establishment risk, and the average inspection result (where 0: fail, 1: Pass with Conditions, 2: Pass). It seems that the richer center and north have more inspections per establishment than the poorer west, and, perhaps more surprisingly,the establishment in these richer areas seem to have <b> average higher risk</b>, while also obtaining <b> average higher better results</b>: Why is it that rich areas seem to have facilities which are performing better in inspections but have on average a higher risk than the facilities in the poor areas?.
+          <p class="w3-text-grey" align="justify"> In the maps to the right we show the number of food inspections per establishment, its average risk, and its average inspection result (0 when it fails, 1 when it passes with conditions and 2 if it passes). It seems that the richer center and north have more inspections per establishment than the poorer west, and perhaps more surprisingly, the facilities in these richer areas seem to have <b>average higher risk</b>, while also obtaining <b>average higher better results</b>: Why is it that rich areas seem to have facilities which are performing better in inspections but have on average a higher risk than the facilities in the poor areas?
            <div class="ui buttons">
             <button class="ui primary button" id = "inspections_per_establishment_btn"># inspections per establishment</button>
             <div class="or"></div>
@@ -264,48 +232,14 @@ width:1600px;
       </div>
 
 
-    <!--Moved to the introduction
-    <div class = "story-block">
-      <div class="w3-col m6 w3-padding-large text-left vertical-align" >
-        <h4 align="left">Per capita income in 2010</h4>
-        <p class="w3-text-grey" align="justify">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="w3-col m6 w3-padding-large vertical-align">
-        <iframe src="maps/per_capita_income.html" frameBorder="0" class = "frame-class"></iframe>
-      </div>
-    </div>
-
-    <div class = "story-block">
-      <div class="w3-col m6 w3-padding-large vertical-align">
-        <iframe src="maps/life_exp_2010.html" frameBorder="0" class = "frame-class"></iframe>
-      </div>
-      <div class="w3-col m6 w3-padding-large text-right vertical-align" >
-        <h4 align="left">Life expectancy in 2010</h4>
-        <p class="w3-text-grey" align="justify">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      </div>
-    </div>
-
-    <div class = "story-block">
-      <div class="w3-col m6 w3-padding-large text-left vertical-align">
-        <h4 align="left">Percentage of households below the poverty line</h4>
-        <p class="w3-text-grey" align="justify">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="w3-col m6 w3-padding-large vertical-align">
-        <iframe src="maps/housholds_below_poverty_perc.html" frameBorder="0" class = "frame-class"></iframe>
-      </div>
-    </div>-->
-
-
-
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large vertical-align">
             <iframe src="img/corr_socio_good.html" frameBorder="0" class = "frame-class"></iframe>
           </div>
       <div class="w3-col m6 w3-padding-large text-left vertical-align">
         <h4 align="left">Facilities in rich areas: More risky, but better performing?</h4>
-        <p class="w3-text-grey" align="justify">Indeed, our intution by looking at the map shows up in the correlation numbers as well: The correlation numer between every good social indicator and the average number of inspections or the risk is positive, and the correlation number between every bad social indicator and the average number of inspections or the risk is negative. If you look at the average inspection result, the sign is the opposite. There is also some weak positive and negative correlations (between 0.1 and 0.3) that appear.
-
-
+        <p class="w3-text-grey" align="justify">Indeed, our intution by looking at the map shows up in the correlation numbers as well: 
+        	<br>The correlation value between every good social indicator and the average number of inspections is positive. The same can be said for good social indicators and the risk of a facility. Furthermore the correlation number between every bad social indicator and the average number of inspections or the risk is negative. If you look at the average inspections result, the sign is opposite. There are also some weak positive and negative correlations (between 0.1 and 0.3) that appear.
       </div>
      
     </div>
@@ -314,10 +248,10 @@ width:1600px;
       <div class="w3-col m6 w3-padding-large text-left vertical-align">
         <h4 align="left">Will you get inspected in 2018?</h4>
         <p class="w3-text-grey" align="justify">
-            We try and use ML to, based on a restaurants previous history and some of its characteristics, predict whether it will get inspected in 2018. Using logistic regression and Monte Carlo crossvalidation with 1000 iterations we estimate a validation set accuracy of 61% (classes are balanced: We chose the period so that approximetaly half the facilities would get inspected at that time and half wouldn't).
+            We try and use ML to, based on a restaurant's previous history and some of its characteristics, predict whether it will get inspected in 2018. Using logistic regression and Monte Carlo cross-validation with 1000 iterations, we estimate a validation set accuracy of 61% (classes are balanced: We chose the period so that approximetaly half the facilities would get inspected at that time and half wouldn't).
 
-However, it is not in the accuracy that the interest of this exercise lays, but in the weights the model assigns to each input variable, both categorical (after 1 hot encoding) and numerical (to which we apply MinMaxScaler) variables. The top 5 variables contributing positively are N_INSPECTIONS, AVERAGE_RISK, SHARED KITCHEN, SHELTER, HOSPITAL. The bottom 5 variables are LONG TERM CARE FACILITY, DAYCARE COMBO 1586, AVERAGE_RESULT, WRIGLEY ROOFTOP AND BAR/GRILL.
-(((here do a bar plot with the top 5 and bottom 5 variables the model looks at?)))
+			However, it is not in the accuracy that the interest of this exercise lays, but in the weights the model assigns to each input variable, both categorical (after 1 hot encoding) and numerical (to which we apply MinMaxScaler) variables. The top 5 variables contributing positively are N_INSPECTIONS, AVERAGE_RISK, SHARED KITCHEN, SHELTER, HOSPITAL. The bottom 5 variables are LONG TERM CARE FACILITY, DAYCARE COMBO 1586, AVERAGE_RESULT, WRIGLEY ROOFTOP AND BAR/GRILL.
+			(((here do a bar plot with the top 5 and bottom 5 variables the model looks at?)))
       </div>
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="img/corr_socio_good.html" frameBorder="0" class = "frame-class"></iframe>
@@ -346,9 +280,6 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
     </div>
 
   </div>
-
-  <!--<div width=1000px height=1000px> -->
-    <!--<iframe src="figures/comm_area_per_income_below_poverty.html" width="100%" height="750" frameBorder="0"></iframe> -->
 
 </div>
 
