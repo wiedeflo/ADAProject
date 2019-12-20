@@ -1,7 +1,7 @@
 '''
 File name: constants.py
 Date created: 03/11/2019
-Date last modified: 24/11/2019
+Date last modified: 20/12/2019
 Python Version: 3.7.4
 Contains constants on the database file paths, columns names, Chicago addresses or locations, etc
 '''
