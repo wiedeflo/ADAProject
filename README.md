@@ -4,7 +4,7 @@
 Our Data Story is available at : https://wiedeflo.github.io/ADAProject/
 
 # Note
-In the notebook and the data story, maps and plotly plots don't always show on Chrome, however they should be displayed on Firefox. We put the ```project.html``` in the repo so that you can see them in case they don't show in your notebooks. 
+In the notebook and the data story, maps and plotly plots don't always show on Chrome, however they should be displayed on Firefox. We put the ```project.html``` in the repo so that you can see them in case they don't show in your notebooks.
 
 # Abstract
 Chicago is a notoriously unequal city: Passengers travelling on its red metro line have life expectancies that vary by 30 years depending on their stop, according to The Economist. We want to investigate how geographical socio-economic divisions in Chicago reflect in food inspections in two ways: results to food inspections, and quantities of food inspections. By analysing results to food inspections, we want to find out which areas are performing better and which are performing worse, and compare this to measures of the socio-economic divide. By inspecting the quantity of inspections per area, we hope to gain insight on a potential bias in the choice of inspected establishment and whether the chances of an establishment getting inspected depend only on its performance or also on its location.
@@ -52,9 +52,9 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 
 # Contributions
 Florian Wiedemair : parts of webscraping unknown locations, parts of map visualization, parts of website design, parts of written analysis\
-Mohamed Ndoye : \
+Mohamed Ndoye : Parts of website design (especially the particles and some maps positionning), comments and spell check in the data story, parts of conclusion\
 Raphael Strebel : Cleaning of databases, parts of written analysis in the data story, parts of webscraping unknown locations, interactive "per capita income wrt households below poverty line" plot\
-Jose Garrido Ramas : Parts of written analysis in the data story, ML part to predict if a facility will get inspected, 
+Jose Garrido Ramas : Parts of written analysis in the data story, ML part to predict if a facility will get inspected,
 correlation between socioeconomic indicators, correlation between socio economic indicators and food inspection results.\
 Everyone will work on the final presentation.
 
@@ -66,7 +66,7 @@ The data is in the ```data``` folder, the code is in the ```src``` folder. The `
 2) Any ideas for further analysis ?
 3) We have many maps, do you think some of them are unnecessary ?
 4) About machine learning we plan on doing for the next milestone, do you have any advice on what we proposed, or any ideas what else we could do ?
-5) Any feedback is more than welcome :) 
+5) Any feedback is more than welcome :)
 
 # Libraries
 pandas \
