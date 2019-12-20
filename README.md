@@ -4,7 +4,7 @@
 Our Data Story is available at : https://wiedeflo.github.io/ADAProject/
 
 # Note
-The maps and the plotly plot don't always show on Chrome, however they should be displayed on Firefox. We put the ```project.html``` in the repo so that you can see them in case they don't show in your notebooks.
+In the notebook and the data story, maps and plotly plots don't always show on Chrome, however they should be displayed on Firefox. We put the ```project.html``` in the repo so that you can see them in case they don't show in your notebooks. 
 
 # Abstract
 Chicago is a notoriously unequal city: Passengers travelling on its red metro line have life expectancies that vary by 30 years depending on their stop, according to The Economist. We want to investigate how geographical socio-economic divisions in Chicago reflect in food inspections in two ways: results to food inspections, and quantities of food inspections. By analysing results to food inspections, we want to find out which areas are performing better and which are performing worse, and compare this to measures of the socio-economic divide. By inspecting the quantity of inspections per area, we hope to gain insight on a potential bias in the choice of inspected establishment and whether the chances of an establishment getting inspected depend only on its performance or also on its location.
