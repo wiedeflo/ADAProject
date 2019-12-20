@@ -166,7 +166,7 @@ width:1600px;
             The heatmap shows the number of inspections on the area we are focusing on.
             We can see that the more we approach the city center of Chicago, the higher the number of inspections.
             However, it is also curious to see that in the north of Chicago, the number of inspections is higher than in the south.
-             This could be due to a higher amount of establishment in this area; we check this in the other map.
+             This could be due to a higher amount of establishments in this area; we check this in the other map.
           </p>
           <br>
         </div>
@@ -213,7 +213,7 @@ width:1600px;
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large text-left vertical-align">
           <h4 align="left">Analysing food inspections</h4>
-          <p class="w3-text-grey" align="justify"> In the maps to the right we show the number of food inspections per establishment, its average risk, and its average inspection result (0 when it fails, 1 when it passes with conditions and 2 if it passes). It seems that the richer center and north have more inspections per establishment than the poorer west, and perhaps more surprisingly, the facilities in these richer areas seem to have <b>average higher risk</b>, while also obtaining <b>average higher better results</b>: Why is it that rich areas seem to have facilities which are performing better in inspections but have on average a higher risk than the facilities in the poor areas?
+          <p class="w3-text-grey" align="justify">To start, we want to take a look at the realtive number of inspections and the results of those. In the maps to the right we show the number of food inspections per establishment, its average risk, and its average inspection result (0 when it fails, 1 when it passes with conditions and 2 if it passes). It seems that the richer center and north have more inspections per establishment than the poorer west, and perhaps more surprisingly, the facilities in these richer areas seem to have <b>average higher risk</b>, while also obtaining <b>average higher better results</b>: Why is it that rich areas seem to have facilities which are performing better in inspections but have on average a higher risk than the facilities in the poor areas?
            <div class="ui buttons">
             <button class="ui primary button" id = "inspections_per_establishment_btn"># inspections per establishment</button>
             <div class="or"></div>
@@ -249,8 +249,11 @@ width:1600px;
         <h4 align="left">Will you get inspected in 2018?</h4>
         <p class="w3-text-grey" align="justify">
             We try and use ML to, based on a restaurant's previous history and some of its characteristics, predict whether it will get inspected in 2018. Using logistic regression and Monte Carlo cross-validation with 1000 iterations, we estimate a validation set accuracy of 61% (classes are balanced: We chose the period so that approximately half of the facilities would get inspected at that time and half wouldn't).
-
-			However, it is not in the accuracy that the interest of this exercise lays, but in the weights the model assigns to each input variable, both categorical (after 1 hot encoding) and numerical (to which we apply MinMaxScaler) variables. The top 5 variables contributing positively are the number of inspections, the average risk, and whether the facility is a shared kitchen, mobile desserts vendor, or a hospital. The 5 variables contributing the most in a negative way are whether it is a restaurant/bar, grocery store/taqueria, the average result, and if it is a day care combo or long term care facility. It is surprising that the average result contributes negatively: Facilities performing worse in the past are less likely to get inspected again.
+      However, it is not in the accuracy that the interest of this exercise lays, but in the weights the model assigns to each input variable, both categorical (after 1 hot encoding) and numerical (to which we apply MinMaxScaler) variables. The top 5 variables contributing positively are the number of inspections, the average risk, 
+      and whether the facility is a daycare, a special event, or a convenience store. The 5 variables contributing the most in a negative way are whether it is a liquor store, banquet, paleteria, the average result, and if it is a long term care facility. Unsurprisingly, we can also see that better performing facilities  (wrt their result) are less likely to be inspected.
+      This shows that some establishment types are slightly more likely to be inspected than others. 
+      We already saw in the description of risk that establishments with risk of adversely affecting the public’s health should get inspected more frequently. 
+      Therefore it makes sense that for example daycare centers or hospitals (which is in the top 10 positive contributors) would be inspected more frequently.
       </div>
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="img/bar_coeff.html" frameBorder="0" class = "frame-class" scrolling="no" style="height: 455px;"></iframe>
@@ -265,10 +268,10 @@ width:1600px;
         <iframe src="maps/map_restaurant_pass.html" id = "restaurant_map" frameBorder="0" class = "frame-class"></iframe>
       </div>
       <div class="w3-col m6 w3-padding-large text-right vertical-align">
-        <h4 align="left">Percentage of failing Restaurants and Stores vs. Percentage of Households below Poverty line</h4>
-        <p class="w3-text-grey" align="justify">There is a correlation between the percentage of failed
+        <h4 align="left">Comparing Restaurant/Store results with Poverty</h4>
+        <p class="w3-text-grey" align="justify">As the tendency to inspect some facilities more often than others might distort our results, we decided to focus only on the 2 most common facility types in this section: restaurants and stores. Indeed we can see that there is a correlation between the percentage of failed
           inspections of restaurants and stores and the percentage of households below the poverty line in areas of Chicago. Looking at the areas with highest percentage of failing restaurants and stores: Oakland, Washington Park and Riverdale, all three of them have over 40% of failed inspections. The percentage of households below the poverty line is also around 40% for the first two areas and over 56% for the last (!). It is curious that neighbour areas sometimes perform much better in both domains. For example Douglas, the northern neighbour of Oakland, has only around 21% failed inspections in restaurants and stores, and 30% households below poverty line. These numbers aren't great, but they are a lot better than its southern neighbour.
-          <br>Of course the relation put in evidence here is not a dependence, but both features are at first glance indicators of how attractive a community can be. A community where more than a third of inspections fail might not be the most appealing, and the same goes for the percentage of households below the poverty line. The motivation behind keeping only restaurants and stores is that facilities such as hospitals or schools present higher risks, and are therefore more severely inspected. As those are more rare than restaurants and stores they might add some bias to specific communities, and so we choose to focus only on the latters.
+          <br>Of course the relation put in evidence here is not a dependence, but both features are at first glance indicators of how attractive a community can be. A community where more than a third of inspections fail might not be the most appealing, and the same goes for the percentage of households below the poverty line.
         </p>
         <div class="ui buttons">
             <button class="ui primary button" id = "restaurant_button">Restaurants/Stores</button>
@@ -335,7 +338,7 @@ width:1600px;
       <p class="w3-large">Our goal was to investigate how geographical socio-economic divisions in Chicago reflect on food inspections. In order to do that, we analysed the results and the quantities of food inspections. By crossing this information with socio-economic factors, such as the per-capita income and life expectancy of each neighbourhood, we were able to gain useful insight on the subject.<br>
         The results of the food inspections carried out show how the establishments in the richer areas are inspected more often than in poorer ones, and present higher average risk while obtaining better results to inspections. This shows that establishments in poorer areas tend to have bad results. Furthermore, we found out that facilities with higher risk tend to perform better, as can be seen in the correlation between the two variables. It could be because high-risk facilities (hospitals, schools,...) are in rich areas, which usually perform better, or because they tend to be particularly careful. <br>
        
-        Finally, we used machine learning to predict whether or not a facility would get inspected in 2018, and determined the features that contribute positively on the result. As expected, the risk contributes positively to the probability of a facility getting inspected. Surprisingly, the average result contributes negatively to this probability. <br>
+        Finally, we used machine learning to predict whether or not a facility would get inspected in 2018, and determined the features that contribute positively on the result. As expected, the risk contributes positively and good results negatively to the probability of a facility getting inspected. <br>
        
 As a final conclusion, areas with better socioeconomic indicators have more high-risk facilities (such as schools, hospitals, hotels, nursing homes, etc), and also perform better in inspections than areas with lower socioeconomic status: the socioeconomic divide of Chicago also manifests itself in the results to food inspections.
        
@@ -390,7 +393,7 @@ As a final conclusion, areas with better socioeconomic indicators have more high
      The heatmap shows the number of inspections on the area we are focusing on and determined before. \
      We can see that the more we approach the city center of Chicago, the higher the number of inspections. \
             However, it is also curious to see that in the north of Chicago, the number of inspections is higher than in the south.\
-             This could be due to a higher amount of establishment in this area; we check this in the other map.\
+             This could be due to a higher amount of establishments in this area; we check this in the other map.\
     ");
   });
 
@@ -484,7 +487,7 @@ As a final conclusion, areas with better socioeconomic indicators have more high
     $("#intro_socio").html(life_exp_text);
   });
 
-   povery_text = "This map shows the precentage of households below the poverty line in all community areas. One oddity that we notice is that the areas with highest per capita incomes are not the ones with least percentage of households under the poverty line. Indeed, when hovering over the areas of the city center, namely " + "Near North Side, Lincoln Park".italics() + " and " + "Loop".italics() + ", we see that this indicator shows percentages of between roughly 13 and 15. This is still relatively high as some areas on the edge of the city limits exhibit much lower percentages of around 5-10. For example taking the two areas " + "Garfield Ridge".italics() + " and " + "Clearing".italics() + ", located on the western limit of the city, towards the center-south side, both have low ratios of households below the poverty line of 8.8-8.9% but their per capita incomes are around 26'000$, which is quite low. Multiple other examples can be found on the same comparison, and we will go deeper into this particular comparison later in the story, but it is interesting to get an early overview of the subject."
+   povery_text = "This map shows the precentage of households below the poverty line in all community areas. For reference at the time the data was collected the federal poverty threshold in the US was 11 670$ per year for a single household. One oddity that we notice is that the areas with highest per capita incomes are not the ones with least percentage of households under the poverty line. Indeed, when hovering over the areas of the city center, namely " + "Near North Side, Lincoln Park".italics() + " and " + "Loop".italics() + ", we see that this indicator shows percentages of between roughly 13 and 15. This is still relatively high as some areas on the edge of the city limits exhibit much lower percentages of around 5-10. For example taking the two areas " + "Garfield Ridge".italics() + " and " + "Clearing".italics() + ", located on the western limit of the city, towards the center-south side, both have low ratios of households below the poverty line of 8.8-8.9% but their per capita incomes are around 26'000$, which is quite low. Multiple other examples can be found on the same comparison, and we will go deeper into this particular comparison later in the story, but it is interesting to get an early overview of the subject."
 
    $("#perc_poverty_btn").click(function() {
     $intro_socio_map.attr('src',"maps/housholds_below_poverty_perc.html");

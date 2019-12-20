@@ -1,4 +1,0 @@
-The map on the left displays the percentage of households below the poverty line for each area.
-For reference at the time of the data was collected the federal poverty threshold in the US was 11 670$ per year for a single household.
-We can see smaller clusters of areas with high poverty in the south, the mid-west and around Fuller Park, where in some areas there are more than 50% of the households below poverty.
-In contrast to that in the south-east and especially the north we find areas where that number can be below 4%. 
