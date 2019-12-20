@@ -250,7 +250,7 @@ width:1600px;
         <p class="w3-text-grey" align="justify">
             We try and use ML to, based on a restaurant's previous history and some of its characteristics, predict whether it will get inspected in 2018. Using logistic regression and Monte Carlo cross-validation with 1000 iterations, we estimate a validation set accuracy of 61% (classes are balanced: We chose the period so that approximately half of the facilities would get inspected at that time and half wouldn't).
 
-			However, it is not in the accuracy that the interest of this exercise lays, but in the weights the model assigns to each input variable, both categorical (after 1 hot encoding) and numerical (to which we apply MinMaxScaler) variables. The top 5 variables contributing positively are N_INSPECTIONS, AVERAGE_RISK, SHARED KITCHEN, SHELTER, HOSPITAL. The bottom 5 variables are LONG TERM CARE FACILITY, DAYCARE COMBO 1586, AVERAGE_RESULT, WRIGLEY ROOFTOP AND BAR/GRILL.
+			However, it is not in the accuracy that the interest of this exercise lays, but in the weights the model assigns to each input variable, both categorical (after 1 hot encoding) and numerical (to which we apply MinMaxScaler) variables. The top 5 variables contributing positively are the number of inspections, the average risk, and whether the facility is a shared kitchen, mobile desserts vendor, or a hospital. The 5 variables contributing the most in a negative way are whether it is a restaurant/bar, grocery store/taqueria, the average result, and if it is a day care combo or long term care facility. It is surprising that the average result contributes negatively: Facilities performing worse in the past are less likely to get inspected again.
       </div>
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="img/bar_coeff.html" frameBorder="0" class = "frame-class" scrolling="no" style="height: 455px;"></iframe>
@@ -333,9 +333,12 @@ width:1600px;
   <div class="w3-content" style="max-width:1200px" id="conclusion">
       <h1 class="w3-center">Conclusion</h1><br>
       <p class="w3-large">Our goal was to investigate how geographical socio-economic divisions in Chicago reflect on food inspections. In order to do that, we analysed the results and the quantities of food inspections. By crossing this information with socio-economic factors, such as the per-capita income and life expectancy of each neighbourhood, we were able to gain useful insight on the subject.<br>
-        The results of the food inspections carried out show how the establishments in the richer areas are more inspected than in poorer ones, and present higher average risk while obtaining better results. This shows that establishments in poorer areas tend to have bad results. Furthermore, we found out that facilities with higher risk are performing better and we arrived to that result by analysing the correlations between them. It could be because high-risk facilities (hospitals, schools,...) are in rich areas, which usually perform better, or because they tend to be particularly careful. <br>
-        We also saw that there is a positive correlation between the inspection results of restaurants and shops, and the life expectancy in most Chicago areas.<br>
-        Finally, we used machine learning to predict whether or not a facility would get inspected in 2018, and determined the features that contribute positively on the result.<br>
+        The results of the food inspections carried out show how the establishments in the richer areas are inspected more often than in poorer ones, and present higher average risk while obtaining better results to inspections. This shows that establishments in poorer areas tend to have bad results. Furthermore, we found out that facilities with higher risk tend to perform better, as can be seen in the correlation between the two variables. It could be because high-risk facilities (hospitals, schools,...) are in rich areas, which usually perform better, or because they tend to be particularly careful. <br>
+       
+        Finally, we used machine learning to predict whether or not a facility would get inspected in 2018, and determined the features that contribute positively on the result. As expected, the risk contributes positively to the probability of a facility getting inspected. Surprisingly, the average result contributes negatively to this probability. <br>
+       
+As a final conclusion, areas with better socioeconomic indicators have more high-risk facilities (such as schools, hospitals, hotels, nursing homes, etc), and also perform better in inspections than areas with lower socioeconomic status: the socioeconomic divide of Chicago also manifests itself in the results to food inspections.
+       
      </p>
     </div>
 
