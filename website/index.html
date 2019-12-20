@@ -134,7 +134,7 @@ width:1600px;
         </div>
         <div class="w3-col m6 w3-padding-large text-right vertical-align">
           <h4 align="left">The city of Chicago</h4>
-          <p class="w3-text-grey" align="justify"> Chicago with its approximately 2.7 million inhabitants is one of the biggest cities in the US. The city is divided into 77 community areas which are displayed on the map to the left. The notorious socio-economic divide between community areas in Chicago will become clearer throughout our data story, and makes this city particularly interesting to analyse. The city center is located on the center-east of the displayed areas, next to Lake Michigan, and is composed of the three areas <i>Near North Side, Near South Side</i> and <i>Loop</i>. You can see the the name of the community area when hovering over it. <br>\\Add more interesting facts about Chicago
+          <p class="w3-text-grey" align="justify"> Chicago with its approximately 2.7 million inhabitants is one of the biggest cities in the US. The city is divided into 77 community areas which are displayed on the map to the left. The notorious socio-economic divide between community areas in Chicago will become clearer throughout our data story, and makes this city particularly interesting to analyse. The city center is located on the center-east of the displayed areas, next to Lake Michigan, and is composed of the three areas <i>Near North Side, Near South Side</i> and <i>Loop</i>. You can see the the name of a community area when hovering over it. <br>These community areas are divided into 9 regions, but we will first focus on each specific area before diving into their relationship with other areas of the same region.
           </p><br>
         </div>
     </div>
@@ -142,9 +142,9 @@ width:1600px;
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large text-left vertical-align">
           <h4 align="left">Food inspections in Chicago</h4>
-          <p class="w3-text-grey" align="justify"> With over 7000 restaurants, Chicago is known for its diverse food culture. For example, did you know that there is a Chicago style pizza? Well now you do.
+          <p class="w3-text-grey" align="justify"> With over 7000 restaurants, Chicago is known for its diverse food culture. For example, did you know that there is a Chicago style pizza? 
            <br> In order to investigate the vast number of culinary establishments we used the <a href="https://www.kaggle.com/chicago/chicago-food-inspections">Chicago Food Inspections</a> dataset provided by Kaggle and the city of Chicago.
-           It provides information on the establishment and the results of every food inspection carried out since January 1<sup>st</sup> 2010. The maps on the right gives a raw overview of some of this data. Select below which data to display.
+           It contains information on the establishment and the results of every food inspection carried out since January 1<sup>st</sup> 2010. The maps on the right gives a raw overview of some of this data. Select below which data to display.
            <div class="ui buttons">
             <button class="ui primary button" id = "num_inspections_btn"># of inspections</button>
             <div class="or"></div>
@@ -153,7 +153,7 @@ width:1600px;
           <h6 align="left" style="margin-top:20px">Explanation</h6>
           <!-- If you change this text remeber to also change the text in the javascript at the bottom -->
           <p class="w3-text-grey" align="justify" id="intro_inspections">
-            The heatmap shows the number of inspections on the area we are focusing on and determined before.
+            The heatmap shows the number of inspections on the area we are focusing on.
             We can see that the more we approach the city center of Chicago, the higher the number of inspections.
             However, it is also curious to see that in the north of Chicago, the number of inspections is higher than in the south.
              This could be due to a higher amount of establishment in this area; we check this in the other map.
@@ -185,7 +185,7 @@ width:1600px;
             <button class="ui button" id = "perc_poverty_btn">Poverty</button>
           </div>
           <h6 align="left" style="margin-top:20px">Explanation</h6>
-          <p class="w3-text-grey" align="justify" id="intro_socio">Community areas around the center have the highest per capita income, but even there the difference is noticeable. One can check that Loop, Near North Side and Lincoln Park have the largest average per capita incomes of approximately 88'700$, 71'500$ and 65'500$, which still shows a great difference. Indeed, Near North Side has average per capita income of 30% more than Loop even thou both are neighbours! Slightly to the south, between Near South Side and its neighbour Armour Square, the difference even larger, the first having an average per capita income of 59'000$ while the second only has around 16'000$.</p><br>
+          <p class="w3-text-grey" align="justify" id="intro_socio">Community areas around the center have the highest per capita income, but even there the difference is noticeable. One can check that Near North Side, Lincoln Park and Loop have the largest average per capita incomes of approximately 88'700$, 71'500$ and 65'500$ resp. which still shows a great difference. Indeed, Near North Side has average per capita income of roughly 30% more than Loop even though both are neighbours! Slightly to the south, between Near South Side and its neighbour Armour Square, the difference even larger, the first having an average per capita income of 59'000$ while the second only has around 16'000$.</p><br>
         </div>
       </div>
   </div>
@@ -453,6 +453,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
       We observe that the more we approach the city center or the north of the city, \
       the higher the number of establishments. Indeed, the number of inspections is correlated with the number of establishments; \
       the more establishments we have on a given area, the higher the inspections will be on that area.\
+      To be clear, it is a correlation and not a dependence since some factors influence the number of inspections of a specific facility. \
     ");
   });
 
@@ -479,7 +480,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
     $("#pc_income_2010_btn").removeClass("ui button");
     $("#pc_income_2010_btn").addClass("ui primary button");
     $("#intro_socio").text("\
-    Community areas around the center have the highest per capita income, but even there the difference is noticeable. One can check that Loop, Near North Side and Lincoln Park have the largest average per capita incomes of approximately 88'700$, 71'500$ and 65'500$, which still shows a great difference. Indeed, Near North Side has average per capita income of 30% more than Loop even thou both are neighbours! Slightly to the south, between Near South Side and its neighbour Armour Square, the difference even larger, the first having an average per capita income of 59'000$ while the second only has around 16'000$. \
+    Community areas around the center have the highest per capita income, but even there the difference is noticeable. One can check that Near North Side, Lincoln Park and Loop have the largest average per capita incomes of approximately 88'700$, 71'500$ and 65'500$ resp. which still shows a great difference. Indeed, Near North Side has average per capita income of roughly 30% more than Loop even though both are neighbours! Slightly to the south, between Near South Side and its neighbour Armour Square, the difference even larger, the first having an average per capita income of 59'000$ while the second only has around 16'000$. \
     ");
   });
 
@@ -492,7 +493,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
     $("#le_2010_btn").removeClass("ui button");
     $("#le_2010_btn").addClass("ui primary button");
     $("#intro_socio").text("\
-    The huge differences in life expectancies when comparing community areas of Chicago is one of the reasons we chose this project. As can be seen on the map the city center seems to do well, with life expectancies in the range of 80-85 years. The communities in the diagonals from the center to the north-west and to the south-west also show high life expectancies. However this value drops dangerously for communities in between the diagonals, and for a cluster of communities in the center-south side : West Englewood, Englewood, Greater Grand Crossing, Fuller Park and Washington Park. This last community area has a life expectancy of 68.9 years, even thou its eastern neighbour's (Hide Park) is 82.3 years.\
+    The frightening differences in life expectancies when comparing community areas of Chicago is one of the reasons we chose this project. As can be seen on the map, the city center seems to do well with life expectancies in the range of 80-85 years. The communities in the diagonals from the center to the north-west and to the south-west also show high life expectancies. However this value drops dangerously for communities in between the diagonals, and for a cluster of communities in the center-south side : West Englewood, Englewood, Greater Grand Crossing, Fuller Park and Washington Park. This last community area has a life expectancy of 68.9 years, even though its eastern neighbour's (Hide Park) is 82.3 years.\
     ");
   });
 
