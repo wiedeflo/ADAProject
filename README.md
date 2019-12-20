@@ -4,7 +4,7 @@
 Our Data Story is available at : https://wiedeflo.github.io/ADAProject/
 
 # Note
-In the notebook and the data story, maps and plotly plots don't always show on Chrome, however they should be displayed on Firefox. We put the ```project.html``` in the repo so that you can see them in case they don't show in your notebooks.
+Please use Firefoy : In the notebook and the data story, maps and plotly plots don't always show on Chrome, however they should be displayed on Firefox. We put the ```project.html``` in the repo so that you can see them in case they don't show in your notebooks (but this file still probably won't show interactive plots).
 
 # Abstract
 Chicago is a notoriously unequal city: Passengers travelling on its red metro line have life expectancies that vary by 30 years depending on their stop, according to The Economist. We want to investigate how geographical socio-economic divisions in Chicago reflect in food inspections in two ways: results to food inspections, and quantities of food inspections. By analysing results to food inspections, we want to find out which areas are performing better and which are performing worse, and compare this to measures of the socio-economic divide. By inspecting the quantity of inspections per area, we hope to gain insight on a potential bias in the choice of inspected establishment and whether the chances of an establishment getting inspected depend only on its performance or also on its location.
@@ -46,9 +46,9 @@ The city of Chicago offers a wide variety of datasets of which we might take adv
 
 2) See what other interesting analysis can be done by combining the databases.
 
-3) Use Machine Learning to cluster establishments or predict their pass/failure evaluation.
+3) Use Machine Learning to predict their pass/failure evaluation.
 
-4) Write a data story/report.
+4) Write a data story.
 
 # Contributions
 Florian Wiedemair : parts of webscraping unknown locations, parts of map visualization, parts of website design, parts of written analysis\
@@ -59,7 +59,7 @@ correlation between socioeconomic indicators, correlation between socio economic
 Everyone will work on the final presentation.
 
 # Structure of the code
-The data is in the ```data``` folder, the code is in the ```src``` folder. The ```src/project.ipynb``` notebook contains the pipeline of the project, with multiple references to ```src/utils``` where helper functions can be found (to avoid overloading the notebook).
+The data is yours to download, put it in a ```data``` folder. The code is in the ```src``` folder. The ```src/project.ipynb``` notebook contains the pipeline of the project, with multiple references to ```src/utils``` where helper functions can be found (to avoid overloading the notebook). The website is in the ```docs``` folder. There is a ```project.html``` file in case you can't load the maps in the notebook, but this file probably won't display plotly plots.
 
 # Questions for TAa
 1) Do you think the direction we follow is the right one ?
