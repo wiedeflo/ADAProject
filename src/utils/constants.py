@@ -11,8 +11,8 @@ Contains constants on the database file paths, columns names, Chicago addresses 
 
 # Data Folder
 DATA_PATH = '../data/'
-MAPS_PATH = '../website/maps/'
-FIG_PATH = '../website/figures/'
+MAPS_PATH = '../docs/maps/'
+FIG_PATH = '../docs/figures/'
 
 # General column names
 AREA_NAME = 'community_area_name'

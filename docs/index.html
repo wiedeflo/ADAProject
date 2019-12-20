@@ -112,8 +112,10 @@ width:1600px;
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide food-header" style="max-width:1600px;min-width:500px" id="food_inspections">
   <div id="particles-js"></div>
-  <div class="w3-display-middle w3-padding-large" style="color: white; font-size: 200px;font-weight: 1000;">
-    <h1 class="w3-xxxlarge">Food Inspection in Chicago</h1>
+  <div class="w3-display-middle w3-padding-large" style="color: white; font-size: 200px;font-weight: 1000;  margin-left: auto;
+  margin-right: auto;">
+    <h1 class="w3-xxxlarge" style="text-align: center; margin-left: auto;
+    margin-right: auto;">Food Inspections in Chicago</h1>
   </div>
   <script src="jquery.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -130,12 +132,11 @@ width:1600px;
 <div class="w3-content" style="max-width:1200px">
   <h1 class="w3-center">Abstract</h1><br>
   <p class="w3-large" align="justify">Chicago is a notoriously unequal city: Passengers travelling on its red metro line have life expectancies that vary by 30 years depending on their stop, according to The Economist. We want to investigate how geographical socio-economic divisions in Chicago reflect in food inspections in two ways: results to food inspections, and quantities of food inspections. By analysing results to food inspections, we want to find out which areas are performing better and which are performing worse, and compare this to measures of the socio-economic divide. By inspecting the quantity of inspections per area, we hope to gain insight on a potential bias in the choice of inspected establishment and whether the chances of an establishment getting inspected depend only on its performance or also on its location.</p>
-
+<br>
   <hr>
 
   <!-- About Section -->
-
-  <div class="w3-row w3-padding-64"  id="introduction">
+  <div class="w3-row w3-padding-32"  id="introduction">
     <h1 class="w3-center">Introduction</h1><br>
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large vertical-align">
@@ -151,7 +152,7 @@ width:1600px;
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large text-left vertical-align">
           <h4 align="left">Food inspections in Chicago</h4>
-          <p class="w3-text-grey" align="justify"> With over 7000 restaurants, Chicago is known for its diverse food culture. For example, did you know that there is a Chicago style pizza?
+          <p class="w3-text-grey" align="justify"> With over 7000 restaurants, Chicago is known for its diverse food culture. For example, did you know that there is a Chicago style pizza? Or that Chicago hosts the worlds biggest annual food festival called "The taste of Chicago"?
            <br> In order to investigate the vast number of culinary establishments we used the <a href="https://www.kaggle.com/chicago/chicago-food-inspections">Chicago Food Inspections</a> dataset provided by Kaggle and the city of Chicago.
            It contains information on the establishment and the results of every food inspection carried out since January 1<sup>st</sup> 2010. The maps on the right gives a raw overview of some of this data. Select below which data to display.
            <div class="ui buttons">
@@ -232,14 +233,15 @@ width:1600px;
 
 
     <div class = "story-block">
+        <div class="w3-col m6 w3-padding-large vertical-align">
+            <iframe src="img/corr_socio_good.html" frameBorder="0" class = "frame-class"></iframe>
+          </div>
       <div class="w3-col m6 w3-padding-large text-left vertical-align">
         <h4 align="left">Facilities in rich areas: More risky, but better performing?</h4>
         <p class="w3-text-grey" align="justify">Indeed, our intution by looking at the map shows up in the correlation numbers as well:
         	<br>The correlation value between every good social indicator and the average number of inspections is positive. The same can be said for good social indicators and the risk of a facility. Furthermore the correlation number between every bad social indicator and the average number of inspections or the risk is negative. If you look at the average inspections result, the sign is opposite. There are also some weak positive and negative correlations (between 0.1 and 0.3) that appear.
       </div>
-      <div class="w3-col m6 w3-padding-large vertical-align">
-        <iframe src="img/corr_socio_good.html" frameBorder="0" class = "frame-class"></iframe>
-      </div>
+
     </div>
 
     <div class = "story-block">
@@ -413,9 +415,8 @@ width:1600px;
     $("#average_result_btn").removeClass("ui button");
     $("#average_result_btn").addClass("ui primary button");
     $("#average_result_exp").text("\
-  ======> This map diesplays risk <======\
      The heatmap shows the average result to inspections. \
-      We observe that the more we approach the city center or the north of the city, \
+      We observe that the more we approach the city center, the north of the city or the south-west, \
       the better the results to inspections are.");
   });
 
@@ -427,7 +428,10 @@ width:1600px;
     $("#average_risk_btn").addClass("ui primary button");
     $("#average_result_btn").removeClass("ui primary button");
     $("#average_result_btn").addClass("ui button");
-    $("#average_result_exp").text("Average risk explanation.");
+    $("#average_result_exp").text("\
+    This map displays the average risk, which is determined in each inspection, per area. \
+    This feature describes the risk of an establishment of adversely affecting the public’s health.\
+    ");
   });
 
   $("#inspections_per_establishment_btn").click(function() {
