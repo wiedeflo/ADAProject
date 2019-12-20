@@ -72,6 +72,15 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-50%);
   top: 50%;
 }
+
+.vertical-align-bot{
+  position: relative;
+  -webkit-transform: translateY(-42%);
+  -ms-transform: translateY(-42%);
+  transform: translateY(-42%);
+  top: 50%;
+}
+
 .food-header{
 background-image: url(img/food.jpg);
 background-repeat: no-repeat;
@@ -342,46 +351,46 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
 
 
 <div>
-
-    <ul id="test" class="flex-container">
-      <li>
+    <div class="w3-content" style="max-width:1200px">
         <h4 align="left">Community area per income below poverty</h4>
-        <iframe id="interactivePlot" src="figures/comm_area_per_income_below_poverty.html" width="190%" height="150%" display="block" frameBorder="0"></iframe>
-      </li>
+        <p> To further analyse the indicator of households below poverty line, we will now compare it to the average per capita income inside same community areas. As a plot depicting the poverty indices of community areas would be hard to geographically interpret, we now introduce the notion of <i>region</i> as defined by the city of Chicago and explained on this <a href="https://en.wikipedia.org/wiki/Community_areas_in_Chicago">Wikipedia page</a>. There are 9 regions in Chicago, and each one of them contains a subset of community areas. It is easier to visualize the households below poverty line w.r.t the average per capita inside regions. You can click on the region names in the legend to put in evidence the community areas of the selected region on the plot. Hover over a point in the plot to see the name of the community area.
+        <br>
+        The legend consists of all regions of Chicago, with <i>All</i> --displaying all regions-- and <i>Chicago</i> --displaying the average of the city--. Clearly the <i>Central</i> region has the highest per capita incomes and few households below the poverty line (around 15%). The <i>North Side</i> region also seems to do very well in those measures, altough the community areas <i>Avondale</i> and <i>Logan Square</i> have much lower per capita incomes (around half of the other areas in the same regions), they have roughly the same percentage of households below the poverty line. In the southernmost regions, there seems to be a greater percentage of households under the poverty line. Indeed, when analysing <i>southwest side, south side, far southwest side</i> and <i>far southeast side</i>, one can check that community areas have around 20-30% of households below poverty line (although <i>far southwest side</i> is slightly better) and the average per capita income rarely exceeds 30k and is usually around 20k, which is not a lot.
+        <br> Displaying the two poverty metrics for different regions, one can see that the community areas in regions usually seem to share similar results. However there are some exceptions, which continues to show the economic divide in the areas. This can probably be explained by the fact that most high paying jobs are in the city center, as we could see on the previous per-capita income maps, but many wealthy people live in quiet neighbourhoods outside the center. 
+    
+       </p>
+      </div>
 
-      <li>
-        <ul align="left" style="list-style: none; margin-top: 160px; margin-left: 300px;">
-          <li><input type = "button" class="plot_button" style="background-color:#4CAF50;" name = "all" id = "all" value = "All" onClick = "openPage(id)"></li>
-          <li><input type = "button" class="plot_button" style="background-color:rgb(0, 0, 0);" name = "chicago" id = "chicago" value = "Chicago" onClick = "openPage(id)"></li>
-          <li><input type = "button" class="plot_button" style="background-color:rgb(0, 127, 0);" name = "far north side" id = "far_north_side" value = "Far North Side" onClick = "openPage(id)"></li>
-          <li><input type = "button" class="plot_button" style="background-color:rgb(0, 0, 127);" name = "northwest side" id = "northwest_side" value = "Northwest Side" onClick = "openPage(id)"></li>
-          <li><input type = "button" class="plot_button" style="background-color:rgb(127, 0, 127);" name = "north side" id = "north_side" value = "North Side" onClick = "openPage(id)"></li>
-          <li><input type = "button" class="plot_button" style="background-color:rgb(0, 127, 127);" name = "west side" id = "west_side" value = "West Side" onClick = "openPage(id)"></li>
-          <li><input type = "button" class="plot_button" style="background-color:rgb(127, 0, 0);" name = "central" id = "central" value = "Central" onClick = "openPage(id)"></li>
-          <li><input type = "button" class="plot_button" style="background-color:rgb(255, 127, 0);" name = "southwest side" id = "southwest_side" value = "Southwest Side" onClick = "openPage(id)"></li>
-          <li><input type = "button" class="plot_button" style="background-color:rgb(127, 127, 0);" name = "south side" id = "south_side" value = "South Side" onClick = "openPage(id)"></li>
-          <li><input type = "button" class="plot_button" style="background-color:rgb(255, 127, 127);" name = "far southwest side" id = "far_southwest_side" value = "Far Southwest Side" onClick = "openPage(id)"></li>
-          <li><input type = "button" class="plot_button" style="background-color:rgb(255, 0, 127);" name = "far southeast side" id = "far_southeast_side" value = "Far Southeast Side" onClick = "openPage(id)"></li>
-        </ul>
-      </li>
+      <div id="test" class="w3-content" style="max-width:1400px; height:680px">
 
-      <li width="200px" height="450px">
-        <br><br><br><br><br><br><br>
-        <iframe src="maps/map_chicago_regions_colored.html" border-radius="20px" height="90%" width="120%" frameBorder="0" overflow="hidden"></iframe>
-      </li>
-    </ul>
+          <div style="max-width:1000px;  float:left; height:100%;">
+            
+            <iframe id="interactivePlot" src="figures/comm_area_per_income_below_poverty.html" scrolling="no" display="block" width="1000px" height="100%" frameborder="0"></iframe>
+          </div>
+          <div class="vertical-align-bot" style="float:left">
+            <iframe src="maps/map_chicago_regions_colored.html" style="border-radius:20px; height:500px; width:400px; overflow:hidden;" frameborder="0"></iframe>
+          </div>    
+      
+      </div>
+      <div style="margin-left: auto;
+      margin-right: auto;width: 950px;">
+      <input type = "button" class="plot_button" style="background-color:#4CAF50;" name = "all" id = "all" value = "All" onClick = "openPage(id)">
+      <input type = "button" class="plot_button" style="background-color:rgb(0, 0, 0);" name = "chicago" id = "chicago" value = "Chicago" onClick = "openPage(id)">
+      <input type = "button" class="plot_button" style="background-color:rgb(0, 127, 0);" name = "far north side" id = "far_north_side" value = "Far North Side" onClick = "openPage(id)">
+      <input type = "button" class="plot_button" style="background-color:rgb(0, 0, 127);" name = "northwest side" id = "northwest_side" value = "Northwest Side" onClick = "openPage(id)">
+      <input type = "button" class="plot_button" style="background-color:rgb(127, 0, 127);" name = "north side" id = "north_side" value = "North Side" onClick = "openPage(id)">
+      <input type = "button" class="plot_button" style="background-color:rgb(0, 127, 127);" name = "west side" id = "west_side" value = "West Side" onClick = "openPage(id)">
+      <input type = "button" class="plot_button" style="background-color:rgb(127, 0, 0);" name = "central" id = "central" value = "Central" onClick = "openPage(id)">
+      <input type = "button" class="plot_button" style="background-color:rgb(255, 127, 0);" name = "southwest side" id = "southwest_side" value = "Southwest Side" onClick = "openPage(id)">
+      <input type = "button" class="plot_button" style="background-color:rgb(127, 127, 0);" name = "south side" id = "south_side" value = "South Side" onClick = "openPage(id)">
+      <input type = "button" class="plot_button" style="background-color:rgb(255, 127, 127);" name = "far southwest side" id = "far_southwest_side" value = "Far Southwest Side" onClick = "openPage(id)">
+      <input type = "button" class="plot_button" style="background-color:rgb(255, 0, 127);" name = "far southeast side" id = "far_southeast_side" value = "Far Southeast Side" onClick = "openPage(id)">
+    </div>
 
   </div>
 
     <br><br><br><br><br><br>
-    <div class="w3-content" style="max-width:1200px">
-    <p> To further analyse the indicator of households below poverty line, we will now compare it to the average per capita income inside same community areas. As a plot depicting the poverty indices of community areas would be hard to geographically interpret, we now introduce the notion of <i>region</i> as defined by the city of Chicago and explained on this <a href="https://en.wikipedia.org/wiki/Community_areas_in_Chicago">Wikipedia page</a>. There are 9 regions in Chicago, and each one of them contains a subset of community areas. It is easier to visualize the households below poverty line w.r.t the average per capita inside regions. You can click on the region names in the legend to put in evidence the community areas of the selected region on the plot. Hover over a point in the plot to see the name of the community area.
-    <br>
-    The legend consists of all regions of Chicago, with <i>All</i> --displaying all regions-- and <i>Chicago</i> --displaying the average of the city--. Clearly the <i>Central</i> region has the highest per capita incomes and few households below the poverty line (around 15%). The <i>North Side</i> region also seems to do very well in those measures, altough the community areas <i>Avondale</i> and <i>Logan Square</i> have much lower per capita incomes (around half of the other areas in the same regions), they have roughly the same percentage of households below the poverty line. In the southernmost regions, there seems to be a greater percentage of households under the poverty line. Indeed, when analysing <i>southwest side, south side, far southwest side</i> and <i>far southeast side</i>, one can check that community areas have around 20-30% of households below poverty line (although <i>far southwest side</i> is slightly better) and the average per capita income rarely exceeds 30k and is usually around 20k, which is not a lot.
-    <br> Displaying the two poverty metrics for different regions, one can see that the community areas in regions usually seem to share similar results. However there are some exceptions, which continues to show the economic divide in the areas. This can probably be explained by the fact that most high paying jobs are in the city center, as we could see on the previous per-capita income maps, but many wealthy people live in quiet neighbourhoods outside the center. 
 
-   </p>
-  </div>
 
 
   <hr>
