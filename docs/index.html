@@ -212,7 +212,7 @@ width:1600px;
 
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large text-left vertical-align">
-          <h4 align="left">Tell me how long people live in the area where you put your restaurant and I will tell you how it is performing</h4>
+          <h4 align="left">Analysing food inspections</h4>
           <p class="w3-text-grey" align="justify"> In the maps to the right we show the number of food inspections per establishment, its average risk, and its average inspection result (0 when it fails, 1 when it passes with conditions and 2 if it passes). It seems that the richer center and north have more inspections per establishment than the poorer west, and perhaps more surprisingly, the facilities in these richer areas seem to have <b>average higher risk</b>, while also obtaining <b>average higher better results</b>: Why is it that rich areas seem to have facilities which are performing better in inspections but have on average a higher risk than the facilities in the poor areas?
            <div class="ui buttons">
             <button class="ui primary button" id = "inspections_per_establishment_btn"># inspections per establishment</button>
@@ -222,7 +222,7 @@ width:1600px;
             <button class="ui button" id = "average_risk_btn">Average risk</button>
           </div>
             <h6 align="left" style="margin-top:20px">Explanation</h6>
-             <p class="w3-text-grey" align="justify" id="average_result_exp">explanation of avg, inspections per est</p><br>
+             <p class="w3-text-grey" align="justify" id="average_result_exp">The map on the right displays the average number of inspections per rertaurant per area. We can see that establishments in the east, north and south tend to get inspected more often. This is slightly similar to the areas with higher per capita income (see map above for comparison). The most inspections per establishment happen in Burnside. However, it is important to note for this and further maps that in this area there are only 2 different establishments (that appear in our dataset). </p><br>
 
           <!-- If you change this text remeber to also change the text in the javascript at the bottom -->
         </div>
@@ -444,7 +444,13 @@ width:1600px;
     $("#average_risk_btn").addClass("ui button");
     $("#average_result_btn").removeClass("ui primary button");
     $("#average_result_btn").addClass("ui button");
-    $("#average_result_exp").text("Avg. inspections per est explanation");
+  $("#average_result_exp").text("The map on the right displays the average number of inspections per rertaurant per area.\
+   We can see that establishments in the east, north and south tend to get inspected more often. \
+   This is slightly similar to the areas with higher per capita income (see map above for comparison).\
+    The most inspections per establishment happen in Burnside.\
+     However, it is important to note for this and further maps that in this area there are only 2 \
+     different establishments (that appear in our dataset).\
+");
   });
 
 
