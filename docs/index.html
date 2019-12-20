@@ -151,7 +151,7 @@ width:1600px;
     <div class = "story-block">
         <div class="w3-col m6 w3-padding-large text-left vertical-align">
           <h4 align="left">Food inspections in Chicago</h4>
-          <p class="w3-text-grey" align="justify"> With over 7000 restaurants, Chicago is known for its diverse food culture. For example, did you know that there is a Chicago style pizza? 
+          <p class="w3-text-grey" align="justify"> With over 7000 restaurants, Chicago is known for its diverse food culture. For example, did you know that there is a Chicago style pizza?
            <br> In order to investigate the vast number of culinary establishments we used the <a href="https://www.kaggle.com/chicago/chicago-food-inspections">Chicago Food Inspections</a> dataset provided by Kaggle and the city of Chicago.
            It contains information on the establishment and the results of every food inspection carried out since January 1<sup>st</sup> 2010. The maps on the right gives a raw overview of some of this data. Select below which data to display.
            <div class="ui buttons">
@@ -180,7 +180,7 @@ width:1600px;
         </div>
         <div class="w3-col m6 w3-padding-large text-right vertical-align">
           <h4 align="left">Socioeconomics in Chicago</h4>
-          <p class="w3-text-grey" align="justify"> As mentioned before Chicago is also notiously unequal. Indeed, the life expectancy varies between 69 and 85 years depending on the areas.
+          <p class="w3-text-grey" align="justify"> As mentioned before Chicago is also notoriously unequal. Indeed, the life expectancy varies between 69 and 85 years depending on the areas.
             <br> In order to capture some of these socioeconomic factors we used the
            <a href="https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2">Cencus Data</a> and the
            <a href="https://data.cityofchicago.org/Health-Human-Services/Public-Health-Statistics-Life-Expectancy-By-Commun/qjr3-bm53">Public Health Statistics</a>
@@ -222,7 +222,7 @@ width:1600px;
           </div>
             <h6 align="left" style="margin-top:20px">Explanation</h6>
              <p class="w3-text-grey" align="justify" id="average_result_exp">explanation of avg, inspections per est</p><br>
-          
+
           <!-- If you change this text remeber to also change the text in the javascript at the bottom -->
         </div>
         <div class="w3-col l6 w3-padding-large vertical-align">
@@ -234,7 +234,7 @@ width:1600px;
     <div class = "story-block">
       <div class="w3-col m6 w3-padding-large text-left vertical-align">
         <h4 align="left">Facilities in rich areas: More risky, but better performing?</h4>
-        <p class="w3-text-grey" align="justify">Indeed, our intution by looking at the map shows up in the correlation numbers as well: 
+        <p class="w3-text-grey" align="justify">Indeed, our intution by looking at the map shows up in the correlation numbers as well:
         	<br>The correlation value between every good social indicator and the average number of inspections is positive. The same can be said for good social indicators and the risk of a facility. Furthermore the correlation number between every bad social indicator and the average number of inspections or the risk is negative. If you look at the average inspections result, the sign is opposite. There are also some weak positive and negative correlations (between 0.1 and 0.3) that appear.
       </div>
       <div class="w3-col m6 w3-padding-large vertical-align">
@@ -246,10 +246,9 @@ width:1600px;
       <div class="w3-col m6 w3-padding-large text-left vertical-align">
         <h4 align="left">Will you get inspected in 2018?</h4>
         <p class="w3-text-grey" align="justify">
-            We try and use ML to, based on a restaurant's previous history and some of its characteristics, predict whether it will get inspected in 2018. Using logistic regression and Monte Carlo cross-validation with 1000 iterations, we estimate a validation set accuracy of 61% (classes are balanced: We chose the period so that approximetaly half the facilities would get inspected at that time and half wouldn't).
+            We try and use ML to, based on a restaurant's previous history and some of its characteristics, predict whether it will get inspected in 2018. Using logistic regression and Monte Carlo cross-validation with 1000 iterations, we estimate a validation set accuracy of 61% (classes are balanced: We chose the period so that approximately half of the facilities would get inspected at that time and half wouldn't).
 
 			However, it is not in the accuracy that the interest of this exercise lays, but in the weights the model assigns to each input variable, both categorical (after 1 hot encoding) and numerical (to which we apply MinMaxScaler) variables. The top 5 variables contributing positively are N_INSPECTIONS, AVERAGE_RISK, SHARED KITCHEN, SHELTER, HOSPITAL. The bottom 5 variables are LONG TERM CARE FACILITY, DAYCARE COMBO 1586, AVERAGE_RESULT, WRIGLEY ROOFTOP AND BAR/GRILL.
-			(((here do a bar plot with the top 5 and bottom 5 variables the model looks at?)))
       </div>
       <div class="w3-col m6 w3-padding-large vertical-align">
         <iframe src="img/corr_socio_good.html" frameBorder="0" class = "frame-class"></iframe>
@@ -267,7 +266,7 @@ width:1600px;
         <h4 align="left">Percentage of failing Restaurants and Stores vs. Percentage of Households below Poverty line</h4>
         <p class="w3-text-grey" align="justify">There is a correlation between the percentage of failed
           inspections of restaurants and stores and the percentage of households below the poverty line in areas of Chicago. Looking at the areas with highest percentage of failing restaurants and stores: Oakland, Washington Park and Riverdale, all three of them have over 40% of failed inspections. The percentage of households below the poverty line is also around 40% for the first two areas and over 56% for the last (!). It is curious that neighbour areas sometimes perform much better in both domains. For example Douglas, the northern neighbour of Oakland, has only around 21% failed inspections in restaurants and stores, and 30% households below poverty line. These numbers aren't great, but they are a lot better than its southern neighbour.
-          <br>Of course the relation put in evidence here is not a dependence, but both features are at first glance indicators of how attractive a community can be. A community where more than a third of inspections fail might not be the most appealing, and the same goes for the percentage of households below the poverty line. The motivation behind keeping only restaurants and stores is that facilities such as hospitals or schools present higher risks, and are therefor more severely inspected. As those are more rare than restaurants and stores they might add some bias to specific communities, and so we choose to focus only on the latters.
+          <br>Of course the relation put in evidence here is not a dependence, but both features are at first glance indicators of how attractive a community can be. A community where more than a third of inspections fail might not be the most appealing, and the same goes for the percentage of households below the poverty line. The motivation behind keeping only restaurants and stores is that facilities such as hospitals or schools present higher risks, and are therefore more severely inspected. As those are more rare than restaurants and stores they might add some bias to specific communities, and so we choose to focus only on the latters.
         </p>
         <div class="ui buttons">
             <button class="ui primary button" id = "restaurant_button">Restaurants/Stores</button>
@@ -288,21 +287,21 @@ width:1600px;
         <p> To further analyse the indicator of households below poverty line, we will now compare it to the average per capita income inside same community areas. As a plot depicting the poverty indices of community areas would be hard to geographically interpret, we now introduce the notion of <i>region</i> as defined by the city of Chicago and explained on this <a href="https://en.wikipedia.org/wiki/Community_areas_in_Chicago">Wikipedia page</a>. There are 9 regions in Chicago, and each one of them contains a subset of community areas. It is easier to visualize the households below poverty line w.r.t the average per capita inside those regions than displaying 77 areas. On the plot below, you can click on the region names in the legend (below the plot) to put in evidence the community areas of the selected region. Hover over a point in the plot or on the map to see the name of the community area.
         <br>
         The legend consists of all regions of Chicago, with <i>All</i> displaying all regions and <i>Chicago</i> displaying the average of those indicators on the entire city. Clearly the <i>Central</i> region has the highest per capita incomes and few households below the poverty line (around 15%). The <i>North Side</i> region also seems to do very well in those measures, altough the community areas <i>Avondale</i> and <i>Logan Square</i> have much lower per capita incomes (around half of the other areas in the same regions), they have roughly the same percentage of households below the poverty line. In the southernmost regions, there seems to be a greater percentage of households under the poverty line. Indeed, when analysing <i>southwest side, south side, far southwest side</i> and <i>far southeast side</i>, one can check that community areas have around 20-30% of households below poverty line (although <i>far southwest side</i> is slightly better), the average per capita income rarely exceeds 30k and is usually around 20k, which is not a lot.
-        <br> Displaying those two poverty metrics for different regions, one can see that the community areas in regions usually seem to share similar results. However there are some exceptions, which continues to show the economic divide in the areas. This can probably be explained by the fact that most high paying jobs are in the city center, as we could see on the previous per-capita income maps, but many wealthy people live in quiet neighbourhoods outside the center, where jobs don't pay as much. 
-    
+        <br> Displaying those two poverty metrics for different regions, one can see that the community areas in regions usually seem to share similar results. However there are some exceptions, which continues to show the economic divide in the areas. This can probably be explained by the fact that most high paying jobs are in the city center, as we could see on the previous per-capita income maps, but many wealthy people live in quiet neighbourhoods outside the center, where jobs don't pay as much.
+
        </p>
       </div>
 
       <div id="test" class="w3-content" style="max-width:1400px; height:680px">
 
           <div style="max-width:1000px;  float:left; height:100%;">
-            
+
             <iframe id="interactivePlot" src="figures/comm_area_per_income_below_poverty.html" scrolling="no" display="block" width="1000px" height="100%" frameborder="0"></iframe>
           </div>
           <div class="vertical-align-bot" style="float:left">
             <iframe src="maps/map_chicago_regions_colored.html" style="border-radius:20px; height:500px; width:400px; overflow:hidden;" frameborder="0"></iframe>
-          </div>    
-      
+          </div>
+
       </div>
       <div style="margin-left: auto;
       margin-right: auto;width: 950px;">
@@ -330,9 +329,12 @@ width:1600px;
   <!-- Conclusion Section -->
   <div class="w3-container w3-padding-64" id="conclusion">
     <h1>Conclusion</h1><br>
-    <p>TODO</p>
-
-
+    <p>Our goal was to investigate how geographical socio-economic divisions in Chicago reflect in food inspections. In order to do that, we analysed the results and the quantities of food inspections. By crossing those information with socioeconomics factors such as the per capita income and life expectancy of each neighbourhood we were able to gain powerful insights.<br>
+    The results of the food inspections carried out show how the establishments in the richer areas are more inspected than the poorer ones and present higher average risk while obtaining better results. Indeed, establishments in poorer areas tend to have bad results.<br>
+    We saw the link between the inspection result of a restaurant and the life expectancy on the area where the restaurant is.<br>
+    Furthermore, we found out that facilities with higher risk are performing better and we arrived to that result by analysing the correlations between them.<br>
+    Finally, we used machine learning to predict whether or not a facility would get inspected in 2018 and detected the features that contribute positively on the result.<br>
+    As a future work, it would be great to look whether there is a correlation between the type of facility inspected (restaurant, hospital, tavern) and the results of the inspection.</p>
   </div>
 
 <!-- End page content -->
@@ -466,7 +468,7 @@ width:1600px;
     $("#intro_socio").html(life_exp_text);
   });
 
-   povery_text = "This map shows the precentage of households below the poverty line in all community areas. One oddity that we notice is that the areas with highest per capita incomes are not the ones with least percentage of households under the poverty line. Indeed, when hovering over the areas of the city center, namely " + "Near North Side, Lincoln Park".italics() + " and " + "Loop".italics() + ", we see that this indicator shows percentages of between roughly 13 and 15. This is still relatively high as some areas on the edge of the city limits exhibit much lower percentages of around 5-10. For example taking the two areas " + "Garfield Ridge".italics() + " and " + "Clearing".italics() + ", located on the western limit of the city, towards the center-south side, both have low ratios of households below the poverty line of 8.8-8.9% but their per capita incomes are around 26000$, which is quite low. Multiple other examples can be found on the same comparison, and we will go deeper into this particular comparison later in the story, but it is interesting to get an early overview of the subject."
+   povery_text = "This map shows the precentage of households below the poverty line in all community areas. One oddity that we notice is that the areas with highest per capita incomes are not the ones with least percentage of households under the poverty line. Indeed, when hovering over the areas of the city center, namely " + "Near North Side, Lincoln Park".italics() + " and " + "Loop".italics() + ", we see that this indicator shows percentages of between roughly 13 and 15. This is still relatively high as some areas on the edge of the city limits exhibit much lower percentages of around 5-10. For example taking the two areas " + "Garfield Ridge".italics() + " and " + "Clearing".italics() + ", located on the western limit of the city, towards the center-south side, both have low ratios of households below the poverty line of 8.8-8.9% but their per capita incomes are around 26'000$, which is quite low. Multiple other examples can be found on the same comparison, and we will go deeper into this particular comparison later in the story, but it is interesting to get an early overview of the subject."
 
    $("#perc_poverty_btn").click(function() {
     $intro_socio_map.attr('src',"maps/housholds_below_poverty_perc.html");
