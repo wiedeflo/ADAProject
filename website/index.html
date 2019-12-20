@@ -239,13 +239,16 @@ width:1600px;
             <button class="ui primary button" id = "inspections_per_establishment_btn"># inspections per establishment</button>
             <div class="or"></div>
             <button class="ui button" id = "average_result_btn">Average result</button>
+            <div class="or"></div>
             <button class="ui button" id = "average_risk_btn">Average risk</button>
-
           </div>
+            <h6 align="left" style="margin-top:20px">Explanation</h6>
+             <p class="w3-text-grey" align="justify" id="average_result_exp">explanation of avg, inspections per est</p><br>
+          
           <!-- If you change this text remeber to also change the text in the javascript at the bottom -->
-                 </div>
+        </div>
         <div class="w3-col l6 w3-padding-large vertical-align">
-          <iframe src="maps/average_result.html" class = "frame-class" id="average_result_map" frameBorder="0"></iframe>
+          <iframe src="maps/inspections_per_establishment.html" class = "frame-class" id="average_result_map" frameBorder="0"></iframe>
         </div>
       </div>
 
@@ -405,6 +408,7 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
     var $restaurant_map = $("#restaurant_map");
     var $intro_inspections_map = $("#intro_food_inspections_map")
     var $intro_socio_map =  $("#intro_socio_map")
+    var $average_result_map =  $("#average_result_map")
 
     function openPage(page){
       figure_path = "figures/comm_area_per_income_below_poverty_" + page + ".html";
@@ -459,15 +463,40 @@ However, it is not in the accuracy that the interest of this exercise lays, but 
 
 
   $("#average_result_btn").click(function() {
-    $intro_inspections_map.attr('src',"maps/average_result.html");
-    $("#average_result_btn").removeClass("ui primary button");
-    $("#average_result_btn").addClass("ui button");
+    $average_result_map.attr('src',"maps/average_result.html");
+    $("#inspections_per_establishment_btn").removeClass("ui primary button");
+    $("#inspections_per_establishment_btn").addClass("ui button");
+    $("#average_risk_btn").removeClass("ui primary button");
+    $("#average_risk_btn").addClass("ui button");
     $("#average_result_btn").removeClass("ui button");
     $("#average_result_btn").addClass("ui primary button");
-    $("#intro_inspections").text("\
+    $("#average_result_exp").text("\
+  ======> This map diesplays risk <======\
      The heatmap shows the average result to inspections. \
       We observe that the more we approach the city center or the north of the city, \
       the better the results to inspections are.");
+  });
+
+  $("#average_risk_btn").click(function() {
+    $average_result_map.attr('src',"maps/average_risk.html");
+    $("#inspections_per_establishment_btn").removeClass("ui primary button");
+    $("#inspections_per_establishment_btn").addClass("ui button");
+    $("#average_risk_btn").removeClass("ui button");
+    $("#average_risk_btn").addClass("ui primary button");
+    $("#average_result_btn").removeClass("ui primary button");
+    $("#average_result_btn").addClass("ui button");
+    $("#average_result_exp").text("Average risk explanation.");
+  });
+
+  $("#inspections_per_establishment_btn").click(function() {
+    $average_result_map.attr('src',"maps/inspections_per_establishment.html");
+    $("#inspections_per_establishment_btn").removeClass("ui button");
+    $("#inspections_per_establishment_btn").addClass("ui primary button");
+    $("#average_risk_btn").removeClass("ui primary button");
+    $("#average_risk_btn").addClass("ui button");
+    $("#average_result_btn").removeClass("ui primary button");
+    $("#average_result_btn").addClass("ui button");
+    $("#average_result_exp").text("Avg. inspections per est explanation");
   });
 
 
